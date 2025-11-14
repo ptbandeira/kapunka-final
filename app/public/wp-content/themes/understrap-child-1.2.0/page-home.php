@@ -9,18 +9,6 @@ get_header();
 
 $kapunka_shop_url = function_exists( 'wc_get_page_id' ) ? get_permalink( wc_get_page_id( 'shop' ) ) : home_url( '/tienda' );
 
-$ritual_products = array();
-if ( function_exists( 'wc_get_products' ) ) {
-    $ritual_products = wc_get_products(
-        array(
-            'limit'   => 3,
-            'orderby' => 'menu_order',
-            'order'   => 'ASC',
-            'status'  => 'publish',
-        )
-    );
-}
-
 $hero = array(
     'eyebrow'     => kapunka_get_meta( 'home_hero_eyebrow', __( 'CIENCIA Y NATURALEZA', 'understrap' ) ),
     'title'       => kapunka_get_meta( 'home_hero_title', __( 'Agradece a tu piel', 'understrap' ) ),
@@ -37,8 +25,11 @@ $hero = array(
 );
 
 $home_hook = array(
-    'title'       => kapunka_get_meta( 'home_hook_title', __( 'Más que un aceite. Un método.', 'understrap' ) ),
-    'description' => kapunka_get_meta( 'home_hook_description', __( 'Kapunka no es solo un ingrediente; es la fusión de un abastecimiento ético en Marruecos y un protocolo clínico desarrollado durante 35 años. Diseñado para quienes exigen resultados visibles sin comprometer la pureza.', 'understrap' ) ),
+    'title' => kapunka_get_meta( 'crb_home_hook_title', __( 'Más que un aceite. Un método.', 'understrap' ) ),
+    'body'  => kapunka_get_meta(
+        'crb_home_hook_body',
+        __( 'Kapunka no es solo un ingrediente; es la fusión de un abastecimiento ético en Marruecos y un protocolo clínico desarrollado durante 35 años. Diseñado para quienes exigen resultados visibles sin comprometer la pureza.', 'understrap' )
+    ),
 );
 
 $home_social_slides = kapunka_get_meta( 'home_social_slides', array() );
@@ -55,49 +46,67 @@ if ( empty( $home_social_slides ) || ! is_array( $home_social_slides ) ) {
     );
 }
 
-$home_trinity_items = kapunka_get_meta( 'home_trinity_items', array() );
-if ( empty( $home_trinity_items ) || ! is_array( $home_trinity_items ) ) {
-    $home_trinity_items = array(
+$home_trinity = kapunka_get_meta( 'crb_home_trinity', array() );
+if ( empty( $home_trinity ) || ! is_array( $home_trinity ) ) {
+    $home_trinity = array(
         array(
-            'title'       => __( 'Origen.', 'understrap' ),
-            'description' => __( 'Primera prensada en frío de cooperativas femeninas certificadas.', 'understrap' ),
+            'crb_home_trinity_title' => __( 'Origen', 'understrap' ),
+            'crb_home_trinity_body'  => __( 'Primera prensada en frío de cooperativas femeninas certificadas.', 'understrap' ),
+            'crb_home_trinity_image' => 0,
         ),
         array(
-            'title'       => __( 'Ciencia.', 'understrap' ),
-            'description' => __( '100% pureza validada. Rico en Vitamina E y ácidos grasos esenciales.', 'understrap' ),
+            'crb_home_trinity_title' => __( 'Ciencia', 'understrap' ),
+            'crb_home_trinity_body'  => __( '100% pureza validada. Rico en Vitamina E y ácidos grasos esenciales.', 'understrap' ),
+            'crb_home_trinity_image' => 0,
         ),
         array(
-            'title'       => __( 'Método.', 'understrap' ),
-            'description' => __( 'Protocolos de aplicación propios que maximizan la absorción.', 'understrap' ),
+            'crb_home_trinity_title' => __( 'Método', 'understrap' ),
+            'crb_home_trinity_body'  => __( 'Protocolos de aplicación propios que maximizan la absorción.', 'understrap' ),
+            'crb_home_trinity_image' => 0,
         ),
     );
 }
 
-$home_evidence = array(
-    'eyebrow' => kapunka_get_meta( 'home_evidence_eyebrow', __( 'Evidencia clínica', 'understrap' ) ),
-    'title'   => kapunka_get_meta( 'home_evidence_title', __( 'Resultados que se sienten y se miden.', 'understrap' ) ),
-    'cta'     => array(
-        'label' => kapunka_get_meta( 'home_evidence_cta_label', __( 'Descargar fichas clínicas', 'understrap' ) ),
-        'url'   => kapunka_get_meta( 'home_evidence_cta_url', home_url( '/profesionales#recursos' ) ),
-    ),
-);
-
-$home_evidence_stats = kapunka_get_meta( 'home_evidence_stats', array() );
-if ( empty( $home_evidence_stats ) || ! is_array( $home_evidence_stats ) ) {
-    $home_evidence_stats = array(
+$home_testimonials = kapunka_get_meta( 'crb_home_testimonials', array() );
+if ( empty( $home_testimonials ) || ! is_array( $home_testimonials ) ) {
+    $home_testimonials = array(
         array(
-            'stat'       => '+32%',
-            'description'=> __( 'Retención de hidratación en 72h tras láser fraccionado.', 'understrap' ),
+            'crb_home_testimonial_quote'  => __( '“Kapunka elevó la experiencia post-láser: la piel queda flexible y sin ardor en minutos.”', 'understrap' ),
+            'crb_home_testimonial_author' => __( '— Dra. Martínez, Clínica Regeneris', 'understrap' ),
         ),
         array(
-            'stat'       => '90%',
-            'description'=> __( 'De profesionales reportan mejor deslizamiento manual.', 'understrap' ),
-        ),
-        array(
-            'stat'       => '-48%',
-            'description'=> __( 'Sensación de ardor en protocolos post-peeling.', 'understrap' ),
+            'crb_home_testimonial_quote'  => __( '“Nuestros rituales corporales ganaron textura y olor firma sin sacrificar resultados clínicos.”', 'understrap' ),
+            'crb_home_testimonial_author' => __( '— Sarah L., Directora Wellness, Hotel Arts', 'understrap' ),
         ),
     );
+}
+
+$home_featured = array(
+    'title' => kapunka_get_meta( 'crb_home_featured_title', __( 'Esenciales Kapunka', 'understrap' ) ),
+);
+
+$home_featured_ids = kapunka_parse_association_ids( kapunka_get_meta( 'crb_home_featured_products', array() ) );
+$home_featured_products = array();
+
+if ( function_exists( 'wc_get_product' ) ) {
+    foreach ( $home_featured_ids as $product_id ) {
+        $product = wc_get_product( $product_id );
+
+        if ( $product && 'publish' === $product->get_status() ) {
+            $home_featured_products[] = $product;
+        }
+    }
+
+    if ( empty( $home_featured_products ) && function_exists( 'wc_get_products' ) ) {
+        $home_featured_products = wc_get_products(
+            array(
+                'limit'   => 4,
+                'orderby' => 'menu_order',
+                'order'   => 'ASC',
+                'status'  => 'publish',
+            )
+        );
+    }
 }
 
 $home_program = array(
@@ -110,14 +119,49 @@ $home_program = array(
     ),
 );
 
+$home_b2b_cta = array(
+    'title' => kapunka_get_meta(
+        'crb_home_b2b_cta_title',
+        $home_program['title']
+    ),
+    'button' => array(
+        'label' => kapunka_get_meta( 'crb_home_b2b_cta_button_text', __( 'Ver detalles', 'understrap' ) ),
+        'url'   => kapunka_get_meta( 'crb_home_b2b_cta_button_link', $home_program['cta']['url'] ),
+    ),
+);
+
 $home_journal = array(
     'eyebrow' => kapunka_get_meta( 'home_journal_eyebrow', __( 'Journal', 'understrap' ) ),
-    'title'   => kapunka_get_meta( 'home_journal_title', __( 'Reflexiones clínicas, casos y rituales guiados.', 'understrap' ) ),
+    'title'   => kapunka_get_meta( 'crb_home_journal_title', kapunka_get_meta( 'home_journal_title', __( 'Reflexiones clínicas, casos y rituales guiados.', 'understrap' ) ) ),
     'cta'     => array(
         'label' => kapunka_get_meta( 'home_journal_cta_label', __( 'Entrar al Journal', 'understrap' ) ),
         'url'   => kapunka_get_meta( 'home_journal_cta_url', home_url( '/aprende' ) ),
     ),
 );
+
+$home_journal_featured_ids = kapunka_parse_association_ids( kapunka_get_meta( 'crb_home_featured_posts', array() ) );
+$home_journal_posts        = array();
+
+if ( ! empty( $home_journal_featured_ids ) ) {
+    $home_journal_posts = get_posts(
+        array(
+            'post_type'      => 'post',
+            'post__in'       => $home_journal_featured_ids,
+            'orderby'        => 'post__in',
+            'posts_per_page' => 3,
+        )
+    );
+}
+
+if ( empty( $home_journal_posts ) ) {
+    $home_journal_posts = get_posts(
+        array(
+            'post_type'      => 'post',
+            'posts_per_page' => 3,
+            'ignore_sticky_posts' => true,
+        )
+    );
+}
 
 $home_newsletter = array(
     'eyebrow'     => kapunka_get_meta( 'home_newsletter_eyebrow', __( 'Newsletter', 'understrap' ) ),
@@ -128,13 +172,7 @@ $home_newsletter = array(
     'shortcode'   => kapunka_get_meta( 'home_newsletter_shortcode', '' ),
 );
 
-$journal_query = new WP_Query(
-    array(
-        'post_type'      => 'post',
-        'posts_per_page' => 2,
-        'ignore_sticky_posts' => true,
-    )
-);
+$journal_query = null;
 ?>
 
 <section class="hero-section hero-section--home">
@@ -181,111 +219,107 @@ $journal_query = new WP_Query(
 <main id="home-page" class="site-main home-main">
     <section class="kapunka-section home-hook">
         <div class="kapunka-clamp">
-            <?php if ( '' !== trim( (string) $home_hook['title'] ) ) : ?>
-                <h2><?php echo esc_html( $home_hook['title'] ); ?></h2>
-            <?php endif; ?>
-            <?php if ( '' !== trim( (string) $home_hook['description'] ) ) : ?>
-                <p><?php echo esc_html( $home_hook['description'] ); ?></p>
-            <?php endif; ?>
-        </div>
-    </section>
-
-    <section class="kapunka-section home-social">
-        <div class="kapunka-clamp">
-            <div class="home-social__slider">
-                <?php foreach ( $home_social_slides as $slide ) :
-                    $quote  = isset( $slide['quote'] ) ? trim( (string) $slide['quote'] ) : '';
-                    $author = isset( $slide['author'] ) ? trim( (string) $slide['author'] ) : '';
-
-                    if ( '' === $quote ) {
-                        continue;
-                    }
-                    ?>
-                    <article class="home-social__slide">
-                        <p class="home-social__quote"><?php echo esc_html( $quote ); ?></p>
-                        <?php if ( '' !== $author ) : ?>
-                            <p class="home-social__author"><?php echo esc_html( $author ); ?></p>
-                        <?php endif; ?>
-                    </article>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-    <section class="kapunka-section home-trinity">
-        <div class="kapunka-clamp">
-            <div class="home-trinity__grid">
-                <?php foreach ( $home_trinity_items as $item ) :
-                    $title = isset( $item['title'] ) ? trim( (string) $item['title'] ) : '';
-                    $desc  = isset( $item['description'] ) ? trim( (string) $item['description'] ) : '';
-
-                    if ( '' === $title && '' === $desc ) {
-                        continue;
-                    }
-                    ?>
-                    <article>
-                        <?php if ( '' !== $title ) : ?>
-                            <h3><?php echo esc_html( $title ); ?></h3>
-                        <?php endif; ?>
-                        <?php if ( '' !== $desc ) : ?>
-                            <p><?php echo esc_html( $desc ); ?></p>
-                        <?php endif; ?>
-                    </article>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-    <section class="kapunka-section home-featured">
-        <div class="kapunka-clamp home-featured__grid">
-            <div class="home-featured__media">
-                <?php if ( ! empty( $ritual_products ) && isset( $ritual_products[0] ) ) : ?>
-                    <?php kapunka_component( 'card-product', array( 'product' => $ritual_products[0], 'context' => 'tienda', 'variant' => 'featured-large' ) ); ?>
+            <div class="home-hook__inner">
+                <?php if ( '' !== trim( (string) $home_hook['title'] ) ) : ?>
+                    <h2 class="home-hook__title"><?php echo esc_html( $home_hook['title'] ); ?></h2>
+                <?php endif; ?>
+                <?php if ( '' !== trim( (string) $home_hook['body'] ) ) : ?>
+                    <div class="home-hook__body">
+                        <?php echo wp_kses_post( wpautop( $home_hook['body'] ) ); ?>
+                    </div>
                 <?php endif; ?>
             </div>
-            <div class="home-featured__stack">
-                <?php if ( ! empty( $ritual_products ) ) : ?>
-                    <?php foreach ( array_slice( $ritual_products, 1, 2 ) as $product ) : ?>
-                        <div class="home-featured__item">
-                            <?php kapunka_component( 'card-product', array( 'product' => $product, 'context' => 'tienda', 'variant' => 'featured-small' ) ); ?>
+        </div>
+    </section>
+
+    <?php if ( ! empty( $home_trinity ) ) : ?>
+        <section class="kapunka-section home-trinity">
+            <div class="kapunka-clamp">
+                <div class="home-trinity__grid">
+                    <?php foreach ( $home_trinity as $item ) :
+                        $title    = isset( $item['crb_home_trinity_title'] ) ? trim( (string) $item['crb_home_trinity_title'] ) : '';
+                        $body     = isset( $item['crb_home_trinity_body'] ) ? trim( (string) $item['crb_home_trinity_body'] ) : '';
+                        $image_id = isset( $item['crb_home_trinity_image'] ) ? (int) $item['crb_home_trinity_image'] : 0;
+
+                        if ( '' === $title && '' === $body && 0 === $image_id ) {
+                            continue;
+                        }
+                        ?>
+                        <article class="home-trinity__item">
+                            <?php if ( $image_id ) : ?>
+                                <div class="home-trinity__image">
+                                    <?php echo wp_get_attachment_image( $image_id, 'medium', false, array( 'loading' => 'lazy', 'decoding' => 'async' ) ); ?>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ( '' !== $title ) : ?>
+                                <h3 class="home-trinity__title"><?php echo esc_html( $title ); ?></h3>
+                            <?php endif; ?>
+                            <?php if ( '' !== $body ) : ?>
+                                <div class="home-trinity__body">
+                                    <?php echo wp_kses_post( wpautop( $body ) ); ?>
+                                </div>
+                            <?php endif; ?>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
+    <?php if ( ! empty( $home_featured_products ) ) : ?>
+        <section class="kapunka-section home-featured">
+            <div class="kapunka-clamp">
+                <?php if ( '' !== trim( (string) $home_featured['title'] ) ) : ?>
+                    <h2 class="home-featured__title"><?php echo esc_html( $home_featured['title'] ); ?></h2>
+                <?php endif; ?>
+                <div class="home-featured__grid">
+                    <?php foreach ( $home_featured_products as $product ) : ?>
+                        <div class="home-featured__card">
+                            <?php kapunka_component( 'card-product', array( 'product' => $product, 'context' => 'tienda' ) ); ?>
                         </div>
                     <?php endforeach; ?>
-                <?php endif; ?>
-                <a class="home-featured__cta" href="<?php echo esc_url( $kapunka_shop_url ); ?>"><?php esc_html_e( 'Ver toda la tienda', 'understrap' ); ?></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 
-    <section class="kapunka-section home-evidence">
-        <div class="kapunka-clamp">
-            <?php if ( '' !== trim( (string) $home_evidence['eyebrow'] ) ) : ?>
-                <p class="kapunka-tech"><?php echo esc_html( $home_evidence['eyebrow'] ); ?></p>
-            <?php endif; ?>
-            <?php if ( '' !== trim( (string) $home_evidence['title'] ) ) : ?>
-                <h2><?php echo esc_html( $home_evidence['title'] ); ?></h2>
-            <?php endif; ?>
-            <div class="home-evidence__stats">
-                <?php foreach ( $home_evidence_stats as $stat ) :
-                    $stat_value = isset( $stat['stat'] ) ? trim( (string) $stat['stat'] ) : '';
-                    $stat_desc  = isset( $stat['description'] ) ? trim( (string) $stat['description'] ) : '';
+    <?php if ( ! empty( $home_testimonials ) ) : ?>
+        <section class="kapunka-section home-testimonials">
+            <div class="kapunka-clamp">
+                <div class="home-testimonials__slider">
+                    <?php foreach ( $home_testimonials as $index => $testimonial ) :
+                        $quote  = isset( $testimonial['crb_home_testimonial_quote'] ) ? trim( (string) $testimonial['crb_home_testimonial_quote'] ) : '';
+                        $author = isset( $testimonial['crb_home_testimonial_author'] ) ? trim( (string) $testimonial['crb_home_testimonial_author'] ) : '';
 
-                    if ( '' === $stat_value ) {
-                        continue;
-                    }
-                    ?>
-                    <article>
-                        <h3><?php echo esc_html( $stat_value ); ?></h3>
-                        <?php if ( '' !== $stat_desc ) : ?>
-                            <p><?php echo esc_html( $stat_desc ); ?></p>
-                        <?php endif; ?>
-                    </article>
-                <?php endforeach; ?>
+                        if ( '' === $quote ) {
+                            continue;
+                        }
+                        $is_active = 0 === $index;
+                        ?>
+                        <article class="home-testimonials__slide<?php echo $is_active ? ' is-active' : ''; ?>" data-index="<?php echo esc_attr( $index ); ?>">
+                            <p class="home-testimonials__quote"><?php echo esc_html( $quote ); ?></p>
+                            <?php if ( '' !== $author ) : ?>
+                                <p class="home-testimonials__author"><?php echo esc_html( $author ); ?></p>
+                            <?php endif; ?>
+                        </article>
+                    <?php endforeach; ?>
+                    <div class="home-testimonials__dots" role="tablist">
+                        <?php foreach ( $home_testimonials as $dot_index => $testimonial ) :
+                            $is_active = 0 === $dot_index;
+                            ?>
+                            <button
+                                class="home-testimonials__dot<?php echo $is_active ? ' is-active' : ''; ?>"
+                                type="button"
+                                data-target="<?php echo esc_attr( $dot_index ); ?>"
+                                aria-label="<?php printf( esc_attr__( 'Testimonio %d', 'understrap' ), $dot_index + 1 ); ?>"
+                                aria-pressed="<?php echo $is_active ? 'true' : 'false'; ?>"
+                            ></button>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
-            <?php if ( ! empty( $home_evidence['cta']['label'] ) && ! empty( $home_evidence['cta']['url'] ) ) : ?>
-                <a class="btn btn-outline" href="<?php echo esc_url( $home_evidence['cta']['url'] ); ?>"><?php echo esc_html( $home_evidence['cta']['label'] ); ?></a>
-            <?php endif; ?>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 
     <section class="kapunka-section home-program">
         <div class="kapunka-clamp home-program__wrap">
@@ -293,20 +327,20 @@ $journal_query = new WP_Query(
                 <?php if ( '' !== trim( (string) $home_program['eyebrow'] ) ) : ?>
                     <p class="kapunka-tech"><?php echo esc_html( $home_program['eyebrow'] ); ?></p>
                 <?php endif; ?>
-                <?php if ( '' !== trim( (string) $home_program['title'] ) ) : ?>
-                    <h2><?php echo esc_html( $home_program['title'] ); ?></h2>
+                <?php if ( '' !== trim( (string) $home_b2b_cta['title'] ) ) : ?>
+                    <h2><?php echo esc_html( $home_b2b_cta['title'] ); ?></h2>
                 <?php endif; ?>
                 <?php if ( '' !== trim( (string) $home_program['description'] ) ) : ?>
                     <p><?php echo esc_html( $home_program['description'] ); ?></p>
                 <?php endif; ?>
             </div>
-            <?php if ( ! empty( $home_program['cta']['label'] ) && ! empty( $home_program['cta']['url'] ) ) : ?>
-                <a class="btn btn-primary" href="<?php echo esc_url( $home_program['cta']['url'] ); ?>"><?php echo esc_html( $home_program['cta']['label'] ); ?></a>
+            <?php if ( ! empty( $home_b2b_cta['button']['label'] ) && ! empty( $home_b2b_cta['button']['url'] ) ) : ?>
+                <a class="btn home-program__button" href="<?php echo esc_url( $home_b2b_cta['button']['url'] ); ?>"><?php echo esc_html( $home_b2b_cta['button']['label'] ); ?></a>
             <?php endif; ?>
         </div>
     </section>
 
-    <?php if ( $journal_query->have_posts() ) : ?>
+    <?php if ( ! empty( $home_journal_posts ) ) : ?>
         <section class="kapunka-section home-journal">
             <div class="kapunka-clamp">
                 <div class="section-heading">
@@ -317,14 +351,34 @@ $journal_query = new WP_Query(
                         <h2><?php echo esc_html( $home_journal['title'] ); ?></h2>
                     <?php endif; ?>
                 </div>
-                <div class="kapunka-grid kapunka-grid--articles">
-                    <?php
-                    while ( $journal_query->have_posts() ) {
-                        $journal_query->the_post();
-                        kapunka_component( 'card-article', array( 'post' => get_post() ) );
-                    }
-                    wp_reset_postdata();
-                    ?>
+                <div class="home-journal__grid">
+                    <?php foreach ( $home_journal_posts as $post ) : ?>
+                        <?php
+                        $permalink = get_permalink( $post );
+                        $title     = get_the_title( $post );
+                        $excerpt   = wp_trim_words( get_the_excerpt( $post ), 25, '…' );
+                        $thumbnail = get_the_post_thumbnail( $post, 'large', array( 'loading' => 'lazy', 'decoding' => 'async' ) );
+                        ?>
+                        <article class="home-journal__card">
+                            <a href="<?php echo esc_url( $permalink ); ?>" class="home-journal__link">
+                                <div class="home-journal__media">
+                                    <?php if ( $thumbnail ) : ?>
+                                        <?php echo $thumbnail; ?>
+                                    <?php else : ?>
+                                        <div class="home-journal__placeholder"></div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="home-journal__content">
+                                    <?php if ( '' !== trim( (string) $title ) ) : ?>
+                                        <h3><?php echo esc_html( $title ); ?></h3>
+                                    <?php endif; ?>
+                                    <?php if ( '' !== trim( (string) $excerpt ) ) : ?>
+                                        <p><?php echo esc_html( $excerpt ); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            </a>
+                        </article>
+                    <?php endforeach; ?>
                 </div>
                 <?php if ( ! empty( $home_journal['cta']['label'] ) && ! empty( $home_journal['cta']['url'] ) ) : ?>
                     <a class="btn btn-outline" href="<?php echo esc_url( $home_journal['cta']['url'] ); ?>"><?php echo esc_html( $home_journal['cta']['label'] ); ?></a>

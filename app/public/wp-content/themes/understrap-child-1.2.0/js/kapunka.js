@@ -265,6 +265,64 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 9000);
     });
 
+    // Home testimonials slider
+    document.querySelectorAll('.home-testimonials__slider').forEach((slider) => {
+        const slides = slider.querySelectorAll('.home-testimonials__slide');
+        const dots = slider.querySelectorAll('.home-testimonials__dot');
+        if (!slides.length) {
+            return;
+        }
+
+        let index = 0;
+        let autoplay = null;
+
+        const setActive = (nextIndex) => {
+            index = nextIndex;
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('is-active', idx === index);
+            });
+            dots.forEach((dot, idx) => {
+                const isActive = idx === index;
+                dot.classList.toggle('is-active', isActive);
+                dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+        };
+
+        const stopAutoplay = () => {
+            if (autoplay) {
+                window.clearInterval(autoplay);
+                autoplay = null;
+            }
+        };
+
+        const startAutoplay = () => {
+            if (slides.length < 2) {
+                return;
+            }
+            stopAutoplay();
+            autoplay = window.setInterval(() => {
+                const nextIndex = (index + 1) % slides.length;
+                setActive(nextIndex);
+            }, 9000);
+        };
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const targetIndex = Number(dot.getAttribute('data-target'));
+                if (!Number.isNaN(targetIndex)) {
+                    setActive(targetIndex);
+                    startAutoplay();
+                }
+            });
+        });
+
+        slider.addEventListener('mouseenter', stopAutoplay);
+        slider.addEventListener('mouseleave', startAutoplay);
+
+        setActive(0);
+        startAutoplay();
+    });
+
     // Smooth scroll
     document.querySelectorAll('.js-scroll-to').forEach((link) => {
         link.addEventListener('click', (event) => {

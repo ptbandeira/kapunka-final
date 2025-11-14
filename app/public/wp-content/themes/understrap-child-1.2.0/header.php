@@ -128,7 +128,7 @@ if ( has_nav_menu( 'primary' ) ) {
                 <button
                     class="kapunka-nav-toggle"
                     type="button"
-                    aria-controls="kapunka-nav-panel"
+                    aria-controls="kapunka-mobile-nav"
                     aria-expanded="false"
                     aria-label="<?php esc_attr_e( 'Alternar navegación', 'understrap' ); ?>"
                 >

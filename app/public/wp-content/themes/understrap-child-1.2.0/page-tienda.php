@@ -26,29 +26,68 @@ $hero = array(
     ),
 );
 
-$tienda_trinity_items = kapunka_get_meta( 'tienda_trinity_items', array() );
+$tienda_trinity_items = kapunka_get_meta( 'crb_tienda_trinity', array() );
 if ( empty( $tienda_trinity_items ) || ! is_array( $tienda_trinity_items ) ) {
     $tienda_trinity_items = array(
         array(
-            'title'       => __( 'Puramente ético', 'understrap' ),
-            'description' => __( 'Primera prensada en frío de cooperativas femeninas certificadas.', 'understrap' ),
+            'crb_tienda_trinity_headline' => __( 'PURAMENTE ÉTICO', 'understrap' ),
+            'crb_tienda_trinity_body'     => __( 'Primera prensada en frío de cooperativas femeninas certificadas.', 'understrap' ),
         ),
         array(
-            'title'       => __( 'Clínicamente eficaz', 'understrap' ),
-            'description' => __( '100% pureza validada. Rico en Vitamina E y ácidos grasos esenciales.', 'understrap' ),
+            'crb_tienda_trinity_headline' => __( 'CLÍNICAMENTE EFICAZ', 'understrap' ),
+            'crb_tienda_trinity_body'     => __( '100% pureza validada. Rico en Vitamina E y ácidos grasos esenciales.', 'understrap' ),
         ),
         array(
-            'title'       => __( 'El ritual experto', 'understrap' ),
-            'description' => __( 'Protocolos de aplicación propios que maximizan la absorción.', 'understrap' ),
+            'crb_tienda_trinity_headline' => __( 'EL RITUAL EXPERTO', 'understrap' ),
+            'crb_tienda_trinity_body'     => __( 'Protocolos de aplicación propios que maximizan la absorción.', 'understrap' ),
         ),
     );
 }
 
-$tienda_banner_id  = (int) kapunka_get_meta( 'tienda_banner_image', 0 );
-$tienda_banner_url = $tienda_banner_id ? wp_get_attachment_image_url( $tienda_banner_id, 'full' ) : '';
+$tienda_banner_id        = (int) kapunka_get_meta( 'tienda_banner_image', 0 );
+$tienda_banner_url       = $tienda_banner_id ? wp_get_attachment_image_url( $tienda_banner_id, 'full' ) : '';
+$tienda_visual_banner_id = (int) kapunka_get_meta( 'crb_tienda_visual_banner', 0 );
 
-$available_filters = array( 'todo', 'rostro', 'cuerpo', 'packs' );
+$tienda_filters_enabled = kapunka_get_meta( 'tienda_filters_enabled', 'yes' );
+$tienda_filters         = kapunka_get_meta( 'tienda_filter_categories', array() );
+if ( empty( $tienda_filters ) || ! is_array( $tienda_filters ) ) {
+    $tienda_filters = array(
+        array( 'label' => __( 'Todo', 'understrap' ), 'slug' => 'todo' ),
+        array( 'label' => __( 'Rostro', 'understrap' ), 'slug' => 'rostro' ),
+        array( 'label' => __( 'Cuerpo', 'understrap' ), 'slug' => 'cuerpo' ),
+        array( 'label' => __( 'Packs', 'understrap' ), 'slug' => 'packs' ),
+    );
+}
+
+$filter_links = array();
+foreach ( $tienda_filters as $filter ) {
+    $label = isset( $filter['label'] ) ? trim( (string) $filter['label'] ) : '';
+    $slug  = isset( $filter['slug'] ) ? sanitize_title( $filter['slug'] ) : '';
+
+    if ( '' === $label ) {
+        continue;
+    }
+
+    if ( '' === $slug ) {
+        $slug = 'todo';
+    }
+
+    $filter_links[ $slug ] = array(
+        'label' => $label,
+        'slug'  => $slug,
+    );
+}
+
+if ( empty( $filter_links ) ) {
+    $filter_links['todo'] = array(
+        'label' => __( 'Todo', 'understrap' ),
+        'slug'  => 'todo',
+    );
+}
+
+$available_filters = array_keys( $filter_links );
 $current_filter    = isset( $_GET['categoria'] ) ? sanitize_key( wp_unslash( $_GET['categoria'] ) ) : 'todo';
+
 if ( ! in_array( $current_filter, $available_filters, true ) ) {
     $current_filter = 'todo';
 }
@@ -72,7 +111,7 @@ if ( function_exists( 'wc_get_products' ) ) {
 ?>
 
 <main id="tienda-page" class="site-main site-main--tienda">
-    <section class="kapunka-section tienda-hero">
+    <section class="tienda-hero">
         <div class="kapunka-clamp">
             <div class="tienda-hero__header">
                 <div>
@@ -97,41 +136,30 @@ if ( function_exists( 'wc_get_products' ) ) {
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="tienda-hero__filters" hidden aria-hidden="true">
-                    <?php
-                    $filter_links = array(
-                        'todo'   => array(
-                            'label' => __( 'Todo', 'understrap' ),
-                            'url'   => $tienda_url,
-                        ),
-                        'rostro' => array(
-                            'label' => __( 'Rostro', 'understrap' ),
-                            'url'   => add_query_arg( 'categoria', 'rostro', $tienda_url ),
-                        ),
-                        'cuerpo' => array(
-                            'label' => __( 'Cuerpo', 'understrap' ),
-                            'url'   => add_query_arg( 'categoria', 'cuerpo', $tienda_url ),
-                        ),
-                        'packs'  => array(
-                            'label' => __( 'Packs', 'understrap' ),
-                            'url'   => add_query_arg( 'categoria', 'packs', $tienda_url ),
-                        ),
-                    );
-
-                    foreach ( $filter_links as $slug => $data ) {
-                        $is_active = ( $slug === $current_filter );
-                        printf(
-                            '<a href="%1$s" class="%3$s">%2$s</a>',
-                            esc_url( $data['url'] ),
-                            esc_html( $data['label'] ),
-                            $is_active ? 'is-active' : ''
-                        );
-                    }
-                    ?>
-                </div>
             </div>
         </div>
     </section>
+
+    <?php if ( 'yes' === $tienda_filters_enabled ) : ?>
+        <section class="tienda-filters" aria-label="<?php esc_attr_e( 'Filtrar productos por categoría', 'understrap' ); ?>">
+            <div class="kapunka-clamp">
+                <nav class="tienda-filters__nav" aria-label="<?php esc_attr_e( 'Filtros de productos', 'understrap' ); ?>">
+                    <?php foreach ( $filter_links as $slug => $data ) :
+                        $is_active = ( $slug === $current_filter );
+                        $url       = 'todo' === $slug ? $tienda_url : add_query_arg( 'categoria', $slug, $tienda_url );
+                        ?>
+                        <a
+                            href="<?php echo esc_url( $url ); ?>"
+                            class="tienda-filters__link<?php echo $is_active ? ' is-active' : ''; ?>"
+                            aria-current="<?php echo $is_active ? 'true' : 'false'; ?>"
+                        >
+                            <?php echo esc_html( $data['label'] ); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </nav>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <section class="product-grid product-grid--tienda">
         <div class="kapunka-clamp">
@@ -155,6 +183,12 @@ if ( function_exists( 'wc_get_products' ) ) {
         </div>
     </section>
 
+    <?php if ( $tienda_visual_banner_id ) : ?>
+        <section class="tienda-visual-banner" aria-hidden="true">
+            <?php echo wp_get_attachment_image( $tienda_visual_banner_id, 'full', false, array( 'loading' => 'lazy', 'decoding' => 'async' ) ); ?>
+        </section>
+    <?php endif; ?>
+
     <section class="tienda-banner" aria-hidden="true">
         <div class="tienda-banner__image" role="presentation"<?php echo $tienda_banner_url ? ' style="background-image: url(' . esc_url( $tienda_banner_url ) . ');"' : ''; ?>></div>
     </section>
@@ -163,8 +197,8 @@ if ( function_exists( 'wc_get_products' ) ) {
         <div class="kapunka-clamp">
             <div class="tienda-trinity__grid">
                 <?php foreach ( $tienda_trinity_items as $item ) :
-                    $title = isset( $item['title'] ) ? trim( (string) $item['title'] ) : '';
-                    $desc  = isset( $item['description'] ) ? trim( (string) $item['description'] ) : '';
+                    $title = isset( $item['crb_tienda_trinity_headline'] ) ? trim( (string) $item['crb_tienda_trinity_headline'] ) : '';
+                    $desc  = isset( $item['crb_tienda_trinity_body'] ) ? trim( (string) $item['crb_tienda_trinity_body'] ) : '';
 
                     if ( '' === $title && '' === $desc ) {
                         continue;
@@ -172,10 +206,10 @@ if ( function_exists( 'wc_get_products' ) ) {
                     ?>
                     <article class="tienda-trinity__item">
                         <?php if ( '' !== $title ) : ?>
-                            <h2><?php echo esc_html( $title ); ?></h2>
+                            <h3 class="tienda-trinity__title"><?php echo esc_html( $title ); ?></h3>
                         <?php endif; ?>
                         <?php if ( '' !== $desc ) : ?>
-                            <p><?php echo esc_html( $desc ); ?></p>
+                            <p class="tienda-trinity__body"><?php echo esc_html( $desc ); ?></p>
                         <?php endif; ?>
                     </article>
                 <?php endforeach; ?>

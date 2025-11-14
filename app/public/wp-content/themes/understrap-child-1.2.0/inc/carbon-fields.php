@@ -45,8 +45,12 @@ function kapunka_register_carbon_fields() {
         ->add_tab(
             __( 'Mensaje inicial', 'understrap' ),
             array(
-                Field::make( 'text', 'home_hook_title', __( 'Título', 'understrap' ) ),
-                Field::make( 'textarea', 'home_hook_description', __( 'Descripción', 'understrap' ) ),
+                Field::make( 'text', 'crb_home_hook_title', __( 'Título editorial', 'understrap' ) )
+                    ->set_default_value( __( 'Más que un aceite. Un método.', 'understrap' ) )
+                    ->set_help_text( __( 'Se mostrará como titular H2 en el bloque editorial.', 'understrap' ) ),
+                Field::make( 'rich_text', 'crb_home_hook_body', __( 'Cuerpo editorial', 'understrap' ) )
+                    ->set_default_value( __( 'Kapunka no es solo un ingrediente; es la fusión de un abastecimiento ético en Marruecos y un protocolo clínico desarrollado durante 35 años. Diseñado para quienes exigen resultados visibles sin comprometer la pureza.', 'understrap' ) )
+                    ->set_help_text( __( 'Texto enriquecido para el bloque “Más que un aceite. Un método.”', 'understrap' ) ),
             )
         )
         ->add_tab(
@@ -65,13 +69,40 @@ function kapunka_register_carbon_fields() {
         ->add_tab(
             __( 'Trinidad', 'understrap' ),
             array(
-                Field::make( 'complex', 'home_trinity_items', __( 'Elementos', 'understrap' ) )
+                Field::make( 'complex', 'crb_home_trinity', __( 'Bloques Trinity', 'understrap' ) )
                     ->set_max( 3 )
+                    ->setup_labels(
+                        array(
+                            'plural_name'   => __( 'Bloques', 'understrap' ),
+                            'singular_name' => __( 'Bloque', 'understrap' ),
+                        )
+                    )
                     ->add_fields(
                         array(
-                            Field::make( 'text', 'title', __( 'Título', 'understrap' ) )
+                            Field::make( 'image', 'crb_home_trinity_image', __( 'Imagen', 'understrap' ) )
+                                ->set_value_type( 'id' ),
+                            Field::make( 'text', 'crb_home_trinity_title', __( 'Título', 'understrap' ) )
                                 ->set_required( true ),
-                            Field::make( 'textarea', 'description', __( 'Descripción', 'understrap' ) ),
+                            Field::make( 'textarea', 'crb_home_trinity_body', __( 'Descripción', 'understrap' ) ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'crb_home_trinity_title' => __( 'Origen', 'understrap' ),
+                                'crb_home_trinity_body'  => __( 'Primera prensada en frío de cooperativas femeninas certificadas.', 'understrap' ),
+                                'crb_home_trinity_image' => 0,
+                            ),
+                            array(
+                                'crb_home_trinity_title' => __( 'Ciencia', 'understrap' ),
+                                'crb_home_trinity_body'  => __( '100% pureza validada. Rico en Vitamina E y ácidos grasos esenciales.', 'understrap' ),
+                                'crb_home_trinity_image' => 0,
+                            ),
+                            array(
+                                'crb_home_trinity_title' => __( 'Método', 'understrap' ),
+                                'crb_home_trinity_body'  => __( 'Protocolos de aplicación propios que maximizan la absorción.', 'understrap' ),
+                                'crb_home_trinity_image' => 0,
+                            ),
                         )
                     ),
             )
@@ -102,6 +133,13 @@ function kapunka_register_carbon_fields() {
                 Field::make( 'textarea', 'home_program_description', __( 'Descripción', 'understrap' ) ),
                 Field::make( 'text', 'home_program_cta_label', __( 'CTA - texto', 'understrap' ) ),
                 Field::make( 'text', 'home_program_cta_url', __( 'CTA - URL', 'understrap' ) ),
+                Field::make( 'text', 'crb_home_b2b_cta_title', __( 'Título CTA B2B', 'understrap' ) )
+                    ->set_default_value( __( 'Formaciones presenciales y soporte remoto para integrar Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'crb_home_b2b_cta_button_text', __( 'Texto botón CTA B2B', 'understrap' ) )
+                    ->set_default_value( __( 'Ver detalles', 'understrap' ) ),
+                Field::make( 'text', 'crb_home_b2b_cta_button_link', __( 'URL botón CTA B2B', 'understrap' ) )
+                    ->set_attribute( 'type', 'url' )
+                    ->set_default_value( home_url( '/profesionales' ) ),
             )
         )
         ->add_tab(
@@ -111,6 +149,18 @@ function kapunka_register_carbon_fields() {
                 Field::make( 'text', 'home_journal_title', __( 'Título', 'understrap' ) ),
                 Field::make( 'text', 'home_journal_cta_label', __( 'CTA - texto', 'understrap' ) ),
                 Field::make( 'text', 'home_journal_cta_url', __( 'CTA - URL', 'understrap' ) ),
+                Field::make( 'text', 'crb_home_journal_title', __( 'Título magazine', 'understrap' ) )
+                    ->set_default_value( __( 'Reflexiones clínicas', 'understrap' ) ),
+                Field::make( 'association', 'crb_home_featured_posts', __( 'Artículos destacados', 'understrap' ) )
+                    ->set_max( 3 )
+                    ->set_types(
+                        array(
+                            array(
+                                'type'      => 'post',
+                                'post_type' => 'post',
+                            ),
+                        )
+                    ),
             )
         )
         ->add_tab(
@@ -123,6 +173,48 @@ function kapunka_register_carbon_fields() {
                 Field::make( 'text', 'home_newsletter_button', __( 'Texto del botón', 'understrap' ) ),
                 Field::make( 'text', 'home_newsletter_shortcode', __( 'Shortcode alternativo', 'understrap' ) )
                     ->set_help_text( __( 'Si se completa, se mostrará el shortcode en lugar del formulario estático.', 'understrap' ) ),
+            )
+        )
+        ->add_tab(
+            __( 'Colección destacada', 'understrap' ),
+            array(
+                Field::make( 'text', 'crb_home_featured_title', __( 'Título', 'understrap' ) )
+                    ->set_default_value( __( 'Esenciales Kapunka', 'understrap' ) ),
+                Field::make( 'association', 'crb_home_featured_products', __( 'Productos destacados', 'understrap' ) )
+                    ->set_max( 4 )
+                    ->set_types(
+                        array(
+                            array(
+                                'type'      => 'post',
+                                'post_type' => 'product',
+                            ),
+                        )
+                    ),
+            )
+        )
+        ->add_tab(
+            __( 'Testimonios B2B', 'understrap' ),
+            array(
+                Field::make( 'complex', 'crb_home_testimonials', __( 'Testimonios', 'understrap' ) )
+                    ->add_fields(
+                        array(
+                            Field::make( 'textarea', 'crb_home_testimonial_quote', __( 'Cita', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'text', 'crb_home_testimonial_author', __( 'Autor', 'understrap' ) ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'crb_home_testimonial_quote'  => __( '“Kapunka elevó la experiencia post-láser: la piel queda flexible y sin ardor en minutos.”', 'understrap' ),
+                                'crb_home_testimonial_author' => __( '— Dra. Martínez, Clínica Regeneris', 'understrap' ),
+                            ),
+                            array(
+                                'crb_home_testimonial_quote'  => __( '“Nuestros rituales corporales ganaron textura y olor firma sin sacrificar resultados clínicos.”', 'understrap' ),
+                                'crb_home_testimonial_author' => __( '— Sarah L., Directora Wellness, Hotel Arts', 'understrap' ),
+                            ),
+                        )
+                    ),
             )
         );
 
@@ -160,6 +252,8 @@ function kapunka_register_carbon_fields() {
             array(
                 Field::make( 'image', 'tienda_banner_image', __( 'Imagen del banner', 'understrap' ) )
                     ->set_value_type( 'id' ),
+                Field::make( 'image', 'crb_tienda_visual_banner', __( 'Visual full-bleed', 'understrap' ) )
+                    ->set_value_type( 'id' ),
                 Field::make( 'complex', 'tienda_trinity_items', __( 'Pilares', 'understrap' ) )
                     ->set_max( 3 )
                     ->add_fields(
@@ -167,6 +261,70 @@ function kapunka_register_carbon_fields() {
                             Field::make( 'text', 'title', __( 'Título', 'understrap' ) )
                                 ->set_required( true ),
                             Field::make( 'textarea', 'description', __( 'Descripción', 'understrap' ) ),
+                        )
+                    ),
+                Field::make( 'complex', 'crb_tienda_trinity', __( 'Pilares (nuevo)', 'understrap' ) )
+                    ->set_max( 3 )
+                    ->add_fields(
+                        array(
+                            Field::make( 'text', 'crb_tienda_trinity_headline', __( 'Título', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'textarea', 'crb_tienda_trinity_body', __( 'Descripción', 'understrap' ) ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'crb_tienda_trinity_headline' => __( 'PURAMENTE ÉTICO', 'understrap' ),
+                                'crb_tienda_trinity_body'     => __( 'Primera prensada en frío de cooperativas femeninas certificadas.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_tienda_trinity_headline' => __( 'CLÍNICAMENTE EFICAZ', 'understrap' ),
+                                'crb_tienda_trinity_body'     => __( '100% pureza validada. Rico en Vitamina E y ácidos grasos esenciales.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_tienda_trinity_headline' => __( 'EL RITUAL EXPERTO', 'understrap' ),
+                                'crb_tienda_trinity_body'     => __( 'Protocolos de aplicación propios que maximizan la absorción.', 'understrap' ),
+                            ),
+                        )
+                    ),
+            )
+        )
+        ->add_tab(
+            __( 'Filtros', 'understrap' ),
+            array(
+                Field::make( 'checkbox', 'tienda_filters_enabled', __( 'Mostrar bloque de filtros', 'understrap' ) )
+                    ->set_option_value( 'yes' )
+                    ->set_default_value( 'yes' ),
+                Field::make( 'complex', 'tienda_filter_categories', __( 'Categorías del filtro', 'understrap' ) )
+                    ->set_max( 4 )
+                    ->add_fields(
+                        array(
+                            Field::make( 'text', 'label', __( 'Etiqueta', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'text', 'slug', __( 'Slug de categoría', 'understrap' ) )
+                                ->set_help_text( __( 'Usa "todo" para el filtro global o el slug de la categoría de producto.', 'understrap' ) )
+                                ->set_required( true ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'label' => __( 'Todo', 'understrap' ),
+                                'slug'  => 'todo',
+                            ),
+                            array(
+                                'label' => __( 'Rostro', 'understrap' ),
+                                'slug'  => 'rostro',
+                            ),
+                            array(
+                                'label' => __( 'Cuerpo', 'understrap' ),
+                                'slug'  => 'cuerpo',
+                            ),
+                            array(
+                                'label' => __( 'Packs', 'understrap' ),
+                                'slug'  => 'packs',
+                            ),
                         )
                     ),
             )
@@ -566,106 +724,53 @@ HTML;
         ->add_tab(
             __( 'Hero', 'understrap' ),
             array(
+                Field::make( 'image', 'crb_origen_hero_image', __( 'Imagen de fondo', 'understrap' ) )
+                    ->set_value_type( 'id' ),
                 Field::make( 'text', 'crb_origen_hero_title', __( 'Título', 'understrap' ) )
                     ->set_default_value( __( 'De la tierra al tacto.', 'understrap' ) )
                     ->set_required( true ),
                 Field::make( 'text', 'crb_origen_hero_subtitle', __( 'Subtítulo', 'understrap' ) )
                     ->set_default_value( __( 'La búsqueda de Mónica Ruiz por el argán más puro del mundo.', 'understrap' ) ),
-                Field::make( 'image', 'crb_origen_hero_image', __( 'Imagen de fondo', 'understrap' ) )
+            )
+        )
+        ->add_tab(
+            __( 'Magazine Highlights', 'understrap' ),
+            array(
+                Field::make( 'image', 'crb_origen_highlights_image', __( 'Imagen principal', 'understrap' ) )
                     ->set_value_type( 'id' ),
-            )
-        )
-        ->add_tab(
-            __( 'Historia', 'understrap' ),
-            array(
-                Field::make( 'complex', 'origen_story_panels', __( 'Paneles destacados', 'understrap' ) )
-                    ->set_max( 3 )
+                Field::make( 'complex', 'crb_origen_highlights_repeater', __( 'Destacados', 'understrap' ) )
                     ->add_fields(
                         array(
-                            Field::make( 'text', 'title', __( 'Título', 'understrap' ) )
+                            Field::make( 'textarea', 'crb_origen_highlight_text', __( 'Texto destacado', 'understrap' ) )
                                 ->set_required( true ),
-                            Field::make( 'textarea', 'description', __( 'Descripción', 'understrap' ) ),
                         )
-                    ),
-                Field::make( 'complex', 'origen_story_blocks', __( 'Cronología', 'understrap' ) )
-                    ->add_fields(
+                    )
+                    ->set_default_value(
                         array(
-                            Field::make( 'text', 'title', __( 'Título', 'understrap' ) )
-                                ->set_required( true ),
-                            Field::make( 'textarea', 'description', __( 'Descripción', 'understrap' ) ),
-                            Field::make( 'image', 'image', __( 'Imagen', 'understrap' ) )
-                                ->set_value_type( 'id' ),
+                            array(
+                                'crb_origen_highlight_text' => __( 'Como enfermera y quiromasajista, entendí que la piel dañada no solo necesita química, necesita nutrición fundamental.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_origen_highlight_text' => __( 'Así nació Kapunka, que significa “gracias” en tailandés. Es mi forma de dar las gracias a la naturaleza, a mis pacientes y a todas las personas que confían en nosotros.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_origen_highlight_text' => __( 'Ofrecer el mejor producto... con la más alta pureza y calidad... sin químicos, sin trucos, sin efectos secundarios. Sólo algo 100% natural.', 'understrap' ),
+                            ),
                         )
                     ),
-            )
-        )
-        ->add_tab(
-            __( 'Carta', 'understrap' ),
-            array(
-                Field::make( 'rich_text', 'crb_origen_founder_letter', __( 'Carta de la fundadora', 'understrap' ) )
+                Field::make( 'text', 'crb_origen_full_letter_link_text', __( 'Texto del enlace', 'understrap' ) )
+                    ->set_default_value( __( 'Leer la carta completa de Mónica →', 'understrap' ) ),
+                Field::make( 'rich_text', 'crb_origen_full_letter_modal_content', __( 'Contenido modal', 'understrap' ) )
                     ->set_default_value( $origen_letter_default ),
-                Field::make( 'image', 'crb_origen_founder_image', __( 'Imagen de apoyo', 'understrap' ) )
+            )
+        )
+        ->add_tab(
+            __( 'Visual Interlude', 'understrap' ),
+            array(
+                Field::make( 'image', 'crb_origen_interlude_image', __( 'Imagen interludio', 'understrap' ) )
                     ->set_value_type( 'id' ),
-            )
-        )
-        ->add_tab(
-            __( 'Misión & Visión', 'understrap' ),
-            array(
-                Field::make( 'text', 'crb_origen_mission_title', __( 'Título misión', 'understrap' ) )
-                    ->set_default_value( __( 'Misión', 'understrap' ) ),
-                Field::make( 'textarea', 'crb_origen_mission_text', __( 'Texto misión', 'understrap' ) )
-                    ->set_default_value( __( 'Proporcionar a cada persona el mejor cuidado para su piel, cabello y uñas a través de un producto totalmente natural, puro y seguro, que aporte salud, belleza y bienestar. Queremos que más gente descubra el poder auténtico del aceite de argán.', 'understrap' ) ),
-                Field::make( 'text', 'crb_origen_vision_title', __( 'Título visión', 'understrap' ) )
-                    ->set_default_value( __( 'Visión', 'understrap' ) ),
-                Field::make( 'textarea', 'crb_origen_vision_text', __( 'Texto visión', 'understrap' ) )
-                    ->set_default_value( __( 'Hacer llegar Kapunka a cualquier lugar del mundo donde se valore un cuidado de la piel eficaz, sustentable y humano. Crecer manteniendo nuestra esencia artesanal y de confianza, y seguir innovando en cómo aplicamos las bondades del argán en la salud de las personas.', 'understrap' ) ),
-            )
-        )
-        ->add_tab(
-            __( 'Impacto', 'understrap' ),
-            array(
-                Field::make( 'text', 'crb_origen_impact_headline', __( 'Titular impacto', 'understrap' ) )
-                    ->set_default_value( __( 'Belleza que empodera.', 'understrap' ) ),
-                Field::make( 'textarea', 'crb_origen_impact_body', __( 'Descripción impacto', 'understrap' ) )
-                    ->set_default_value( __( 'Cada gota proviene de cooperativas de mujeres bereberes. Garantizamos salarios justos y desarrollo comunitario.', 'understrap' ) ),
-                Field::make( 'complex', 'crb_origen_impact_stats', __( 'Estadísticas impacto', 'understrap' ) )
-                    ->set_max( 3 )
-                    ->add_fields(
-                        array(
-                            Field::make( 'text', 'stat_number', __( 'Número', 'understrap' ) ),
-                            Field::make( 'text', 'stat_label', __( 'Etiqueta', 'understrap' ) ),
-                        )
-                    ),
-            )
-        )
-        ->add_tab(
-            __( 'Valores', 'understrap' ),
-            array(
-                Field::make( 'complex', 'crb_origen_valor_tiles', __( 'Valores 2x2', 'understrap' ) )
-                    ->set_max( 4 )
-                    ->add_fields(
-                        array(
-                            Field::make( 'text', 'headline', __( 'Titular', 'understrap' ) ),
-                            Field::make( 'textarea', 'body', __( 'Descripción', 'understrap' ) ),
-                            Field::make( 'image', 'background', __( 'Imagen de fondo', 'understrap' ) )
-                                ->set_value_type( 'url' ),
-                        )
-                    ),
-            )
-        )
-        ->add_tab(
-            __( 'Cooperativas', 'understrap' ),
-            array(
-                Field::make( 'text', 'origen_cooperativas_title', __( 'Título', 'understrap' ) ),
-                Field::make( 'textarea', 'origen_cooperativas_description', __( 'Descripción', 'understrap' ) ),
-                Field::make( 'complex', 'origen_cooperativas_items', __( 'Bloques', 'understrap' ) )
-                    ->add_fields(
-                        array(
-                            Field::make( 'text', 'title', __( 'Título', 'understrap' ) )
-                                ->set_required( true ),
-                            Field::make( 'textarea', 'description', __( 'Descripción', 'understrap' ) ),
-                        )
-                    ),
+                Field::make( 'text', 'crb_origen_interlude_caption', __( 'Leyenda', 'understrap' ) )
+                    ->set_default_value( __( 'Una historia de confluencia sanitaria.', 'understrap' ) ),
             )
         );
 

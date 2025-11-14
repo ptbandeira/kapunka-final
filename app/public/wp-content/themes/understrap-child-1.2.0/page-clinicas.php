@@ -163,6 +163,12 @@ if ( empty( $clinicas_curriculum_modules ) ) {
                     </figure>
                     <div class="pro-before-after__control">
                         <input type="range" min="8" max="92" value="54" aria-label="<?php esc_attr_e( 'Comparar antes y después', 'understrap' ); ?>">
+                        <div class="pro-before-after__handle" aria-hidden="true">
+                            <span>&lt;&gt;</span>
+                        </div>
+                        <div class="pro-before-after__hint" aria-hidden="true">
+                            <?php esc_html_e( 'Arrastra para comparar', 'understrap' ); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -242,12 +248,16 @@ if ( empty( $clinicas_curriculum_modules ) ) {
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-before-after]').forEach(function (component) {
         var range = component.querySelector('input[type="range"]');
+        var handle = component.querySelector('.pro-before-after__handle');
         if (!range) {
             return;
         }
         var viewport = component.querySelector('.pro-before-after__viewport');
         var updateSlider = function (value) {
             viewport.style.setProperty('--slider', value + '%');
+            if (handle) {
+                handle.style.setProperty('--handle-position', value + '%');
+            }
         };
         updateSlider(range.value);
         range.addEventListener('input', function (event) {
