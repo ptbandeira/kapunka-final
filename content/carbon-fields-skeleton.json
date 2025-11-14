@@ -1,0 +1,579 @@
+{
+  "theme_options": {
+    "newsletter_shortcode": "[contact-form-7 id=\"999\" title=\"Newsletter Kapunka\"]",
+    "mega_menu_ctas": [
+      {
+        "menu_slug": "tienda",
+        "image": 0,
+        "title": "¿Cuál es tu tipo de piel?",
+        "label": "Explorar guía",
+        "url": "/tienda"
+      },
+      {
+        "menu_slug": "tienda",
+        "image": 0,
+        "title": "Ahorra con packs clínicos",
+        "label": "Ver packs",
+        "url": "/tienda/mezclas"
+      },
+      {
+        "menu_slug": "aprende",
+        "image": 0,
+        "title": "Historias desde las cooperativas",
+        "label": "Leer notas",
+        "url": "/aprende"
+      },
+      {
+        "menu_slug": "profesionales",
+        "image": 0,
+        "title": "Diagnóstico 1:1 para tu clínica",
+        "label": "Reservar cita",
+        "url": "/profesionales/inscripcion"
+      }
+    ]
+  },
+  "pages": {
+    "tienda": {
+      "title": "Tienda",
+      "meta": {
+        "tienda_hero_eyebrow": "Colección clínica",
+        "tienda_hero_title": "Aceites puros y rituales Kapunka",
+        "tienda_hero_description": "Protocolos minimalistas creados para acompañar cada fase de la piel: preparación, recuperación y mantenimiento.",
+        "tienda_hero_primary_label": "Comprar ahora",
+        "tienda_hero_primary_url": "/tienda",
+        "tienda_hero_secondary_label": "Ver certificaciones",
+        "tienda_hero_secondary_url": "/sobre-nosotros#cooperativas",
+        "tienda_componentes": [
+          {
+            "_type": "cta",
+            "eyebrow": "Certificación europea",
+            "title": "Productos con trazabilidad total",
+            "description": "Cada lote está prensado en frío, cuenta con análisis físico-químicos y está registrado en el CPNP.",
+            "primary_label": "Solicitar fichas técnicas",
+            "primary_url": "/contacto",
+            "secondary_label": "Conoce nuestras cooperativas",
+            "secondary_url": "/sobre-nosotros#cooperativas"
+          },
+          {
+            "_type": "testimonials",
+            "items": [
+              {
+                "quote": "Integramos Kapunka en postoperatorios de mastoplastia y la piel responde con menos eritema.",
+                "author": "Dra. Marisol Vega",
+                "role": "Dermatóloga estética",
+                "before_image": 0,
+                "after_image": 0
+              },
+              {
+                "quote": "El aceite puro se ha convertido en el producto imprescindible de nuestros protocolos aftercare.",
+                "author": "Natalia Ruiz",
+                "role": "Directora de spa médico",
+                "before_image": 0,
+                "after_image": 0
+              }
+            ]
+          },
+          {
+            "_type": "newsletter",
+            "title": "Notas clínicas cada mes",
+            "description": "Recibe guías prácticas sobre recuperación tisular, rituales hammam y nuevas mezclas de la colección.",
+            "form_shortcode": "[contact-form-7 id=\"100\" title=\"Newsletter\"]"
+          },
+          {
+            "_type": "faq",
+            "title": "Preguntas sobre compras",
+            "items": [
+              {
+                "question": "¿Los productos tienen caducidad corta?",
+                "answer": "El aceite sin refinar conserva su potencia 24 meses cerrado y 12 meses abierto. Todos los envases llevan fecha y número de lote."
+              },
+              {
+                "question": "¿Hacen envíos a toda España?",
+                "answer": "Sí, enviamos desde Lleida a península y Baleares en 48-72 h. Para Canarias y envíos internacionales contáctanos para coordinar la documentación."
+              },
+              {
+                "question": "¿Puedo comprar con tarifa profesional?",
+                "answer": "Disponemos de tarifas por volumen y recambios para cabinas. Completa el formulario de Profesionales para recibir condiciones personalizadas."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "profesionales": {
+      "title": "Profesionales",
+      "meta": {
+        "profesionales_hero_eyebrow": "Formación certificada",
+        "profesionales_hero_title": "Método Kapunka para clínicas",
+        "profesionales_hero_description": "Un programa de 4 semanas que combina ciencia del argán, acompañamiento emocional y protocolos sensoriales.",
+        "profesionales_hero_primary_label": "Reservar plaza",
+        "profesionales_hero_primary_url": "/profesionales/inscripcion",
+        "profesionales_hero_secondary_label": "Descargar programa",
+        "profesionales_hero_secondary_url": "/docs/metodo-kapunka.pdf",
+        "profesionales_curriculum_title": "Currículum del programa",
+        "profesionales_curriculum_description": "Cuatro módulos intensivos y tutorías en vivo.",
+        "profesionales_curriculum_modules": [
+          {
+            "title": "Bioquímica del argán aplicado a la piel sensible",
+            "description": "Perfil lipídico, tocoferoles y fracciones insaponificables para entender la regeneración de la barrera cutánea.",
+            "bullets": [
+              {
+                "item": "Lectura de certificados COSMOS"
+              },
+              {
+                "item": "Interpretación de análisis de lote"
+              }
+            ]
+          },
+          {
+            "title": "Diseño de ritual clínico",
+            "description": "Cómo adaptar el Método Kapunka a cirugías, dermatología y medicina estética.",
+            "bullets": [
+              {
+                "item": "Mapas de recuperación tisular"
+              },
+              {
+                "item": "Protocolos para cicatrices y quemaduras leves"
+              }
+            ]
+          },
+          {
+            "title": "Implementación en cabina y retail",
+            "description": "Educación del paciente, plan de venta ética y seguimiento digital.",
+            "bullets": [
+              {
+                "item": "Plantillas de seguimiento post tratamiento"
+              },
+              {
+                "item": "Kit minorista para pacientes"
+              }
+            ]
+          }
+        ],
+        "profesionales_benefits_title": "Beneficios para tu equipo",
+        "profesionales_benefits": [
+          {
+            "title": "Producto seguro para piel inflamada",
+            "description": "Aceite puro, sin fragancias ni alérgenos, ideal para protocolos inmediatos post procedimiento."
+          },
+          {
+            "title": "Material educativo listo para usar",
+            "description": "Manual digital, fichas de paciente y comunicación para email marketing."
+          },
+          {
+            "title": "Soporte clínico continuo",
+            "description": "Mentorías trimestrales, reposición de material y acompañamiento en campañas."
+          }
+        ],
+        "profesionales_testimonios": [
+          {
+            "quote": "El método Kapunka nos permitió establecer protocolos unificados para cirugía y láser.",
+            "author": "Dr. Edgar Almenara",
+            "role": "Cirujano plástico",
+            "before_image": 0,
+            "after_image": 0
+          }
+        ],
+        "profesionales_faq_title": "Preguntas frecuentes",
+        "profesionales_faq_items": [
+          {
+            "question": "¿Hay requisitos para inscribirse?",
+            "answer": "El programa está dirigido a clínicas, spas médicos y profesionales titulados. Solicita la entrevista inicial para validar tu plaza."
+          },
+          {
+            "question": "¿Incluye certificación?",
+            "answer": "Sí, al completar los cuatro módulos y la práctica supervisada obtienes una certificación firmada por Kapunka."
+          }
+        ],
+        "profesionales_form_shortcode": "[contact-form-7 id=\"120\" title=\"Inscripción profesionales\"]",
+        "profesionales_componentes": [
+          {
+            "_type": "cta",
+            "eyebrow": "Acompañamiento continuo",
+            "title": "Agenda una sesión de diagnóstico",
+            "description": "Revisamos tus protocolos actuales y adaptamos Kapunka a tu equipo.",
+            "primary_label": "Solicitar diagnóstico",
+            "primary_url": "/contacto",
+            "secondary_label": "Ver casos clínicos",
+            "secondary_url": "/aprende"
+          }
+        ]
+      }
+    },
+    "sobre-nosotros": {
+      "title": "Sobre nosotros",
+      "meta": {
+        "sobre_hero_eyebrow": "Historia",
+        "sobre_hero_title": "El origen de Kapunka",
+        "sobre_hero_description": "Una marca española con raíces en las cooperativas femeninas del Atlas.",
+        "sobre_story": [
+          {
+            "title": "2009 · Primer viaje a Marruecos",
+            "description": "Mónica Ruiz documenta el prensado artesanal y se compromete a comprar lotes completos a cooperativas lideradas por mujeres.",
+            "image": 0
+          },
+          {
+            "title": "2014 · Registro sanitario europeo",
+            "description": "Kapunka obtiene la notificación CPNP y comienza a trabajar con clínicas de medicina estética en Barcelona y Madrid.",
+            "image": 0
+          },
+          {
+            "title": "2023 · Lanzamiento de la colección clínica",
+            "description": "Se integra el Método Kapunka en protocolos de recuperación post cirugía y láser.",
+            "image": 0
+          }
+        ],
+        "sobre_founder_title": "Sobre Mónica Ruiz",
+        "sobre_founder_bio": "Fundadora de Kapunka y especialista en comunicación clínica. Tras su propia experiencia post quirúrgica, creó un método de acompañamiento basado en gratitud y tacto consciente.",
+        "sobre_founder_image": 0,
+        "sobre_values_title": "Valores",
+        "sobre_values_items": [
+          {
+            "title": "Gratitud",
+            "description": "Cada producto recuerda el gesto tailandés “kapunka”: manos al corazón para agradecer."
+          },
+          {
+            "title": "Transparencia",
+            "description": "Ingredientes cortos, documentación disponible y relación directa con cooperativas."
+          },
+          {
+            "title": "Respeto",
+            "description": "Priorizamos procesos lentos, comercio justo y educación honesta hacia el consumidor."
+          }
+        ],
+        "sobre_cooperativas_title": "Cooperativas y certificaciones",
+        "sobre_cooperativas_description": "Trabajamos con tres cooperativas ubicadas en Essaouira y Tiznit, auditadas cada año por ECOCERT/COSMOS.",
+        "sobre_cooperativas_items": [
+          {
+            "title": "Aït Maamar",
+            "description": "Grupo de 42 mujeres con molino hidráulico y laboratorio propio."
+          },
+          {
+            "title": "Azrou Iri",
+            "description": "Especialistas en prensado en frío y filtrado por decantación lenta."
+          },
+          {
+            "title": "Tiznit Sahara",
+            "description": "Productoras de semillas seleccionadas y programas de alfabetización."
+          }
+        ],
+        "sobre_componentes": [
+          {
+            "_type": "cta",
+            "eyebrow": "Impacto local",
+            "title": "Apoya a las cooperativas de mujeres",
+            "description": "Cada compra financia becas de alfabetización y equipamiento.",
+            "primary_label": "Consultar informes",
+            "primary_url": "/contacto",
+            "secondary_label": "Ver testimonios",
+            "secondary_url": "/aprende"
+          },
+          {
+            "_type": "newsletter",
+            "title": "Cartas desde el Atlas",
+            "description": "Historias mensuales sobre las mujeres que prensan cada lote.",
+            "form_shortcode": "[contact-form-7 id=\"130\" title=\"Cartas Atlas\"]"
+          }
+        ]
+      }
+    },
+    "contacto": {
+      "title": "Contacto",
+      "meta": {
+        "contacto_intro": "Resolvemos dudas sobre pedidos, formación clínica y colaboraciones.",
+        "contacto_details": [
+          {
+            "label": "Email",
+            "entry_value": "<a href=\"mailto:hola@kapunka.es\">hola@kapunka.es</a>"
+          },
+          {
+            "label": "Teléfono",
+            "entry_value": "+34 600 123 456"
+          },
+          {
+            "label": "Dirección",
+            "entry_value": "Passeig de Lluís Companys 14, 25007 Lleida"
+          },
+          {
+            "label": "Horarios",
+            "entry_value": "De lunes a viernes, 9:00–18:00 CET."
+          }
+        ],
+        "contacto_form_shortcode": "[contact-form-7 id=\"140\" title=\"Formulario de contacto\"]",
+        "contacto_cta": [
+          {
+            "eyebrow": "Atención a profesionales",
+            "title": "¿Necesitas tarifas especiales?",
+            "description": "Envíanos el volumen estimado y agenda una llamada con nuestro equipo clínico.",
+            "primary_label": "Solicitar llamada",
+            "primary_url": "/profesionales/inscripcion",
+            "secondary_label": "Preguntas frecuentes",
+            "secondary_url": "/profesionales#faq"
+          }
+        ]
+      }
+    }
+  },
+  "posts": [
+    {
+      "post_title": "¿Qué es el aceite de argán? Historia y propiedades",
+      "post_slug": "que-es-el-aceite-de-argan-historia-y-propiedades",
+      "post_status": "publish",
+      "meta": {
+        "tiempo_de_lectura": "8 min",
+        "autor_nombre": "Mónica Ruiz",
+        "autor_rol": "Fundadora Kapunka",
+        "autor_notas": "Comunicadora clínica y responsable de producto.",
+        "tabla_contenidos": [
+          {
+            "label": "Origen del argán",
+            "anchor": "#origen"
+          },
+          {
+            "label": "Composición bioquímica",
+            "anchor": "#composicion"
+          }
+        ],
+        "referencias_cientificas": [
+          {
+            "title": "Argan oil and skin health",
+            "journal": "Journal of Cosmetic Dermatology",
+            "year": "2021",
+            "link": "https://example.com/argan-oil"
+          }
+        ],
+        "productos_relacionados": [],
+        "articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Beneficios del aceite de argán en protocolos clínicos",
+      "post_slug": "beneficios-aceite-argan-protocolos-clinicos",
+      "post_status": "publish",
+      "meta": {
+        "tiempo_de_lectura": "6 min",
+        "autor_nombre": "Dr. Sergio Vidal",
+        "autor_rol": "Dermatólogo",
+        "autor_notas": "",
+        "tabla_contenidos": [],
+        "referencias_cientificas": [],
+        "productos_relacionados": [],
+        "articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Proceso tradicional: del fruto al aceite puro",
+      "post_slug": "proceso-tradicional-del-fruto-al-aceite",
+      "post_status": "publish",
+      "meta": {
+        "tiempo_de_lectura": "5 min",
+        "autor_nombre": "Equipo Kapunka",
+        "autor_rol": "",
+        "autor_notas": "",
+        "tabla_contenidos": [],
+        "referencias_cientificas": [],
+        "productos_relacionados": [],
+        "articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Cuidado post-procedimiento con aceite puro",
+      "post_slug": "cuidado-post-procedimiento-aceite-puro",
+      "post_status": "publish",
+      "meta": {
+        "tiempo_de_lectura": "7 min",
+        "autor_nombre": "Dra. Alicia Jordà",
+        "autor_rol": "Cirujana plástica",
+        "autor_notas": "",
+        "tabla_contenidos": [],
+        "referencias_cientificas": [],
+        "productos_relacionados": [],
+        "articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Cicatrices y recuperación tisular",
+      "post_slug": "cicatrices-y-recuperacion-tisular",
+      "post_status": "publish",
+      "meta": {
+        "tiempo_de_lectura": "6 min",
+        "autor_nombre": "Dr. Martín Pasquini",
+        "autor_rol": "Especialista en láser",
+        "autor_notas": "",
+        "tabla_contenidos": [],
+        "referencias_cientificas": [],
+        "productos_relacionados": [],
+        "articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Cuidado infantil con argán",
+      "post_slug": "cuidado-infantil-con-argan",
+      "post_status": "publish",
+      "meta": {
+        "tiempo_de_lectura": "4 min",
+        "autor_nombre": "Paula Esteve",
+        "autor_rol": "Matrona",
+        "autor_notas": "",
+        "tabla_contenidos": [],
+        "referencias_cientificas": [],
+        "productos_relacionados": [],
+        "articulos_relacionados": []
+      }
+    }
+  ],
+  "products": [
+    {
+      "post_title": "Aceite puro clásico 50 ml",
+      "post_slug": "aceite-puro-clasico-50ml",
+      "post_status": "publish",
+      "meta": {
+        "ingredientes": [
+          {
+            "item": "Argania Spinosa Kernel Oil"
+          }
+        ],
+        "beneficios": [
+          {
+            "item": "Restaura la barrera lipídica"
+          },
+          {
+            "item": "Reduce eritema post-láser"
+          }
+        ],
+        "instrucciones": "Aplicar 3-5 gotas sobre la piel limpia, mañana y noche. Masajear suavemente hasta absorber.",
+        "certificaciones": [
+          {
+            "item": "ECOCERT/COSMOS"
+          },
+          {
+            "item": "CPNP EU"
+          }
+        ],
+        "producto_faq_title": "Preguntas sobre aceite puro",
+        "producto_faq_items": [
+          {
+            "question": "¿Es apto para bebés?",
+            "answer": "Sí, a partir de los 3 meses y siempre sobre piel limpia."
+          },
+          {
+            "question": "¿Se puede usar en cuero cabelludo?",
+            "answer": "Sí, aplica en puntas o masajea antes de lavar."
+          }
+        ],
+        "producto_cta": [
+          {
+            "eyebrow": "Profesionales",
+            "title": "Solicita tarifa clínica",
+            "description": "Incluye fichas de paciente y recambios para cabina.",
+            "primary_label": "Hablar con Kapunka",
+            "primary_url": "/contacto"
+          }
+        ],
+        "producto_articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Roll-on cicatrices 10 ml",
+      "post_slug": "roll-on-cicatrices-10ml",
+      "post_status": "publish",
+      "meta": {
+        "ingredientes": [
+          {
+            "item": "Argania Spinosa Kernel Oil"
+          },
+          {
+            "item": "Vitamina E natural"
+          }
+        ],
+        "beneficios": [
+          {
+            "item": "Aplicador preciso para cicatrices"
+          },
+          {
+            "item": "Textura seca de rápida absorción"
+          }
+        ],
+        "instrucciones": "Aplicar directamente sobre la zona 2 veces al día.",
+        "certificaciones": [
+          {
+            "item": "Dermatológicamente testado"
+          }
+        ],
+        "producto_faq_title": "Preguntas sobre roll-on",
+        "producto_faq_items": [
+          {
+            "question": "¿Puedo usarlo después de suturas?",
+            "answer": "Consulta a tu cirujano; recomendamos usarlo cuando la piel esté cerrada."
+          }
+        ],
+        "producto_cta": [],
+        "producto_articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Mezcla Serenidad 100 ml",
+      "post_slug": "mezcla-serenidad-100ml",
+      "post_status": "publish",
+      "meta": {
+        "ingredientes": [
+          {
+            "item": "Argán puro"
+          },
+          {
+            "item": "Algodón macerado"
+          }
+        ],
+        "beneficios": [
+          {
+            "item": "Ideal para masajes post-tratamiento"
+          },
+          {
+            "item": "Alivia descamación"
+          }
+        ],
+        "instrucciones": "Masajear con movimientos lentos hasta que la piel quede satinada.",
+        "certificaciones": [
+          {
+            "item": "Cruelty Free"
+          }
+        ],
+        "producto_faq_title": "Preguntas sobre Mezcla Serenidad",
+        "producto_faq_items": [],
+        "producto_cta": [],
+        "producto_articulos_relacionados": []
+      }
+    },
+    {
+      "post_title": "Elemento de ritual hammam",
+      "post_slug": "elemento-ritual-hammam",
+      "post_status": "publish",
+      "meta": {
+        "ingredientes": [
+          {
+            "item": "Guante kessa vegetal"
+          },
+          {
+            "item": "Jabón negro beldi"
+          }
+        ],
+        "beneficios": [
+          {
+            "item": "Exfoliación suave previa al aceite"
+          }
+        ],
+        "instrucciones": "Aplicar jabón beldi con la piel húmeda, dejar actuar y trabajar con el guante kessa.",
+        "certificaciones": [],
+        "producto_faq_title": "Preguntas sobre ritual hammam",
+        "producto_faq_items": [
+          {
+            "question": "¿Cada cuánto se usa?",
+            "answer": "Una vez por semana para evitar sobre exfoliación."
+          }
+        ],
+        "producto_cta": [],
+        "producto_articulos_relacionados": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,861 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Beauty Ecommerce X\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-29 19:51+0000\n"
+"PO-Revision-Date: 2025-10-29 19:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.27\n"
+"X-Domain: beauty-ecommerce-x"
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:22
+#, php-format
+msgid "%s and %s"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:46
+msgid "1-Click Starter Content Import"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:9
+msgid "40% discount"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:73
+msgid ""
+"Access 300+ pre-built Elementor sections and build beautiful sites, fast."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:49
+msgid ""
+"Access all the premium layouts and designs perfect for any niche or industry."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:155
+msgid "Add a custom logo to make your website look more professional."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:103
+msgid "Add a navigation to your website to improve the user experience."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:101
+msgid "Add Menus"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:142
+msgid "Add your website name and tagline to improve the design and SEO."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:55
+msgid "AMP Compatible And Mobile Ready"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:9
+#, php-format
+msgid "and unlock all features with %s Premium."
+msgstr ""
+
+#. Name of the theme
+msgid "Beauty Ecommerce X"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Beauty Ecommerce X is a minimal fashion, clothing and lifestyle WordPress "
+"theme designed for e-commerce shops, bloggers, and online businesses. Built "
+"for speed and SEO, Beauty Ecommerce X is responsive, mobile friendly, and "
+"works easily with popular builders like Elementor, Brizy, and Divi Builder. "
+"Whether you're running a fashion store, corporate site, or a minimalist blog,"
+" this theme offers a clean, cool, and modern design with both light and dark "
+"mode options. With Gutenberg and block editor compatibility, building "
+"landing pages and new templates is easy and intuitive. Beauty Ecommerce X "
+"also supports Adsense, affiliate marketing, and banner advertisements, "
+"making it ideal for reviewing, writing, blogging and news sites. Woocommerce "
+"integration ensures your store is ready to sell, while schema markup "
+"enhances your site's visibility in search engines. It's the best option for "
+"startups, travel bloggers, or writers looking for a simple, fastest, and "
+"free solution with FSE capabilities and customizable color schemes to match "
+"your brand. Create an e Commerce shop where you sell cosmetics beauty "
+"products like makeup, skincare, haircare and prafumes today!"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:40
+msgid ""
+"Benefit from our comprehensive documentation and dedicated support team, "
+"always ready to help."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:43
+msgid ""
+"Brizy, Elementor, Divi Builder, Beaver Builder - you name it. Every page "
+"builder plugin is compatible."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:140
+msgid "Change Site Title"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:64
+msgid "Child Themes"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Base"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Contrast Dark"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Contrast Light"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+msgctxt "Color name"
+msgid "Featured"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Mono 1"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Mono 2"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Mono 3"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Mono 4"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json:1 styles/log.json:1 styles/hyacinth.json:1 styles/bow.json:1
+#: styles/nest.json:1 styles/sandal.json:1 opt/styles/fuji.json:1
+#: opt/styles/recycle.json:1 opt/styles/paper.json:1 opt/styles/gust.json:1
+#: opt/styles/baloon.json:1 opt/styles/hibiscus.json:1
+#: opt/styles/accent-orange.json:1
+msgctxt "Color name"
+msgid "Primary Hover"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:240
+msgid "Contact Support"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:237
+msgid "Contact support"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:185
+msgid "Create a beautiful website easily, without coding."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:171
+msgid "Create a new page"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:166
+msgid "Create New Pages"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:37
+msgid ""
+"Create your online store easily. The premium version is compatible with all "
+"popular e-commerce plugins."
+msgstr ""
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "About"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "Blog (Alternative)"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "Blog With Sidebar"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "Contact"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Custom template name"
+msgid "Full Width"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:40
+msgid "Customer Support & Documentation"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:127
+msgid "Customize Design"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:34
+msgid "Customize Everything"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:90
+msgid "Customize Settings"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:34
+msgid ""
+"Customize the design to fit your brand or style with our easy-to-use "
+"customization options."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:129
+msgid "Customize your website design to fit your personality or brand."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:248
+#, php-format
+msgid "Do you enjoy using %s? Support us by reviewing us on WordPress.org!"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:37
+msgid "E-commerce Compatibility"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:116
+msgid "Edit and customize your front page design through the site editor."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:114
+msgid "Edit Front Page"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:73
+msgid "Elementor sections"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font family name"
+msgid "Lato"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "Tiny"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "XLarge"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "XSmall"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "XXLarge"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Font size name"
+msgid "XXSmall"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:61
+msgid "Frequent Updates"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:28
+msgid "Fully Search Engine Optimized"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:58
+msgid "GDPR Compliant"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:28
+msgid ""
+"Get free traffic by ranking #1 on Google with the lightning-fast & SEO-"
+"optimized premium version."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:206
+msgid "Get Premium Version"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/addons-notice.php:31
+msgid "Get Started"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:46
+msgid ""
+"Get started easily with our one-click demo content import feature. Get your "
+"website up and running in seconds."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:246
+msgid "Give us feedback"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:91
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:106
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:119
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:132
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:145
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:158
+msgid "Go To Site Editor"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://superbthemes.com/"
+msgstr ""
+
+#. URI of the theme
+msgid "https://superbthemes.com/ruby-ecommerce/beauty-ecommerce-x/"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:239
+#, php-format
+msgid ""
+"If you have issues with %s, please send us an email through our website!"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/addons-notice.php:36
+msgid "Install & Activate"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:249
+msgid "Leave a Review"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:221
+msgid "Need inspiration? Take a moment to view our theme demo!"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:58
+msgid ""
+"Our premium version comes fully compliant, giving you peace of mind about "
+"user data protection and privacy."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:61
+msgid ""
+"Our premium version provides frequent enhancements for security, performance,"
+" and features."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:31
+msgid "Page Speed Optimized"
+msgstr ""
+
+#: patterns/banner-001.php:2
+msgctxt "Pattern title"
+msgid "Banner 001"
+msgstr ""
+
+#: patterns/blog-001.php:2
+msgctxt "Pattern title"
+msgid "Blog 001"
+msgstr ""
+
+#: patterns/blog-002.php:2
+msgctxt "Pattern title"
+msgid "Blog 002"
+msgstr ""
+
+#: patterns/blog-003.php:2
+msgctxt "Pattern title"
+msgid "Blog 003"
+msgstr ""
+
+#: patterns/blog-004.php:2
+msgctxt "Pattern title"
+msgid "Blog 004"
+msgstr ""
+
+#: patterns/blog-005.php:2
+msgctxt "Pattern title"
+msgid "Blog 005"
+msgstr ""
+
+#: patterns/blog-006.php:2
+msgctxt "Pattern title"
+msgid "Blog 006"
+msgstr ""
+
+#: patterns/cta-001.php:2
+msgctxt "Pattern title"
+msgid "Call To Action 001"
+msgstr ""
+
+#: patterns/cta-005.php:2
+msgctxt "Pattern title"
+msgid "Call To Action 005"
+msgstr ""
+
+#: patterns/contact-001.php:2
+msgctxt "Pattern title"
+msgid "Contact 001"
+msgstr ""
+
+#: patterns/contact-005.php:2
+msgctxt "Pattern title"
+msgid "Contact 005"
+msgstr ""
+
+#: patterns/contact-009.php:3
+msgctxt "Pattern title"
+msgid "Contact 009"
+msgstr ""
+
+#: patterns/contact-011.php:2
+msgctxt "Pattern title"
+msgid "Contact 011"
+msgstr ""
+
+#: patterns/content-001.php:2
+msgctxt "Pattern title"
+msgid "Content 001"
+msgstr ""
+
+#: patterns/content-002.php:2
+msgctxt "Pattern title"
+msgid "Content 002"
+msgstr ""
+
+#: patterns/content-003.php:2
+msgctxt "Pattern title"
+msgid "Content 003"
+msgstr ""
+
+#: patterns/content-008.php:2
+msgctxt "Pattern title"
+msgid "Content 008"
+msgstr ""
+
+#: patterns/content-010.php:2
+msgctxt "Pattern title"
+msgid "Content 010"
+msgstr ""
+
+#: patterns/content-011.php:2
+msgctxt "Pattern title"
+msgid "Content 011"
+msgstr ""
+
+#: patterns/content-015.php:2
+msgctxt "Pattern title"
+msgid "Content 015"
+msgstr ""
+
+#: patterns/content-016.php:2
+msgctxt "Pattern title"
+msgid "Content 016"
+msgstr ""
+
+#: patterns/content-017.php:2
+msgctxt "Pattern title"
+msgid "Content 017"
+msgstr ""
+
+#: patterns/header-003.php:2
+msgctxt "Pattern title"
+msgid "Header 003"
+msgstr ""
+
+#: patterns/header-009.php:2
+msgctxt "Pattern title"
+msgid "Header 009"
+msgstr ""
+
+#: patterns/layout-002.php:2
+msgctxt "Pattern title"
+msgid "Layout 002"
+msgstr ""
+
+#: patterns/layout-003.php:2
+msgctxt "Pattern title"
+msgid "Layout 003"
+msgstr ""
+
+#: patterns/layout-004.php:2
+msgctxt "Pattern title"
+msgid "Layout 004"
+msgstr ""
+
+#: patterns/layout-005.php:2
+msgctxt "Pattern title"
+msgid "Layout 005"
+msgstr ""
+
+#: patterns/layout-006.php:2
+msgctxt "Pattern title"
+msgid "Layout 006"
+msgstr ""
+
+#: patterns/team-001.php:2
+msgctxt "Pattern title"
+msgid "Team 001"
+msgstr ""
+
+#: patterns/testimonial-001.php:2
+msgctxt "Pattern title"
+msgid "Testimonial 001"
+msgstr ""
+
+#: patterns/testimonial-003.php:2
+msgctxt "Pattern title"
+msgid "Testimonial 003"
+msgstr ""
+
+#: patterns/testimonial-004.php:2
+msgctxt "Pattern title"
+msgid "Testimonial 004"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:193
+msgid "Premium"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:49
+msgid "Premium Designs, Patterns & Layouts"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:181
+msgid "Premium Features"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/addons-notice.php:35
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:13
+msgid "Read More"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "Xlarge"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "XSmall"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "XXlarge"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Space size name"
+msgid "XXSmall"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:168
+msgid "Start creating your website by adding pages to it."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:55
+msgid "Stay ahead with Accelerated Mobile Pages (AMP) compatibility."
+msgstr ""
+
+#: opt/styles/baloon.json:1
+msgctxt "Style variation name"
+msgid "Baloon"
+msgstr ""
+
+#: opt/styles/gust.json:1
+msgctxt "Style variation name"
+msgid "Gust"
+msgstr ""
+
+#: opt/styles/hibiscus.json:1
+msgctxt "Style variation name"
+msgid "Hibiscus"
+msgstr ""
+
+#: styles/log.json:1
+msgctxt "Style variation name"
+msgid "Log"
+msgstr ""
+
+#: styles/sandal.json:1
+msgctxt "Style variation name"
+msgid "Sandal"
+msgstr ""
+
+#: opt/styles/recycle.json:1
+msgctxt "Style variation name"
+msgid "♻️ Recycle"
+msgstr ""
+
+#: styles/bow.json:1
+msgctxt "Style variation name"
+msgid "🎀 Bow"
+msgstr ""
+
+#: opt/styles/paper.json:1
+msgctxt "Style variation name"
+msgid "📃 Paper"
+msgstr ""
+
+#: opt/styles/fuji.json:1
+msgctxt "Style variation name"
+msgid "🗻Fuji"
+msgstr ""
+
+#: opt/styles/accent-orange.json:1
+msgctxt "Style variation name"
+msgid "🟠 Accent Orange"
+msgstr ""
+
+#: styles/nest.json:1
+msgctxt "Style variation name"
+msgid "🪹 Nest"
+msgstr ""
+
+#: styles/hyacinth.json:1
+msgctxt "Style variation name"
+msgid "🪻 Hyacinth"
+msgstr ""
+
+#. Author of the theme
+msgid "SuperbThemesCom"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:70
+msgid ""
+"Take advantage of the 400+ beautiful patterns for every type of website."
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:9
+msgid "Take advantage of the up to"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Template part name"
+msgid "Comments"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json:1
+msgctxt "Template part name"
+msgid "Post Meta"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:10
+msgid "The discount is only available for a limited time."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:52
+msgid ""
+"The premium version looks perfect everywhere, from desktop to mobile, and in "
+"every browser."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-controller.php:38
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/addons-notice.php:32
+#, php-format
+msgid "Unlock %s & the Full Potential of WordPress with Superb Addons"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:182
+msgid "Unlock All Features"
+msgstr ""
+
+#: inc/superbthemes-info-content/template-information/class-template-information-controller.php:44
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:23
+#, php-format
+msgid ""
+"Unlock all features by upgrading to the premium edition of %s and its parent "
+"theme %s."
+msgstr ""
+
+#: inc/superbthemes-info-content/template-information/class-template-information-controller.php:44
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:23
+#, php-format
+msgid "Unlock all features by upgrading to the premium edition of %s."
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:7
+#, php-format
+msgid "Unlock All Features with %s Premium – Limited Time Offer"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:31
+msgid ""
+"Unlock maximum speed with the premium version. It loads in less than 0.3 "
+"seconds. "
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/theme-notice.php:13
+msgid "Upgrade Now"
+msgstr ""
+
+#: inc/superbthemes-info-content/template-information/class-template-information-controller.php:50
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:228
+msgid "Upgrade to premium"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:153
+msgid "Upload Logo"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:64
+msgid ""
+"Use child themes to make modifications without affecting the parent theme's "
+"code, ensuring smooth updates."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:67
+msgid "Use our many custom WordPress Gutenberg blocks for every purpose!"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:220
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:222
+msgid "View Demo"
+msgstr ""
+
+#: inc/superbthemes-info-content/template-information/class-template-information-controller.php:53
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:231
+msgid "View Premium Version"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:202
+#, php-format
+msgid ""
+"With %s Premium you'll have full access to this feature as well as all the "
+"other features listed."
+msgstr ""
+
+#: inc/superbthemes-info-content/admin-notice/notices/addons-notice.php:33
+msgid ""
+"With over 500 patterns, blocks, widgets and sections at your fingertips, you "
+"can create a professional website in minutes. Superb Addons works perfectly "
+"with Elementor and and the WordPress editor Gutenberg. Unlock the full "
+"potential of WordPress."
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:67
+msgid "WordPress blocks"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:70
+msgid "WordPress patterns"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:52
+msgid "Works On All Devices And Browsers"
+msgstr ""
+
+#: inc/superbthemes-info-content/theme-page/class-theme-page-template.php:43
+msgid "Works With All Page Builders"
+msgstr ""

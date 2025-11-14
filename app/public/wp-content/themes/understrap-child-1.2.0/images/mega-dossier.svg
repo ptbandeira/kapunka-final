@@ -1,0 +1,18 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradDossier" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2f0ef"/>
+      <stop offset="100%" stop-color="#d6dce0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="32" fill="url(#gradDossier)"/>
+  <rect x="320" y="170" width="560" height="460" rx="32" fill="#fff" stroke="#bec5ca" stroke-width="4"/>
+  <rect x="360" y="220" width="200" height="32" rx="16" fill="#0f1419" opacity="0.75"/>
+  <rect x="360" y="280" width="320" height="22" rx="11" fill="#bcc3c8"/>
+  <rect x="360" y="320" width="280" height="18" rx="9" fill="#d2d8dd"/>
+  <rect x="360" y="360" width="240" height="18" rx="9" fill="#d2d8dd"/>
+  <rect x="360" y="400" width="180" height="18" rx="9" fill="#d2d8dd"/>
+  <rect x="360" y="460" width="400" height="24" rx="12" fill="#0f1419" opacity="0.6"/>
+  <rect x="360" y="510" width="280" height="24" rx="12" fill="#0f1419" opacity="0.35"/>
+  <rect x="360" y="560" width="180" height="24" rx="12" fill="#0f1419" opacity="0.2"/>
+</svg>

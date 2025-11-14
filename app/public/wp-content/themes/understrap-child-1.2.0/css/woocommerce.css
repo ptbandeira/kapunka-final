@@ -1,0 +1,489 @@
+/* WooCommerce Overrides for Kapunka */
+
+/* Tienda Layout ---------------------------------------------------- */
+.tienda-shell {
+    max-width: 1120px;
+    margin: clamp(5rem, 12vw, 8rem) auto clamp(7rem, 14vw, 10rem);
+    padding: 0 clamp(2rem, 6vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3.5rem, 8vw, 5rem);
+}
+
+.tienda-shell__header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.tienda-shell__title {
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.tienda-shell__filters ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.kapunka-shop__filters a {
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid transparent;
+    transition: color 0.4s ease-out, border-color 0.4s ease-out;
+}
+
+.kapunka-shop__filters a:hover,
+.kapunka-shop__filters a.is-active {
+    border-color: currentColor;
+    color: #000000;
+}
+
+.kapunka-shop__grid {
+    width: 100%;
+}
+
+.kapunka-shop__grid .products {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+@media (max-width: 1280px) {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products,
+    .kapunka-shop__grid .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 960px) {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products,
+    .kapunka-shop__grid .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .woocommerce ul.products,
+    .woocommerce-page ul.products,
+    .kapunka-shop__grid .products {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Product Cards ---------------------------------------------------- */
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    list-style: none;
+    text-align: left;
+}
+
+.woocommerce ul.products li.product .woocommerce-LoopProduct-link,
+.woocommerce-page ul.products li.product .woocommerce-LoopProduct-link {
+    display: grid;
+    gap: 1.6rem;
+}
+
+.woocommerce ul.products li.product img,
+.woocommerce-page ul.products li.product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.woocommerce ul.products li.product .secondary-image,
+.woocommerce-page ul.products li.product .secondary-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+.woocommerce ul.products li.product .kapunka-product-media,
+.woocommerce-page ul.products li.product .kapunka-product-media {
+    position: relative;
+}
+
+.woocommerce ul.products li.product:hover img:first-of-type,
+.woocommerce-page ul.products li.product:hover img:first-of-type {
+    opacity: 0;
+}
+
+.woocommerce ul.products li.product:hover .secondary-image,
+.woocommerce-page ul.products li.product:hover .secondary-image {
+    opacity: 1;
+}
+
+.kapunka-shop-card__title {
+    margin: 0;
+    color: #000000;
+    text-decoration: none;
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.kapunka-shop-card__price {
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.kapunka-shop-card__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    color: #000000;
+    opacity: 0.8;
+    transition: opacity 0.4s ease-out;
+}
+
+.kapunka-shop-card__more:hover {
+    opacity: 1;
+}
+
+.kapunka-shop-card__hover {
+    position: absolute;
+    inset: auto 0 0;
+    padding: clamp(1rem, 2vw, 1.6rem);
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.kapunka-shop-card__more-line {
+    width: 36px;
+    height: 1px;
+    background: currentColor;
+    display: block;
+    transition: transform 0.4s ease-out;
+}
+
+.kapunka-shop-card__hover .button,
+.kapunka-shop-card__hover .add_to_cart_button {
+    pointer-events: auto;
+    border: none;
+    background: rgba(17, 17, 17, 0.9);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    padding: 0.85rem 2.4rem;
+    border-radius: 999px;
+    transition: background 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce-page ul.products li.product .woocommerce-loop-product__title {
+    font-weight: 300;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce-page ul.products li.product .price {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--gray-dark, #333);
+    margin: 0;
+}
+
+.woocommerce ul.products li.product .button,
+.woocommerce-page ul.products li.product .button {
+    border: none;
+    background: none;
+    color: #000000;
+    padding: 0;
+}
+
+.woocommerce ul.products li.product .button:hover,
+.woocommerce-page ul.products li.product .button:hover {
+    color: #000000;
+}
+
+
+.kapunka-single-product {
+    max-width: var(--shell-max-width);
+    margin: clamp(4.5rem, 9vw, 7rem) auto clamp(3.5rem, 9vw, 6rem);
+    padding-inline: var(--shell-inline-padding);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 4.5rem);
+    box-sizing: border-box;
+}
+
+/* Remove legacy default grid to avoid conflicts */
+.woocommerce div.product,
+.woocommerce-page div.product {
+    display: block;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    border: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    margin: 0;
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: #000;
+    color: #fff;
+}
+
+.woocommerce div.product .summary .price {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.woocommerce div.product form.cart .button {
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.woocommerce div.product .woocommerce-product-gallery__trigger {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .woocommerce div.product {
+        grid-template-columns: 1fr;
+    }
+}
+
+.kapunka-product-fold {
+    display: grid;
+    gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+@media (min-width: 1024px) {
+    .kapunka-product-fold {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: start;
+    }
+
+    .kapunka-product-fold__media,
+    .kapunka-product-fold__summary {
+        position: sticky;
+        top: 7rem;
+    }
+}
+
+.kapunka-product-fold__media .woocommerce-product-gallery {
+    margin: 0;
+}
+
+.kapunka-product-fold__summary {
+    display: grid;
+    gap: 1.6rem;
+    align-content: start;
+}
+
+.kapunka-product-fold__summary .product_title {
+    margin: 0;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.kapunka-product-fold__summary .woocommerce-product-details__short-description {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--gray-dark, #2c2c2c);
+}
+
+.kapunka-product-fold__summary .price {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    font-weight: 200;
+    letter-spacing: 0.04em;
+    color: var(--primary-black, #111);
+}
+
+.kapunka-product-fold__summary form.cart {
+    display: grid;
+    gap: 1.1rem;
+}
+
+.kapunka-product-fold__summary .variations {
+    border: none;
+    padding: 0;
+}
+
+.kapunka-product-fold__summary .variations tr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+}
+
+.kapunka-product-fold__summary select,
+.kapunka-product-fold__summary .quantity input[type="number"] {
+    width: 100%;
+    border: 1px solid rgba(17, 17, 17, 0.16);
+    background: var(--gray-light, #f7f7f7);
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    appearance: none;
+}
+
+.kapunka-product-fold__summary .single_add_to_cart_button {
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+    background: var(--primary-black, #111);
+    color: #fff;
+    padding: 1rem 1.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.kapunka-product-accordion {
+    padding: clamp(6rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
+    display: grid;
+    gap: 0;
+}
+
+.kapunka-product-accordion__item {
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.kapunka-product-accordion__item summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.35rem 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.kapunka-product-accordion__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.kapunka-product-accordion__item summary::after {
+    content: '+';
+    font-size: 1.6rem;
+    transition: transform 0.4s ease-out;
+}
+
+.kapunka-product-accordion__item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.kapunka-product-accordion__content {
+    padding-bottom: 2.2rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 720px;
+    color: var(--gray-dark, #2c2c2c);
+}
+
+.kapunka-related {
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+    padding-bottom: clamp(6rem, 12vw, 8rem);
+}
+
+.kapunka-related .related.products {
+    margin: 0;
+}
+
+.kapunka-related .related.products ul.products {
+    margin: 0;
+    gap: 1.6rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 960px) {
+    .kapunka-related .related.products ul.products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .kapunka-product-fold {
+        grid-template-columns: 1fr;
+    }
+
+    .kapunka-related .related.products ul.products {
+        grid-template-columns: 1fr;
+    }
+
+    .kapunka-product-accordion {
+        padding: clamp(4rem, 12vw, 6rem) 0;
+    }
+}

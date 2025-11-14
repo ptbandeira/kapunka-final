@@ -1,0 +1,585 @@
+[21-Oct-2025 08:29:10 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-theme-upgrader.php on line 160
+[21-Oct-2025 08:37:29 UTC] WordPress database error Table 'local.wp_gla_ads_recommendations' doesn't exist for query SELECT * FROM `wp_gla_ads_recommendations`
+WHERE
+recommendation_type = 'IMPROVE_PERFORMANCE_MAX_AD_STRENGTH' made by require('wp-admin/menu.php'), require_once('wp-admin/includes/menu.php'), do_action('admin_menu'), WP_Hook->do_action, WP_Hook->apply_filters, Automattic\WooCommerce\GoogleListingsAndAds\Menu\NotificationManager->display_aggregated_notification_pill, Automattic\WooCommerce\GoogleListingsAndAds\Menu\NotificationManager->initial_notification_count, Automattic\WooCommerce\GoogleListingsAndAds\Ads\AdsRecommendationsService->get_recommendations, Automattic\WooCommerce\GoogleListingsAndAds\DB\Query->get_results, Automattic\WooCommerce\GoogleListingsAndAds\DB\Query->query_results
+[21-Oct-2025 12:02:12 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[21-Oct-2025 17:54:20 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[21-Oct-2025 18:45:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 18:46:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:13:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:17:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:21:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:23:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:26:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:28:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:30:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:32:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:34:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:35:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:38:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:38:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:41:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:42:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Oct-2025 19:44:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Elementor\Modules\Ai\Module->get_product_images_ajax('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(192): do_action('wp_ajax_element...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[24-Oct-2025 21:32:40 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[24-Oct-2025 21:32:40 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[24-Oct-2025 21:32:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[24-Oct-2025 21:32:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[24-Oct-2025 21:33:26 UTC] [Image Optimizer]: info in ImageOptimization\Modules\Core\Components\Migrations->run_migration(): The migration `fix_optimized_size_keys` successfully executed.
+[24-Oct-2025 21:33:28 UTC] WordPress database error Deadlock found when trying to get lock; try restarting transaction for query 
+INSERT INTO wp_actionscheduler_actions ( `hook`, `status`, `scheduled_date_gmt`, `scheduled_date_local`, `schedule`, `group_id`, `priority`, `args` )
+SELECT 'image-optimization/database/migration', 'pending', '2025-10-24 21:33:28', '2025-10-24 21:33:28', 'O:28:\"ActionScheduler_NullSchedule\":0:{}', 10, 0, '{\"name\":\"fix_mime_type\"}' FROM DUAL
+WHERE ( 
+SELECT action_id FROM wp_actionscheduler_actions
+WHERE status IN ( 'pending', 'in-progress' )
+AND hook = 'image-optimization/database/migration'
+AND `group_id` = 10
+ LIMIT 1 ) IS NULL made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, ActionScheduler::{closure}, do_action('action_scheduler_init'), WP_Hook->do_action, WP_Hook->apply_filters, ImageOptimization\Classes\Migration\Migration_Manager::init, ImageOptimization\Classes\Async_Operation\Async_Operation::create, as_enqueue_async_action, ActionScheduler_ActionFactory->create, ActionScheduler_ActionFactory->store_unique_action, ActionScheduler_DBStore->save_unique_action, ActionScheduler_DBStore->save_action_to_db
+[24-Oct-2025 21:33:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\Core\Components\Migrations->run_migration(): The migration `fix_mime_type` successfully executed.
+[24-Oct-2025 21:33:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[24-Oct-2025 21:33:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[24-Oct-2025 21:34:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\Core\Components\Migrations->run_migration(): The migration `fix_avif_with_zero_dimensions` successfully executed.
+[28-Oct-2025 12:41:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[28-Oct-2025 12:41:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[28-Oct-2025 20:40:44 UTC] [Loco.error] "Theme not found: blockbase-wpcom" in src/package/Theme.php:119
+[29-Oct-2025 15:13:14 UTC] PHP Warning:  compact(): Undefined variable $title in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/includes/durbin/class-xpo.php on line 433
+[29-Oct-2025 15:13:14 UTC] PHP Warning:  compact(): Undefined variable $url in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/includes/durbin/class-xpo.php on line 433
+[29-Oct-2025 15:13:14 UTC] PHP Warning:  compact(): Undefined variable $nonce in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/includes/durbin/class-xpo.php on line 433
+[29-Oct-2025 15:13:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function request_filesystem_credentials() in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-upgrader-skin.php:139
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-automatic-upgrader-skin.php(49): WP_Upgrader_Skin->request_filesystem_credentials(false, '/Users/pedrosan...', false)
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-upgrader.php(239): Automatic_Upgrader_Skin->request_filesystem_credentials(false, '/Users/pedrosan...', false)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-upgrader.php(825): WP_Upgrader->fs_connect(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-plugin-upgrader.php(135): WP_Upgrader->run(Array)
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/includes/durbin/class-xpo.php(434): Plugin_Upgrader->install('https://downloa...')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/includes/durbin/class-xpo.php(380): WOPB\Includes\Durbin\Xpo::plugin_install('revenue/revenue...', 'revenue')
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/classes/SetupWizard.php(194): WOPB\Includes\Durbin\Xpo::install_and_active_plugin('revenue')
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/product-blocks/classes/SetupWizard.php(141): WOPB\SetupWizard->handle_plugin_activation('revenue')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/rest-api/class-wp-rest-server.php(1292): WOPB\SetupWizard->wizard_site_action_callback(Object(WP_REST_Request))
+#9 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/rest-api/class-wp-rest-server.php(1125): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wopb/v2/wizard...', Array, NULL)
+#10 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#11 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/rest-api.php(459): WP_REST_Server->serve_request('/wopb/v2/wizard...')
+#12 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#13 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#14 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#15 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#16 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp.php(818): WP->parse_request('')
+#17 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/functions.php(1342): WP->main('')
+#18 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(16): wp()
+#19 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#20 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-upgrader-skin.php on line 139
+[29-Oct-2025 19:03:05 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[29-Oct-2025 19:03:10 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[29-Oct-2025 19:08:10 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/product-blocks-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[29-Oct-2025 19:08:10 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/product-blocks-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[29-Oct-2025 19:08:10 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/product-blocks-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[29-Oct-2025 19:08:10 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/product-blocks-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[29-Oct-2025 19:25:10 UTC] [Loco.error] "Theme not found: blockbase-wpcom" in src/package/Theme.php:119
+[29-Oct-2025 19:54:01 UTC] [Loco.error] "Theme not found: blockbase-wpcom" in src/package/Theme.php:119
+[30-Oct-2025 10:52:56 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[30-Oct-2025 14:55:03 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[30-Oct-2025 15:03:57 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 15:04:32 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 15:23:52 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 15:23:57 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 15:24:02 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 15:24:07 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 17:15:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 20:05:02 UTC] Error de evento de anulación de programación de cron para el gancho: spectra_regenerate_post_assets. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":false,"args":[464]}
+[30-Oct-2025 20:12:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[30-Oct-2025 20:35:10 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[31-Oct-2025 10:10:44 UTC] PHP Warning:  fopen(/var/tmp/index-GOnsIq.tmp): Failed to open stream: No space left on device in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-filesystem-ftpext.php on line 190
+[31-Oct-2025 10:10:44 UTC] PHP Warning:  unlink(/var/tmp/index-GOnsIq.tmp): No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-filesystem-ftpext.php on line 193
+[31-Oct-2025 10:10:44 UTC] PHP Warning:  fopen(/var/tmp/index-A8YY23.tmp): Failed to open stream: No space left on device in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-filesystem-ftpext.php on line 190
+[31-Oct-2025 10:10:44 UTC] PHP Warning:  unlink(/var/tmp/index-A8YY23.tmp): No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/includes/class-wp-filesystem-ftpext.php on line 193
+[31-Oct-2025 10:38:17 UTC] PHP Warning:  Unknown: Failed to open stream: No such file or directory in Unknown on line 0
+[31-Oct-2025 10:38:17 UTC] PHP Fatal error:  Failed opening required '/Volumes/Install Local/Local.app/Contents/Resources/extraResources/local-bootstrap.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in Unknown on line 0
+[31-Oct-2025 10:38:17 UTC] PHP Warning:  Unknown: Failed to open stream: No such file or directory in Unknown on line 0
+[31-Oct-2025 10:38:17 UTC] PHP Fatal error:  Failed opening required '/Volumes/Install Local/Local.app/Contents/Resources/extraResources/local-bootstrap.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in Unknown on line 0
+[31-Oct-2025 10:39:09 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[31-Oct-2025 10:39:09 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[31-Oct-2025 10:39:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[31-Oct-2025 10:39:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[31-Oct-2025 10:39:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[31-Oct-2025 10:39:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[31-Oct-2025 10:51:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 10
+[31-Oct-2025 10:51:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 18
+[31-Oct-2025 10:51:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 26
+[31-Oct-2025 10:51:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 28
+[31-Oct-2025 10:52:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 10
+[31-Oct-2025 10:52:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 18
+[31-Oct-2025 10:52:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 26
+[31-Oct-2025 10:52:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 28
+[31-Oct-2025 10:53:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 10
+[31-Oct-2025 10:53:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 18
+[31-Oct-2025 10:53:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 26
+[31-Oct-2025 10:53:14 UTC] PHP Warning:  Undefined variable $blockId in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/plugins/essential-blocks/views/product-images.php on line 28
+[31-Oct-2025 19:58:22 UTC] Error de evento de anulación de programación de cron para el gancho: spectra_regenerate_post_assets. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":false,"args":[362]}
+[03-Nov-2025 17:22:12 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[04-Nov-2025 14:51:53 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/carousel-block-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:53 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/carousel-block-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:54 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/carousel-block-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:54 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/carousel-block-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:57 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/megamenu-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:57 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/megamenu-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:57 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/megamenu-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:57 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/megamenu-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:57 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/ultimate-addons-for-gutenberg-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:57 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/ultimate-addons-for-gutenberg-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:58 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/ultimate-addons-for-gutenberg-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:58 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/ultimate-addons-for-gutenberg-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:58 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/templately-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:58 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/templately-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:59 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/templately-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:51:59 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/templately-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[04-Nov-2025 14:54:27 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-customize-widgets.php on line 926
+[04-Nov-2025 16:55:23 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[04-Nov-2025 17:04:39 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[04-Nov-2025 17:37:09 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:09 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:10 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:10 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:17 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:18 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:28 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:37:28 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[04-Nov-2025 17:37:28 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[04-Nov-2025 17:37:38 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:38:47 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:39:38 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 17:39:47 UTC] PHP Fatal error:  Cannot redeclare kapunka_enqueue_styles() (previously declared in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:93) in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 105
+[04-Nov-2025 19:47:42 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[04-Nov-2025 21:25:45 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[05-Nov-2025 12:26:30 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[05-Nov-2025 12:27:37 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[05-Nov-2025 18:18:58 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/advanced-custom-fields-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 18:18:58 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/advanced-custom-fields-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 18:18:59 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/advanced-custom-fields-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 18:18:59 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/advanced-custom-fields-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:41 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/meta-box-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:41 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/meta-box-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:41 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/meta-box-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:41 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/meta-box-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:58 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/custom-css-js-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:58 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/custom-css-js-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:59 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/custom-css-js-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[05-Nov-2025 22:35:59 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/custom-css-js-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[06-Nov-2025 08:42:35 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/pods-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[06-Nov-2025 08:42:35 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/pods-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[06-Nov-2025 08:42:35 UTC] PHP Warning:  include(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/pods-es_ES.l10n.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[06-Nov-2025 08:42:35 UTC] PHP Warning:  include(): Failed opening '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/languages/plugins/pods-es_ES.l10n.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/l10n.php on line 1608
+[06-Nov-2025 08:50:42 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:42 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:43 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:43 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:59 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:59 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:50:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:00 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:00 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:00 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#5 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:11 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(22): require_once('/Users/pedrosan...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:11 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[06-Nov-2025 08:51:11 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[06-Nov-2025 08:51:59 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:51:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(22): require_once('/Users/pedrosan...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:52:12 UTC] PHP Warning:  require_once(/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php): Failed to open stream: No such file or directory in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:52:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php:25
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(695): include()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(22): require_once('/Users/pedrosan...')
+#4 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php on line 25
+[06-Nov-2025 08:56:43 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[06-Nov-2025 20:33:21 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "STDERR" in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/scripts/import-carbon-fields.php:40
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/functions.php(210): require()
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): {closure}('')
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(727): do_action('init')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#9 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/scripts/import-carbon-fields.php on line 40
+[06-Nov-2025 20:50:31 UTC] Invalid JSON structure.
+[06-Nov-2025 20:52:12 UTC] Invalid JSON structure.
+[06-Nov-2025 20:55:05 UTC] Invalid JSON structure.
+[06-Nov-2025 21:37:05 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[06-Nov-2025 22:17:52 UTC] Theme option 'newsletter_shortcode' updated.
+[06-Nov-2025 22:17:52 UTC] Page 'Tienda' (#526) updated.
+[06-Nov-2025 22:17:52 UTC] Page 'Profesionales' (#528) updated.
+[06-Nov-2025 22:17:52 UTC] Page 'Sobre nosotros' (#530) updated.
+[06-Nov-2025 22:17:52 UTC] Page 'Contacto' (#532) updated.
+[06-Nov-2025 22:17:52 UTC] Post '¿Qué es el aceite de argán? Historia y propiedades' (#540) updated.
+[06-Nov-2025 22:17:52 UTC] Post 'Beneficios del aceite de argán en protocolos clínicos' (#541) updated.
+[06-Nov-2025 22:17:52 UTC] Post 'Proceso tradicional: del fruto al aceite puro' (#542) updated.
+[06-Nov-2025 22:17:52 UTC] Post 'Cuidado post-procedimiento con aceite puro' (#543) updated.
+[06-Nov-2025 22:17:52 UTC] Post 'Cicatrices y recuperación tisular' (#544) updated.
+[06-Nov-2025 22:17:52 UTC] Post 'Cuidado infantil con argán' (#545) updated.
+[06-Nov-2025 22:17:52 UTC] Product 'Aceite puro clásico 50 ml' (#546) updated.
+[06-Nov-2025 22:17:52 UTC] Product 'Roll-on cicatrices 10 ml' (#547) updated.
+[06-Nov-2025 22:17:52 UTC] Product 'Mezcla Serenidad 100 ml' (#548) updated.
+[06-Nov-2025 22:17:52 UTC] Product 'Elemento de ritual hammam' (#549) updated.
+[06-Nov-2025 22:17:52 UTC] Import completed successfully.
+[06-Nov-2025 23:07:41 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[07-Nov-2025 10:06:22 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:14:37 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:22:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:22:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:22:47 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:22:52 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:22:57 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:23:02 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:23:07 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:36:52 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:38:54 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[07-Nov-2025 10:42:29 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[10-Nov-2025 14:40:52 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[11-Nov-2025 00:36:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:36:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:36:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:36:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:36:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:36:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:36:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:08 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:12 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:17 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:23 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:27 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:37 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:54 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:37:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:08 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:23 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:37 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:52 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:38:59 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:07 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:23 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:43 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:39:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:08 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:18 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:23 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:32 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:47 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:40:59 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:02 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:08 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:17 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:23 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:43 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:47 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:54 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:41:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:07 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:17 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:23 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:28 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:43 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:42:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:48:07 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:48:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:48:17 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:49:20 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:49:25 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:49:30 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:50:32 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:50:37 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:50:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:50:47 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:51:43 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:54:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:56:32 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:57:59 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:04 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:19 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:24 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:29 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:34 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:44 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:58:55 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:59:45 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:59:49 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 00:59:54 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 01:01:04 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 01:02:05 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 01:02:56 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 01:03:01 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 01:04:55 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 01:07:37 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 15:08:15 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:02 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:06 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:11 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:21 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:27 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:31 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:19:36 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:20:33 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:20:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:22:04 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:22:59 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:23:04 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:23:09 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:23:14 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:24:13 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:28:38 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:28:42 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:28:48 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:28:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:30:20 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:32:12 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[11-Nov-2025 17:50:07 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[12-Nov-2025 11:57:08 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[12-Nov-2025 11:58:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[12-Nov-2025 11:58:58 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[12-Nov-2025 11:59:03 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[12-Nov-2025 12:01:53 UTC] [Image Optimizer]: info in ImageOptimization\Modules\ConnectManager\Components\Connect->get_connect_status(): Status check error. Reason: User is not connected
+[12-Nov-2025 21:36:09 UTC] Error de evento de reprogramación de cron para el gancho: action_scheduler_run_queue. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"every_minute","args":["WP Cron"],"interval":60}

@@ -1,0 +1,3 @@
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using Pedros-MacBook-Pro.local. Set the 'ServerName' directive globally to suppress this message
+[Tue Nov 04 16:50:50.463577 2025] [mpm_event:notice] [pid 40650:tid 8344019264] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Tue Nov 04 16:50:50.464496 2025] [core:notice] [pid 40650:tid 8344019264] AH00094: Command line: '/Users/pedrosantos/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/pedrosantos/Library/Application Support/Local/run/luL7r-0ak/conf/apache/apache2.conf'

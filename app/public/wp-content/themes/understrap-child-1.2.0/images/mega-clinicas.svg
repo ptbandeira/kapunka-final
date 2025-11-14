@@ -1,0 +1,20 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradClinicas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f1ec"/>
+      <stop offset="100%" stop-color="#dfd7ce"/>
+    </linearGradient>
+    <linearGradient id="strokeClinicas" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9b8874"/>
+      <stop offset="100%" stop-color="#413328"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#gradClinicas)" rx="32"/>
+  <path d="M160 620C260 540 360 500 560 500C760 500 870 450 1020 380" fill="none" stroke="url(#strokeClinicas)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="280" cy="330" r="110" fill="none" stroke="#cab39e" stroke-width="6"/>
+  <circle cx="280" cy="330" r="70" fill="none" stroke="#aa927b" stroke-width="4"/>
+  <rect x="730" y="220" width="260" height="160" rx="28" fill="none" stroke="#ad9983" stroke-width="5"/>
+  <rect x="760" y="250" width="200" height="20" rx="10" fill="#aa927b" opacity="0.65"/>
+  <rect x="760" y="290" width="150" height="16" rx="8" fill="#c0aa96" opacity="0.75"/>
+  <rect x="760" y="325" width="120" height="16" rx="8" fill="#c0aa96" opacity="0.45"/>
+</svg>
