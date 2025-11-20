@@ -323,6 +323,74 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoplay();
     });
 
+    // Generic fade slider (Interlude, Highlights)
+    document.querySelectorAll('[data-fade-slider]').forEach((slider) => {
+        const slides = slider.querySelectorAll('.kapunka-fade-slide');
+        if (slides.length <= 1) {
+            slides.forEach((slide) => {
+                slide.classList.add('is-active');
+                slide.setAttribute('aria-hidden', 'false');
+            });
+            return;
+        }
+
+        const sliderId = slider.getAttribute('data-fade-slider') || 'fade-slider';
+        const dots = document.querySelectorAll(`[data-fade-dot="${sliderId}"]`);
+        let index = 0;
+        let timer = null;
+
+        const setActive = (nextIndex) => {
+            index = nextIndex;
+            slides.forEach((slide, idx) => {
+                const isActive = idx === index;
+                slide.classList.toggle('is-active', isActive);
+                slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+            });
+            dots.forEach((dot, idx) => {
+                const isActive = idx === index;
+                dot.classList.toggle('is-active', isActive);
+                dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+        };
+
+        const stop = () => {
+            if (timer) {
+                window.clearInterval(timer);
+                timer = null;
+            }
+        };
+
+        const start = () => {
+            if (slides.length < 2) {
+                return;
+            }
+            stop();
+            timer = window.setInterval(() => {
+                const next = (index + 1) % slides.length;
+                setActive(next);
+            }, 6000);
+        };
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const target = Number(dot.getAttribute('data-fade-target'));
+                if (!Number.isNaN(target)) {
+                    setActive(target);
+                    start();
+                }
+            });
+        });
+
+        const section = slider.closest('[data-fade-section]');
+        if (section) {
+            section.addEventListener('mouseenter', stop);
+            section.addEventListener('mouseleave', start);
+        }
+
+        setActive(0);
+        start();
+    });
+
     // Smooth scroll
     document.querySelectorAll('.js-scroll-to').forEach((link) => {
         link.addEventListener('click', (event) => {

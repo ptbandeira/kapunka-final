@@ -32,6 +32,20 @@ $letter_default = <<<'HTML'
 HTML;
 
 $highlights_image_id = (int) kapunka_get_meta( 'crb_origen_highlights_image', 0 );
+$highlights_gallery_raw = kapunka_get_meta( 'crb_origen_highlights_gallery', array() );
+$highlights_gallery     = array_values(
+    array_filter(
+        array_map(
+            static function( $image ) {
+                if ( is_array( $image ) && isset( $image['id'] ) ) {
+                    return (int) $image['id'];
+                }
+                return (int) $image;
+            },
+            is_array( $highlights_gallery_raw ) ? $highlights_gallery_raw : array()
+        )
+    )
+);
 $highlights_entries  = kapunka_get_meta( 'crb_origen_highlights_repeater', array() );
 if ( empty( $highlights_entries ) || ! is_array( $highlights_entries ) ) {
     $highlights_entries = array(
@@ -43,7 +57,42 @@ if ( empty( $highlights_entries ) || ! is_array( $highlights_entries ) ) {
 $full_letter_link_text = kapunka_get_meta( 'crb_origen_full_letter_link_text', __( 'Leer la carta completa de Mónica →', 'understrap' ) );
 $modal_letter_content  = kapunka_get_meta( 'crb_origen_full_letter_modal_content', $letter_default );
 $interlude_image_id    = (int) kapunka_get_meta( 'crb_origen_interlude_image', 0 );
+$interlude_gallery_raw = kapunka_get_meta( 'crb_origen_interlude_gallery', array() );
+$interlude_gallery     = array_values(
+    array_filter(
+        array_map(
+            static function( $image ) {
+                if ( is_array( $image ) && isset( $image['id'] ) ) {
+                    return (int) $image['id'];
+                }
+                return (int) $image;
+            },
+            is_array( $interlude_gallery_raw ) ? $interlude_gallery_raw : array()
+        )
+    )
+);
 $interlude_caption     = kapunka_get_meta( 'crb_origen_interlude_caption', __( 'Una historia de confluencia sanitaria.', 'understrap' ) );
+$valores_grid          = kapunka_get_meta( 'crb_origen_valores_grid', array() );
+if ( empty( $valores_grid ) || ! is_array( $valores_grid ) ) {
+    $valores_grid = array(
+        array(
+            'crb_origen_valor_title' => __( 'Confianza', 'understrap' ),
+            'crb_origen_valor_text'  => __( 'Honestidad y calidad absoluta en todo lo que hacemos. Nos avalan pruebas científicas y la satisfacción de nuestros clientes.', 'understrap' ),
+        ),
+        array(
+            'crb_origen_valor_title' => __( 'Esfuerzo & Excelencia', 'understrap' ),
+            'crb_origen_valor_text'  => __( 'No escatimamos en esfuerzos para lograr la máxima pureza y eficacia. Desde la cosecha manual hasta las pruebas de laboratorio, perseguimos la excelencia.', 'understrap' ),
+        ),
+        array(
+            'crb_origen_valor_title' => __( 'Compromiso', 'understrap' ),
+            'crb_origen_valor_text'  => __( 'Con tu piel y tu salud, con nuestro equipo y colaboradores, y con el entorno. Cumplimos lo que prometemos y nos regimos por la ética.', 'understrap' ),
+        ),
+        array(
+            'crb_origen_valor_title' => __( 'Agradecimiento', 'understrap' ),
+            'crb_origen_valor_text'  => __( 'El valor que dio origen a todo. Agradecemos la confianza de cada cliente retribuyéndola con calidad. Agradecemos a la naturaleza cuidándola.', 'understrap' ),
+        ),
+    );
+}
 ?>
 <section class="origen-hero" style="background-image: url('<?php echo esc_url( $hero_background ); ?>');">
     <div class="origen-hero__overlay"></div>
@@ -57,15 +106,36 @@ $interlude_caption     = kapunka_get_meta( 'crb_origen_interlude_caption', __( '
     </div>
 </section>
 
-<?php if ( $highlights_image_id || ! empty( $highlights_entries ) ) : ?>
+<?php if ( $highlights_image_id || ! empty( $highlights_gallery ) || ! empty( $highlights_entries ) ) : ?>
     <section class="origen-highlights">
         <div class="kapunka-clamp origen-highlights__grid">
             <div class="origen-highlights__media">
-                <?php
-                if ( $highlights_image_id ) {
-                    echo wp_get_attachment_image( $highlights_image_id, 'large', false, array( 'loading' => 'lazy' ) );
-                }
-                ?>
+                <?php if ( ! empty( $highlights_gallery ) ) : ?>
+                    <div class="kapunka-fade-slider origen-highlights__media-slider" data-fade-slider="highlights">
+                        <?php foreach ( $highlights_gallery as $index => $image_id ) : ?>
+                            <figure class="kapunka-fade-slide origen-highlights__slide<?php echo 0 === $index ? ' is-active' : ''; ?>" aria-hidden="<?php echo 0 === $index ? 'false' : 'true'; ?>">
+                                <?php echo wp_get_attachment_image( $image_id, 'large', false, array( 'loading' => 'lazy' ) ); ?>
+                            </figure>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php if ( count( $highlights_gallery ) > 1 ) : ?>
+                        <div class="kapunka-fade-dots origen-highlights__dots" role="tablist" aria-label="<?php esc_attr_e( 'Galería de Mónica', 'understrap' ); ?>">
+                            <?php foreach ( $highlights_gallery as $index => $image_id ) : ?>
+                                <button
+                                    type="button"
+                                    class="kapunka-fade-dot origen-highlights__dot<?php echo 0 === $index ? ' is-active' : ''; ?>"
+                                    data-fade-dot="highlights"
+                                    data-fade-target="<?php echo esc_attr( $index ); ?>"
+                                    aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>"
+                                    aria-label="<?php echo esc_attr( sprintf( __( 'Mostrar imagen %d', 'understrap' ), $index + 1 ) ); ?>">
+                                    <span class="screen-reader-text"><?php echo esc_html( sprintf( __( 'Imagen %d', 'understrap' ), $index + 1 ) ); ?></span>
+                                </button>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                <?php elseif ( $highlights_image_id ) : ?>
+                    <?php echo wp_get_attachment_image( $highlights_image_id, 'large', false, array( 'loading' => 'lazy' ) ); ?>
+                <?php endif; ?>
             </div>
             <div class="origen-highlights__list">
                 <?php foreach ( $highlights_entries as $highlight ) :
@@ -112,14 +182,72 @@ $interlude_caption     = kapunka_get_meta( 'crb_origen_interlude_caption', __( '
     </div>
 <?php endif; ?>
 
-<?php if ( $interlude_image_id ) : ?>
+<?php if ( ! empty( $interlude_gallery ) ) : ?>
+    <section class="origen-interlude" data-fade-section="interlude">
+        <div class="kapunka-fade-slider origen-interlude__slider" data-fade-slider="interlude">
+            <?php foreach ( $interlude_gallery as $index => $image_id ) : ?>
+                <figure class="kapunka-fade-slide origen-interlude__slide<?php echo 0 === $index ? ' is-active' : ''; ?>" aria-hidden="<?php echo 0 === $index ? 'false' : 'true'; ?>">
+                    <?php echo wp_get_attachment_image( $image_id, 'full', false, array( 'loading' => 'lazy' ) ); ?>
+                    <?php if ( '' !== trim( (string) $interlude_caption ) ) : ?>
+                        <figcaption class="origen-interlude__caption">
+                            <h2><?php echo esc_html( $interlude_caption ); ?></h2>
+                        </figcaption>
+                    <?php endif; ?>
+                </figure>
+            <?php endforeach; ?>
+        </div>
+        <?php if ( count( $interlude_gallery ) > 1 ) : ?>
+            <div class="kapunka-fade-dots origen-interlude__dots" role="tablist" aria-label="<?php esc_attr_e( 'Slideshow de Mónica', 'understrap' ); ?>">
+                <?php foreach ( $interlude_gallery as $index => $image_id ) : ?>
+                    <button
+                        type="button"
+                        class="kapunka-fade-dot origen-interlude__dot<?php echo 0 === $index ? ' is-active' : ''; ?>"
+                        data-fade-dot="interlude"
+                        data-fade-target="<?php echo esc_attr( $index ); ?>"
+                        aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>"
+                        aria-label="<?php echo esc_attr( sprintf( __( 'Mostrar imagen %d', 'understrap' ), $index + 1 ) ); ?>">
+                        <span class="screen-reader-text"><?php echo esc_html( sprintf( __( 'Imagen %d', 'understrap' ), $index + 1 ) ); ?></span>
+                    </button>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </section>
+<?php elseif ( $interlude_image_id ) : ?>
     <section class="origen-interlude">
         <figure class="origen-interlude__figure">
             <?php echo wp_get_attachment_image( $interlude_image_id, 'full', false, array( 'loading' => 'lazy' ) ); ?>
             <?php if ( '' !== trim( (string) $interlude_caption ) ) : ?>
-                <figcaption class="origen-interlude__caption"><?php echo esc_html( $interlude_caption ); ?></figcaption>
+                <figcaption class="origen-interlude__caption">
+                    <h2><?php echo esc_html( $interlude_caption ); ?></h2>
+                </figcaption>
             <?php endif; ?>
         </figure>
+    </section>
+<?php endif; ?>
+
+<?php if ( ! empty( $valores_grid ) ) : ?>
+    <section class="origen-valores">
+        <div class="kapunka-clamp">
+            <div class="origen-valores__grid">
+                <?php foreach ( $valores_grid as $valor ) :
+                    $title = isset( $valor['crb_origen_valor_title'] ) ? trim( (string) $valor['crb_origen_valor_title'] ) : '';
+                    $text  = isset( $valor['crb_origen_valor_text'] ) ? trim( (string) $valor['crb_origen_valor_text'] ) : '';
+
+                    if ( '' === $title && '' === $text ) {
+                        continue;
+                    }
+                    ?>
+                    <article class="origen-valor">
+                        <?php if ( '' !== $title ) : ?>
+                            <h3><?php echo esc_html( $title ); ?></h3>
+                        <?php endif; ?>
+                        <?php if ( '' !== $text ) : ?>
+                            <p><?php echo esc_html( $text ); ?></p>
+                        <?php endif; ?>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
     </section>
 <?php endif; ?>
 

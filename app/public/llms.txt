@@ -5,18 +5,18 @@ The XML sitemap of this website can be found by following [this link](http://kap
 # Kapunka
 
 ## Páginas
-- [Origen](http://kapunka-local.local/origen/)
-- [Método Kapunka](http://kapunka-local.local/metodo-kapunka/)
 - [Profesionales](http://kapunka-local.local/profesionales/)
-- [Tienda](http://kapunka-local.local/tienda/)
-- [Cart](http://kapunka-local.local/cart/)
+- [Origen](http://kapunka-local.local/origen/)
+- [Impacto social](http://kapunka-local.local/impacto-social/)
+- [Spas \& Hoteles](http://kapunka-local.local/spas/)
+- [Clínicas](http://kapunka-local.local/clinicas/)
 
 ## Entradas
-- [¿Qué es el aceite de argán? Historia y propiedades](http://kapunka-local.local/que-es-el-aceite-de-argan-historia-y-propiedades/)
-- [Beneficios del aceite de argán en protocolos clínicos](http://kapunka-local.local/beneficios-aceite-argan-protocolos-clinicos/)
-- [Proceso tradicional: del fruto al aceite puro](http://kapunka-local.local/proceso-tradicional-del-fruto-al-aceite/)
-- [Cuidado post\-procedimiento con aceite puro](http://kapunka-local.local/cuidado-post-procedimiento-aceite-puro/)
+- [La historia del árbol del Argán](http://kapunka-local.local/cuidado-post-procedimiento-aceite-puro/)
+- [Beneficios para que va a obtener el bebé, hidratando con KAPUNKA](http://kapunka-local.local/cuidado-infantil-con-argan/)
+- [Como prevenir las ESTRÍAS y mejorar la existentes con aceite de argán](http://kapunka-local.local/proceso-tradicional-del-fruto-al-aceite/)
 - [Cicatrices y recuperación tisular](http://kapunka-local.local/cicatrices-y-recuperacion-tisular/)
+- [Qué beneficios aporta KAPUNKA antes y  después de una sesión láser?](http://kapunka-local.local/beneficios-aceite-argan-protocolos-clinicos/)
 
 ## Productos
 - [Kapunka Cicatrices](http://kapunka-local.local/product/kapunka-cicatrices/): \<table style="height: 45px;" width="677"\>

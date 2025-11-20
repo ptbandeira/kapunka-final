@@ -338,72 +338,49 @@ function kapunka_register_carbon_fields() {
         ->add_tab(
             __( 'Hero', 'understrap' ),
             array(
-                Field::make( 'text', 'profesionales_hero_eyebrow', __( 'Eyebrow', 'understrap' ) )
+                Field::make( 'text', 'crb_pro_hero_eyebrow', __( 'Eyebrow', 'understrap' ) )
                     ->set_default_value( __( 'DIVISIÓN PROFESIONAL', 'understrap' ) ),
-                Field::make( 'text', 'profesionales_hero_title', __( 'Título', 'understrap' ) )
+                Field::make( 'text', 'crb_pro_hero_title', __( 'Título', 'understrap' ) )
                     ->set_default_value( __( 'Eleve sus protocolos estéticos.', 'understrap' ) )
                     ->set_required( true ),
-                Field::make( 'textarea', 'profesionales_hero_description', __( 'Descripción', 'understrap' ) )
+                Field::make( 'text', 'crb_pro_hero_subtitle', __( 'Subtítulo', 'understrap' ) )
                     ->set_default_value( __( 'Línea exclusiva de alto rendimiento para clínicas, spas de lujo y hoteles. Incluye formación técnica de nuestro método.', 'understrap' ) ),
-                Field::make( 'image', 'profesionales_hero_image', __( 'Imagen destacada', 'understrap' ) )
+                Field::make( 'image', 'crb_pro_hero_image', __( 'Imagen destacada', 'understrap' ) )
                     ->set_value_type( 'id' ),
-                Field::make( 'text', 'profesionales_hero_primary_label', __( 'CTA principal - texto', 'understrap' ) )
-                    ->set_default_value( __( 'Solicitar Partnership', 'understrap' ) ),
-                Field::make( 'text', 'profesionales_hero_primary_url', __( 'CTA principal - URL', 'understrap' ) )
-                    ->set_default_value( home_url( '/contacto#profesionales' ) ),
-                Field::make( 'text', 'profesionales_hero_secondary_label', __( 'CTA secundaria - texto', 'understrap' ) )
-                    ->set_default_value( __( 'Ver kit profesional', 'understrap' ) ),
-                Field::make( 'text', 'profesionales_hero_secondary_url', __( 'CTA secundaria - URL', 'understrap' ) )
-                    ->set_default_value( home_url( '/profesionales#kit' ) ),
             )
         )
         ->add_tab(
-            __( 'Currículum', 'understrap' ),
+            __( 'Propuesta de Valor', 'understrap' ),
             array(
-                Field::make( 'text', 'profesionales_curriculum_title', __( 'Título', 'understrap' ) )
-                    ->set_default_value( __( 'Currículum del programa', 'understrap' ) ),
-                Field::make( 'textarea', 'profesionales_curriculum_description', __( 'Descripción', 'understrap' ) )
-                    ->set_default_value( __( 'Cuatro módulos intensivos y tutorías en vivo.', 'understrap' ) ),
-                Field::make( 'complex', 'profesionales_curriculum_modules', __( 'Módulos', 'understrap' ) )
+                Field::make( 'complex', 'crb_pro_value_grid', __( 'Grid 2x2', 'understrap' ) )
+                    ->set_max( 4 )
                     ->add_fields(
                         array(
-                            Field::make( 'text', 'title', __( 'Título del módulo', 'understrap' ) )
+                            Field::make( 'image', 'crb_pro_value_image', __( 'Imagen', 'understrap' ) )
+                                ->set_value_type( 'id' )
                                 ->set_required( true ),
-                            Field::make( 'textarea', 'description', __( 'Descripción', 'understrap' ) ),
-                            Field::make( 'complex', 'bullets', __( 'Viñetas', 'understrap' ) )
-                                ->set_layout( 'tabbed-vertical' )
-                                ->add_fields(
-                                    array(
-                                        Field::make( 'text', 'item', __( 'Elemento', 'understrap' ) ),
-                                    )
-                                ),
+                            Field::make( 'text', 'crb_pro_value_headline', __( 'Titular', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'textarea', 'crb_pro_value_body', __( 'Descripción', 'understrap' ) ),
                         )
                     )
                     ->set_default_value(
                         array(
                             array(
-                                'title'       => __( 'Bioquímica del argán aplicado a la piel sensible', 'understrap' ),
-                                'description' => __( 'Perfil lipídico, tocoferoles y fracciones insaponificables para entender la regeneración de la barrera cutánea.', 'understrap' ),
-                                'bullets'     => array(
-                                    array( 'item' => __( 'Lectura de certificados COSMOS', 'understrap' ) ),
-                                    array( 'item' => __( 'Interpretación de análisis de lote', 'understrap' ) ),
-                                ),
+                                'crb_pro_value_headline' => __( 'Rentabilidad', 'understrap' ),
+                                'crb_pro_value_body'     => __( 'Producto con historia y validación que justifica un ticket medio elevado.', 'understrap' ),
                             ),
                             array(
-                                'title'       => __( 'Diseño de ritual clínico', 'understrap' ),
-                                'description' => __( 'Cómo adaptar el Método Kapunka a cirugías, dermatología y medicina estética.', 'understrap' ),
-                                'bullets'     => array(
-                                    array( 'item' => __( 'Mapas de recuperación tisular', 'understrap' ) ),
-                                    array( 'item' => __( 'Protocolos para cicatrices y quemaduras leves', 'understrap' ) ),
-                                ),
+                                'crb_pro_value_headline' => __( 'Formación', 'understrap' ),
+                                'crb_pro_value_body'     => __( 'Acceso al "Método Kapunka": protocolos de masaje facial y corporal.', 'understrap' ),
                             ),
                             array(
-                                'title'       => __( 'Implementación en cabina y retail', 'understrap' ),
-                                'description' => __( 'Educación del paciente, plan de venta ética y seguimiento digital.', 'understrap' ),
-                                'bullets'     => array(
-                                    array( 'item' => __( 'Plantillas de seguimiento post tratamiento', 'understrap' ) ),
-                                    array( 'item' => __( 'Kit minorista para pacientes', 'understrap' ) ),
-                                ),
+                                'crb_pro_value_headline' => __( 'Formatos Cabina', 'understrap' ),
+                                'crb_pro_value_body'     => __( 'Tamaños exclusivos (500ml) para uso intensivo.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_pro_value_headline' => __( 'Soporte Técnico', 'understrap' ),
+                                'crb_pro_value_body'     => __( 'Fichas técnicas completas y material de marketing.', 'understrap' ),
                             ),
                         )
                     ),
@@ -486,14 +463,20 @@ function kapunka_register_carbon_fields() {
                 Field::make( 'text', 'profesionales_faq_title', __( 'Título FAQ', 'understrap' ) ),
                 Field::make( 'complex', 'profesionales_faq_items', __( 'Preguntas frecuentes', 'understrap' ) )
                     ->add_fields( kapunka_cf_single_faq_fields() ),
-                Field::make( 'text', 'profesionales_form_shortcode', __( 'Shortcode del formulario de inscripción', 'understrap' ) ),
+                Field::make( 'text', 'crb_pro_form_headline', __( 'Título del formulario', 'understrap' ) )
+                    ->set_default_value( __( 'Solicitar acceso', 'understrap' ) ),
+                Field::make( 'textarea', 'crb_pro_form_body', __( 'Descripción del formulario', 'understrap' ) )
+                    ->set_default_value( __( 'Envíe su solicitud para acceder a nuestra plataforma profesional, fichas técnicas y precios de cabina.', 'understrap' ) ),
             )
         )
         ->add_tab(
             __( 'Kit y Onboarding', 'understrap' ),
             array(
-                Field::make( 'text', 'profesionales_kit_eyebrow', __( 'Texto superior del kit', 'understrap' ) ),
-                Field::make( 'text', 'profesionales_kit_title', __( 'Título del kit', 'understrap' ) ),
+                Field::make( 'text', 'crb_pro_kit_eyebrow', __( 'Texto superior del kit', 'understrap' ) )
+                    ->set_default_value( __( 'Kit profesional', 'understrap' ) ),
+                Field::make( 'text', 'crb_pro_kit_headline', __( 'Título del kit', 'understrap' ) )
+                    ->set_default_value( __( 'Maletín con botellas, goteros, manual técnico y fichas impresas.', 'understrap' ) ),
+                Field::make( 'textarea', 'crb_pro_kit_body', __( 'Descripción del kit', 'understrap' ) ),
                 Field::make( 'complex', 'profesionales_kit_bullets', __( 'Puntos destacados del kit', 'understrap' ) )
                     ->add_fields(
                         array(
@@ -501,7 +484,7 @@ function kapunka_register_carbon_fields() {
                                 ->set_required( true ),
                         )
                     ),
-                Field::make( 'image', 'profesionales_kit_image', __( 'Imagen del kit', 'understrap' ) )
+                Field::make( 'image', 'crb_pro_kit_image', __( 'Imagen del kit', 'understrap' ) )
                     ->set_value_type( 'id' ),
                 Field::make( 'complex', 'profesionales_onboarding_steps', __( 'Pasos de onboarding', 'understrap' ) )
                     ->add_fields(
@@ -738,6 +721,9 @@ HTML;
             array(
                 Field::make( 'image', 'crb_origen_highlights_image', __( 'Imagen principal', 'understrap' ) )
                     ->set_value_type( 'id' ),
+                Field::make( 'media_gallery', 'crb_origen_highlights_gallery', __( 'Galería de Mónica', 'understrap' ) )
+                    ->set_type( 'image' )
+                    ->set_help_text( __( 'Opcional: selecciona varias imágenes para crear un slideshow en el bloque de highlights.', 'understrap' ) ),
                 Field::make( 'complex', 'crb_origen_highlights_repeater', __( 'Destacados', 'understrap' ) )
                     ->add_fields(
                         array(
@@ -769,8 +755,45 @@ HTML;
             array(
                 Field::make( 'image', 'crb_origen_interlude_image', __( 'Imagen interludio', 'understrap' ) )
                     ->set_value_type( 'id' ),
+                Field::make( 'media_gallery', 'crb_origen_interlude_gallery', __( 'Galería interludio', 'understrap' ) )
+                    ->set_type( 'image' )
+                    ->set_help_text( __( 'Selecciona varias imágenes para el pase de diapositivas. Se mostrarán en el orden elegido.', 'understrap' ) ),
                 Field::make( 'text', 'crb_origen_interlude_caption', __( 'Leyenda', 'understrap' ) )
                     ->set_default_value( __( 'Una historia de confluencia sanitaria.', 'understrap' ) ),
+            )
+        )
+        ->add_tab(
+            __( 'Valores', 'understrap' ),
+            array(
+                Field::make( 'complex', 'crb_origen_valores_grid', __( 'Valores', 'understrap' ) )
+                    ->set_max( 4 )
+                    ->add_fields(
+                        array(
+                            Field::make( 'text', 'crb_origen_valor_title', __( 'Título', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'textarea', 'crb_origen_valor_text', __( 'Descripción', 'understrap' ) ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'crb_origen_valor_title' => __( 'Confianza', 'understrap' ),
+                                'crb_origen_valor_text'  => __( 'Honestidad y calidad absoluta en todo lo que hacemos. Nos avalan pruebas científicas y la satisfacción de nuestros clientes.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_origen_valor_title' => __( 'Esfuerzo & Excelencia', 'understrap' ),
+                                'crb_origen_valor_text'  => __( 'No escatimamos en esfuerzos para lograr la máxima pureza y eficacia. Desde la cosecha manual hasta las pruebas de laboratorio, perseguimos la excelencia.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_origen_valor_title' => __( 'Compromiso', 'understrap' ),
+                                'crb_origen_valor_text'  => __( 'Con tu piel y tu salud, con nuestro equipo y colaboradores, y con el entorno. Cumplimos lo que prometemos y nos regimos por la ética.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_origen_valor_title' => __( 'Agradecimiento', 'understrap' ),
+                                'crb_origen_valor_text'  => __( 'El valor que dio origen a todo. Agradecemos la confianza de cada cliente retribuyéndola con calidad. Agradecemos a la naturaleza cuidándola.', 'understrap' ),
+                            ),
+                        )
+                    ),
             )
         );
 
@@ -1198,6 +1221,35 @@ HTML;
                             ),
                         )
                     ),
+                Field::make( 'complex', 'crb_spa_value_text_grid', __( 'Grid de texto 4 columnas', 'understrap' ) )
+                    ->set_max( 4 )
+                    ->add_fields(
+                        array(
+                            Field::make( 'text', 'crb_spa_value_title', __( 'Título', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'textarea', 'crb_spa_value_text', __( 'Texto', 'understrap' ) ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'crb_spa_value_title' => __( 'Rentabilidad', 'understrap' ),
+                                'crb_spa_value_text'   => __( 'Producto con historia y validación que justifica un ticket medio elevado.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_spa_value_title' => __( 'Formación', 'understrap' ),
+                                'crb_spa_value_text'   => __( 'Acceso al "Método Kapunka": protocolos de masaje facial y corporal.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_spa_value_title' => __( 'Formatos Cabina', 'understrap' ),
+                                'crb_spa_value_text'   => __( 'Tamaños exclusivos (500ml) para uso intensivo.', 'understrap' ),
+                            ),
+                            array(
+                                'crb_spa_value_title' => __( 'Soporte Técnico', 'understrap' ),
+                                'crb_spa_value_text'   => __( 'Fichas técnicas completas y material de marketing.', 'understrap' ),
+                            ),
+                        )
+                    ),
             )
         )
         ->add_tab(
@@ -1221,8 +1273,7 @@ HTML;
     // Impacto Social page
     // -------------------------
     $impacto_intro_default = <<<'HTML'
-<p>Kapunka es más que un aceite; es una historia de impacto positivo. Cada gota proviene de una reserva de la biosfera reconocida por UNESCO.</p>
-<p>Trabajamos mano a mano con cooperativas de mujeres bereber en Marruecos, apoyando su desarrollo económico y preservando sus técnicas tradicionales y sostenibles. Esta es nuestra forma de gratitud.</p>
+<p>Kapunka es más que un aceite; es una historia de impacto positivo. Cada gota proviene de una reserva de la biosfera reconocida por UNESCO. Trabajamos mano a mano con cooperativas de mujeres bereber en Marruecos, apoyando su desarrollo económico y preservando sus técnicas tradicionales y sostenibles. Esta es nuestra forma de gratitud.</p>
 HTML;
 
     Container::make( 'post_meta', __( 'Impacto Social', 'understrap' ) )

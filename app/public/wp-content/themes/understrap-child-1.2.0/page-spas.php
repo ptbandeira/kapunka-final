@@ -67,6 +67,28 @@ if ( empty( $rentabilidad_items ) ) {
     );
 }
 
+$spa_value_text_grid = kapunka_get_meta( 'crb_spa_value_text_grid', array() );
+if ( empty( $spa_value_text_grid ) ) {
+    $spa_value_text_grid = array(
+        array(
+            'crb_spa_value_title' => __( 'Rentabilidad', 'understrap' ),
+            'crb_spa_value_text'   => __( 'Producto con historia y validación que justifica un ticket medio elevado.', 'understrap' ),
+        ),
+        array(
+            'crb_spa_value_title' => __( 'Formación', 'understrap' ),
+            'crb_spa_value_text'   => __( 'Acceso al "Método Kapunka": protocolos de masaje facial y corporal.', 'understrap' ),
+        ),
+        array(
+            'crb_spa_value_title' => __( 'Formatos Cabina', 'understrap' ),
+            'crb_spa_value_text'   => __( 'Tamaños exclusivos (500ml) para uso intensivo.', 'understrap' ),
+        ),
+        array(
+            'crb_spa_value_title' => __( 'Soporte Técnico', 'understrap' ),
+            'crb_spa_value_text'   => __( 'Fichas técnicas completas y material de marketing.', 'understrap' ),
+        ),
+    );
+}
+
 $cta = array(
     'eyebrow' => kapunka_get_meta( 'crb_spa_cta_eyebrow', __( 'CO-CREACIÓN KAPUNKA', 'understrap' ) ),
     'title'   => kapunka_get_meta( 'crb_spa_cta_title', __( 'Diseñamos su carta de tratamientos.', 'understrap' ) ),
@@ -189,6 +211,32 @@ $exclusivity_body  = kapunka_get_meta( 'crb_spa_exclusivity_body', __( 'No busca
         </section>
     <?php endif; ?>
 
+    <?php if ( ! empty( $spa_value_text_grid ) ) : ?>
+        <section class="spa-value-text-grid">
+            <div class="kapunka-clamp">
+                <div class="spa-value-text-grid__inner">
+                    <?php foreach ( $spa_value_text_grid as $item ) :
+                        $value_title = isset( $item['crb_spa_value_title'] ) ? trim( (string) $item['crb_spa_value_title'] ) : '';
+                        $value_text  = isset( $item['crb_spa_value_text'] ) ? trim( (string) $item['crb_spa_value_text'] ) : '';
+
+                        if ( '' === $value_title && '' === $value_text ) {
+                            continue;
+                        }
+                        ?>
+                        <article class="spa-value-text-grid__item">
+                            <?php if ( '' !== $value_title ) : ?>
+                                <h3><?php echo esc_html( $value_title ); ?></h3>
+                            <?php endif; ?>
+                            <?php if ( '' !== $value_text ) : ?>
+                                <p><?php echo esc_html( $value_text ); ?></p>
+                            <?php endif; ?>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <section class="spa-cta">
         <div class="kapunka-clamp spa-cta__wrap">
             <div>
@@ -203,7 +251,7 @@ $exclusivity_body  = kapunka_get_meta( 'crb_spa_exclusivity_body', __( 'No busca
                 <?php endif; ?>
             </div>
             <?php if ( ! empty( $cta['button']['label'] ) && ! empty( $cta['button']['url'] ) ) : ?>
-                <a class="btn btn-outline" href="<?php echo esc_url( $cta['button']['url'] ); ?>">
+                <a class="kapunka-button spa-cta__button" href="<?php echo esc_url( $cta['button']['url'] ); ?>">
                     <?php echo esc_html( $cta['button']['label'] ); ?>
                 </a>
             <?php endif; ?>

@@ -58,11 +58,15 @@ $cta_body     = kapunka_get_meta( 'crb_impacto_cta_body', __( 'Nuestra fundadora
         </div>
     </section>
 
-    <section class="impacto-intro">
-        <div class="kapunka-clamp impacto-intro__inner">
-            <?php echo wp_kses_post( apply_filters( 'the_content', $intro_body ) ); ?>
-        </div>
-    </section>
+    <?php if ( $intro_body ) : ?>
+        <section class="impacto-intro">
+            <div class="kapunka-clamp impacto-intro__inner">
+                <div class="impacto-intro__body">
+                    <?php echo wp_kses_post( apply_filters( 'the_content', $intro_body ) ); ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
 
     <?php if ( ! empty( $pillars ) ) : ?>
         <section class="impacto-pillars">

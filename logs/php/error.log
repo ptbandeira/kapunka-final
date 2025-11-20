@@ -592,3 +592,86 @@ Stack trace:
 [14-Nov-2025 14:45:49 UTC] PHP Warning:  Undefined variable $mission_text in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/page-el-origen.php on line 215
 [14-Nov-2025 14:45:49 UTC] PHP Warning:  Undefined variable $vision_text in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/page-el-origen.php on line 215
 [14-Nov-2025 16:29:32 UTC] PHP Parse error:  syntax error, unexpected identifier "e" in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/page-el-origen.php on line 11
+[14-Nov-2025 20:47:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Carbon_Fields\Field\Media_Gallery_Field::set_value_type() in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php:774
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): kapunka_register_carbon_fields('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/vendor/htmlburger/carbon-fields/core/Loader/Loader.php(113): do_action('carbon_fields_r...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Carbon_Fields\Loader\Loader->trigger_fields_register('')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(727): do_action('init')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#9 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#10 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#11 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#12 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php on line 774
+[14-Nov-2025 20:47:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Carbon_Fields\Field\Media_Gallery_Field::set_value_type() in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php:774
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): kapunka_register_carbon_fields('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/vendor/htmlburger/carbon-fields/core/Loader/Loader.php(113): do_action('carbon_fields_r...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Carbon_Fields\Loader\Loader->trigger_fields_register('')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(727): do_action('init')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#9 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#10 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#11 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#12 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php on line 774
+[14-Nov-2025 20:48:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Carbon_Fields\Field\Media_Gallery_Field::set_value_type() in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php:774
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): kapunka_register_carbon_fields('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/vendor/htmlburger/carbon-fields/core/Loader/Loader.php(113): do_action('carbon_fields_r...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Carbon_Fields\Loader\Loader->trigger_fields_register('')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(727): do_action('init')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#9 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#10 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#11 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#12 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php on line 774
+[14-Nov-2025 20:48:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Carbon_Fields\Field\Media_Gallery_Field::set_value_type() in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php:774
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): kapunka_register_carbon_fields('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/vendor/htmlburger/carbon-fields/core/Loader/Loader.php(113): do_action('carbon_fields_r...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Carbon_Fields\Loader\Loader->trigger_fields_register('')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(727): do_action('init')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#9 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#10 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-blog-header.php(13): require_once('/Users/pedrosan...')
+#11 /Users/pedrosantos/Local Sites/kapunka-local/app/public/index.php(17): require('/Users/pedrosan...')
+#12 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php on line 774
+[14-Nov-2025 20:48:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Carbon_Fields\Field\Media_Gallery_Field::set_value_type() in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php:774
+Stack trace:
+#0 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): kapunka_register_carbon_fields('')
+#1 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#2 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/vendor/htmlburger/carbon-fields/core/Loader/Loader.php(113): do_action('carbon_fields_r...')
+#4 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(324): Carbon_Fields\Loader\Loader->trigger_fields_register('')
+#5 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#7 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-settings.php(727): do_action('init')
+#8 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-config.php(103): require_once('/Users/pedrosan...')
+#9 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-load.php(50): require_once('/Users/pedrosan...')
+#10 /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-admin/admin-ajax.php(22): require_once('/Users/pedrosan...')
+#11 {main}
+  thrown in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/inc/carbon-fields.php on line 774
+[14-Nov-2025 20:48:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-recovery-mode-email-service.php on line 367
+[14-Nov-2025 20:48:54 UTC] PHP Warning:  Trying to access array offset on value of type bool in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-includes/class-wp-recovery-mode-email-service.php on line 368
+[16-Nov-2025 19:55:05 UTC] PHP Warning:  Undefined array key "title" in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/page-profesionales.php on line 256
+[16-Nov-2025 19:56:27 UTC] PHP Warning:  Undefined variable $form_shortcode in /Users/pedrosantos/Local Sites/kapunka-local/app/public/wp-content/themes/understrap-child-1.2.0/page-profesionales.php on line 346

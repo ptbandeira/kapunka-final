@@ -40,7 +40,7 @@ $show_cta  = ! empty( $cta_url );
                     <?php if ( ! empty( $item['question'] ) ) : ?>
                         <summary>
                             <span><?php echo esc_html( $item['question'] ); ?></span>
-                            <span class="kapunka-faq__icon" aria-hidden="true">+</span>
+                            <span class="kapunka-faq__icon" aria-hidden="true"></span>
                         </summary>
                     <?php endif; ?>
 
