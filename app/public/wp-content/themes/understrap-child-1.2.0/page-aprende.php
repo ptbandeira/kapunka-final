@@ -9,18 +9,24 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+$hero_background_enabled = kapunka_get_meta( 'aprende_hero_background_enabled', false );
+$hero_background_image_id = $hero_background_enabled ? kapunka_get_meta( 'aprende_hero_background_image', 0 ) : 0;
+$hero_background_image_url = $hero_background_image_id ? wp_get_attachment_image_url( $hero_background_image_id, 'full' ) : '';
+
 $hero = array(
-    'eyebrow'   => kapunka_get_meta( 'aprende_hero_eyebrow', __( 'Journal Kapunka', 'understrap' ) ),
-    'title'     => kapunka_get_meta( 'aprende_hero_title', __( 'Análisis clínicos, rituales guiados y casos de cabina.', 'understrap' ) ),
+    'eyebrow'     => kapunka_get_meta( 'aprende_hero_eyebrow', __( 'Journal Kapunka', 'understrap' ) ),
+    'title'       => kapunka_get_meta( 'aprende_hero_title', __( 'Análisis clínicos, rituales guiados y casos de cabina.', 'understrap' ) ),
     'description' => kapunka_get_meta( 'aprende_hero_description', __( 'Notas mensuales con protocolos descargables, playlists para cabina y noticias desde las cooperativas.', 'understrap' ) ),
-    'primary'   => array(
+    'primary'     => array(
         'label' => kapunka_get_meta( 'aprende_hero_primary_label', __( 'Suscribirme al Journal', 'understrap' ) ),
         'url'   => kapunka_get_meta( 'aprende_hero_primary_url', '#journal-newsletter' ),
     ),
-    'secondary' => array(
+    'secondary'   => array(
         'label' => kapunka_get_meta( 'aprende_hero_secondary_label' ),
         'url'   => kapunka_get_meta( 'aprende_hero_secondary_url' ),
     ),
+    'background_enabled' => $hero_background_enabled,
+    'background_image'   => $hero_background_image_url,
 );
 
 $featured_ids   = kapunka_parse_association_ids( kapunka_get_meta( 'aprende_destacados', array() ) );
@@ -69,14 +75,20 @@ $components = kapunka_get_meta( 'aprende_componentes', array() );
 ?>
 
 <main id="aprende-page" class="site-main site-main--aprende">
-    <section class="hero-section text-left">
-        <div class="kapunka-clamp">
+    <section class="hero-section text-left aprende-hero<?php echo $hero['background_enabled'] && $hero['background_image'] ? ' aprende-hero--with-background' : ''; ?>">
+        <?php if ( $hero['background_enabled'] && $hero['background_image'] ) : ?>
+            <div class="aprende-hero__background" aria-hidden="true">
+                <img src="<?php echo esc_url( $hero['background_image'] ); ?>" alt="" loading="lazy" decoding="async">
+                <div class="aprende-hero__overlay"></div>
+            </div>
+        <?php endif; ?>
+        <div class="kapunka-clamp aprende-hero__content">
             <?php if ( ! empty( $hero['eyebrow'] ) ) : ?>
-                <p class="text-uppercase letter-spacing"><?php echo esc_html( $hero['eyebrow'] ); ?></p>
+                <p class="aprende-hero__eyebrow text-uppercase letter-spacing"><?php echo esc_html( $hero['eyebrow'] ); ?></p>
             <?php endif; ?>
-            <h1><?php echo esc_html( $hero['title'] ); ?></h1>
+            <h1 class="aprende-hero__title"><?php echo esc_html( $hero['title'] ); ?></h1>
             <?php if ( ! empty( $hero['description'] ) ) : ?>
-                <p><?php echo esc_html( $hero['description'] ); ?></p>
+                <p class="aprende-hero__description"><?php echo esc_html( $hero['description'] ); ?></p>
             <?php endif; ?>
             <div class="hero-cta">
                 <?php if ( ! empty( $hero['primary']['url'] ) && ! empty( $hero['primary']['label'] ) ) : ?>
@@ -111,8 +123,8 @@ $components = kapunka_get_meta( 'aprende_componentes', array() );
 
     <section class="aprende-section aprende-latest">
         <div class="aprende-section__inner kapunka-clamp">
-            <div class="section-heading">
-                <p class="text-uppercase letter-spacing"><?php esc_html_e( 'Dermatología Natural · Casos de Éxito · Lifestyle Consciente', 'understrap' ); ?></p>
+            <div class="section-heading aprende-latest__heading">
+                <p class="aprende-latest__category-labels text-uppercase letter-spacing"><?php esc_html_e( 'Dermatología Natural · Casos de Éxito · Lifestyle Consciente', 'understrap' ); ?></p>
                 <h2><?php echo esc_html( $list_title ); ?></h2>
                 <?php if ( ! empty( $list_description ) ) : ?>
                     <p><?php echo esc_html( $list_description ); ?></p>
@@ -153,7 +165,7 @@ $components = kapunka_get_meta( 'aprende_componentes', array() );
                     continue;
                 }
                 ?>
-                <article>
+                <article class="journal-collection-card">
                     <?php if ( '' !== $collection_title ) : ?>
                         <h3><?php echo esc_html( $collection_title ); ?></h3>
                     <?php endif; ?>

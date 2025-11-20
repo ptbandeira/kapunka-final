@@ -910,6 +910,12 @@ HTML;
         ->add_tab(
             __( 'Hero', 'understrap' ),
             array(
+                Field::make( 'checkbox', 'aprende_hero_background_enabled', __( 'Activar imagen de fondo en hero', 'understrap' ) )
+                    ->set_option_value( 'yes' )
+                    ->set_help_text( __( 'Activa o desactiva la imagen de fondo del hero. Mantenimiento: Página Journal.', 'understrap' ) ),
+                Field::make( 'image', 'aprende_hero_background_image', __( 'Imagen de fondo del hero', 'understrap' ) )
+                    ->set_value_type( 'id' )
+                    ->set_help_text( __( 'Se mostrará solo si la opción anterior está activada. Mantenimiento: Página Journal.', 'understrap' ) ),
                 Field::make( 'text', 'aprende_hero_eyebrow', __( 'Eyebrow', 'understrap' ) ),
                 Field::make( 'text', 'aprende_hero_title', __( 'Título', 'understrap' ) )
                     ->set_required( true ),

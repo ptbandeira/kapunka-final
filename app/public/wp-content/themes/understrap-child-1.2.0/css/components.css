@@ -369,6 +369,20 @@
     font-weight: 300;
 }
 
+/* Journal page - ensure article titles are lighter */
+#aprende-page .kapunka-article-card__title {
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+#aprende-page .aprende-latest__grid .kapunka-article-card__title,
+#aprende-page .aprende-featured__grid .kapunka-article-card__title {
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    line-height: 1.4;
+}
+
 .kapunka-article-card__excerpt {
     margin: 0;
     color: #555;
@@ -575,11 +589,130 @@
 }
 
 /* Journal supporting blocks --------------------------------------- */
+/* Hero Journal */
+.aprende-hero {
+    position: relative;
+    padding: clamp(7rem, 14vh, 11rem) clamp(1.5rem, 6vw, 4rem);
+}
+
+.aprende-hero--with-background {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.aprende-hero__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.aprende-hero__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aprende-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.aprende-hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.aprende-hero__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.aprende-hero--with-background .aprende-hero__eyebrow {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.aprende-hero__title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 250;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    margin: 0 0 2rem;
+    color: #222;
+}
+
+.aprende-hero--with-background .aprende-hero__title {
+    color: #fff;
+}
+
+.aprende-hero__description {
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.75;
+    margin: 0 0 3rem;
+    color: rgba(0, 0, 0, 0.8);
+    max-width: 65ch;
+}
+
+.aprende-hero--with-background .aprende-hero__description {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Category labels */
+.aprende-latest__category-labels {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Article titles - lighter weight */
+#aprende-page .kapunka-article-card__title,
+#aprende-page .aprende-latest__grid .kapunka-article-card__title,
+#aprende-page .aprende-featured__grid .kapunka-article-card__title {
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+#aprende-page .kapunka-article-card--featured-main .kapunka-article-card__title {
+    font-weight: 250;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    letter-spacing: -0.015em;
+}
+
+/* Padding adjustments */
+.aprende-hero {
+    padding-top: clamp(7rem, 14vh, 11.5rem);
+    padding-bottom: clamp(7rem, 14vh, 11.5rem);
+}
+
+.aprende-section {
+    padding: clamp(6rem, 12vh, 10rem) 0;
+}
+
+.aprende-featured {
+    padding-top: clamp(8rem, 14vh, 12rem);
+    padding-bottom: clamp(6rem, 12vh, 10rem);
+}
+
+.aprende-latest {
+    padding-top: clamp(8.5rem, 15vh, 13rem);
+    padding-bottom: clamp(6rem, 12vh, 10rem);
+}
+
 .journal-collections {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     background: #fff;
-    padding: clamp(6rem, 12vh, 10rem) 0;
+    padding: clamp(7rem, 13vh, 11.5rem) 0;
 }
 
 .journal-collections__grid {
@@ -588,78 +721,209 @@
     gap: 2rem;
 }
 
-.journal-collections__grid article {
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+.journal-collections__grid article,
+.journal-collection-card {
+    border: 1px solid #e6e6e6;
+    padding: 2.5rem 2rem;
+    background: #fff;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 0;
+}
+
+.journal-collections__grid article:hover,
+.journal-collection-card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.journal-collections__grid article h3,
+.journal-collection-card h3 {
+    font-weight: 300;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    color: #222;
+}
+
+.journal-collections__grid article p,
+.journal-collection-card p {
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 .journal-cta {
-    background: #111;
+    background: #000;
     color: #fff;
-    padding: clamp(6rem, 12vh, 10rem) 0;
+    padding: clamp(7.5rem, 14vh, 12rem) clamp(1.5rem, 6vw, 4rem);
 }
 
 .journal-cta__wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
     justify-content: space-between;
+    padding: 3rem 2.5rem;
+}
+
+.journal-cta__wrap .kapunka-tech {
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
 }
 
 .journal-cta__wrap h2 {
-    color: currentColor;
+    color: #fff;
     max-width: 38ch;
+    font-weight: 300;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.01em;
+    margin: 0;
 }
 
 .journal-cta .btn {
-    border-radius: 12px;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 1.25rem 3rem;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.5s ease, transform 0.45s ease;
+    display: inline-block;
+}
+
+.journal-cta .btn:hover,
+.journal-cta .btn:focus {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+    outline: none;
 }
 
 .journal-newsletter {
-    padding: clamp(6rem, 12vh, 10rem) 0;
+    padding: clamp(7.5rem, 14vh, 12rem) clamp(1.5rem, 6vw, 4rem);
     background: #f8f8f8;
+}
+
+.journal-newsletter .kapunka-tech {
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.5rem;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .journal-newsletter h2 {
     max-width: 38ch;
+    font-weight: 300;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.journal-newsletter p {
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 3rem;
 }
 
 .newsletter-form {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    align-items: flex-start;
 }
 
 .newsletter-form input[type="email"] {
     flex: 1 1 280px;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
-    padding: 0.75rem 0;
+    padding: 0.875rem 0;
     font-size: 1rem;
+    font-weight: 300;
+    color: #222;
+    transition: border-bottom-color 0.45s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-bottom-color: #000;
+    border-bottom-width: 2px;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 300;
 }
 
 .newsletter-form button {
-    border: 1px solid #000;
+    border: none;
     background: #000;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.75rem 1.75rem;
-    border-radius: 12px;
-    transition: background 0.4s ease-out, color 0.4s ease-out;
+    letter-spacing: 0.08em;
+    padding: 0.875rem 2.5rem;
+    border-radius: 4px;
+    font-weight: 300;
+    font-size: 0.9rem;
+    transition: background 0.5s ease, transform 0.45s ease;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-.newsletter-form button:hover {
-    background: #333;
+.newsletter-form button:hover,
+.newsletter-form button:focus {
+    background: #222;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.newsletter-form button:active {
+    transform: translateY(0);
 }
 
 @media (max-width: 640px) {
     .journal-cta__wrap {
         flex-direction: column;
         align-items: flex-start;
+        padding: 2rem 1.5rem;
+    }
+    
+    .aprende-hero {
+        padding-top: clamp(5rem, 10vh, 8rem);
+        padding-bottom: clamp(5rem, 10vh, 8rem);
+    }
+    
+    .aprende-hero__title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+    
+    .journal-collections__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .journal-collections__grid article,
+    .journal-collection-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 100%;
     }
 }
 
