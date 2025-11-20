@@ -805,20 +805,44 @@ HTML;
         ->add_tab(
             __( 'Hero', 'understrap' ),
             array(
-                Field::make( 'text', 'metodo_hero_eyebrow', __( 'Eyebrow', 'understrap' ) ),
-                Field::make( 'text', 'metodo_hero_title', __( 'Título', 'understrap' ) )
-                    ->set_required( true ),
-                Field::make( 'textarea', 'metodo_hero_description', __( 'Descripción', 'understrap' ) ),
-                Field::make( 'image', 'metodo_hero_image', __( 'Imagen destacada', 'understrap' ) )
+                Field::make( 'file', 'kapunka_metodo_hero_media', __( 'Medio del hero (imagen o video)', 'understrap' ) )
+                    ->set_value_type( 'url' )
+                    ->set_default_value( 'story-image.jpg' )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_eyebrow', __( 'Eyebrow', 'understrap' ) )
+                    ->set_default_value( __( 'Formación exclusiva', 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_title', __( 'Título principal', 'understrap' ) )
+                    ->set_default_value( __( 'Formación Kapunka — Certifícate Kapunka Pro', 'understrap' ) )
+                    ->set_required( true )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_metodo_subtitle', __( 'Subtítulo', 'understrap' ) )
+                    ->set_default_value( __( 'La técnica detrás del producto. Formación práctica para su equipo y certificación oficial.', 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_alt_text_hero', __( 'Texto alternativo para hero', 'understrap' ) )
+                    ->set_default_value( __( 'Sesión de formación Kapunka — terapeuta en práctica.', 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                // Keep legacy fields for backward compatibility
+                Field::make( 'text', 'metodo_hero_eyebrow', __( 'Eyebrow (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_hero_title', __( 'Título (legacy)', 'understrap' ) ),
+                Field::make( 'textarea', 'metodo_hero_description', __( 'Descripción (legacy)', 'understrap' ) ),
+                Field::make( 'image', 'metodo_hero_image', __( 'Imagen destacada (legacy)', 'understrap' ) )
                     ->set_value_type( 'url' ),
             )
         )
         ->add_tab(
             __( 'Programa', 'understrap' ),
             array(
-                Field::make( 'text', 'metodo_syllabus_eyebrow', __( 'Eyebrow', 'understrap' ) ),
-                Field::make( 'text', 'metodo_syllabus_title', __( 'Título', 'understrap' ) ),
-                Field::make( 'complex', 'metodo_syllabus_items', __( 'Etapas del programa', 'understrap' ) )
+                Field::make( 'textarea', 'kapunka_metodo_syllabus', __( 'Syllabus completo', 'understrap' ) )
+                    ->set_default_value( __( "Teoría — Bioquímica del Argán puro. Control sensorial, estabilidad y trazabilidad.\n\nPráctica — Masaje facial de remonte (lifting natural) y maniobras corporales combinadas.\n\nCertificación — Examen práctico y diploma oficial Kapunka con sello 'Método Kapunka autorizado'.", 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_duration', __( 'Duración del programa', 'understrap' ) )
+                    ->set_default_value( __( 'Programa intensivo de dos jornadas. Online + taller práctico.', 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                // Keep legacy fields for backward compatibility
+                Field::make( 'text', 'metodo_syllabus_eyebrow', __( 'Eyebrow (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_syllabus_title', __( 'Título (legacy)', 'understrap' ) ),
+                Field::make( 'complex', 'metodo_syllabus_items', __( 'Etapas del programa (legacy)', 'understrap' ) )
                     ->set_layout( 'tabbed-vertical' )
                     ->add_fields(
                         array(
@@ -832,25 +856,49 @@ HTML;
         ->add_tab(
             __( 'Badge', 'understrap' ),
             array(
-                Field::make( 'text', 'metodo_badge_eyebrow', __( 'Eyebrow', 'understrap' ) ),
-                Field::make( 'text', 'metodo_badge_title', __( 'Título', 'understrap' ) ),
-                Field::make( 'textarea', 'metodo_badge_description', __( 'Descripción', 'understrap' ) ),
-                Field::make( 'image', 'metodo_badge_image', __( 'Imagen del badge', 'understrap' ) )
+                Field::make( 'file', 'kapunka_metodo_badge_image', __( 'Imagen del badge', 'understrap' ) )
+                    ->set_value_type( 'url' )
+                    ->set_default_value( 'Kapunka-plate-Autorizado.png' )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_badge_text', __( 'Texto del badge', 'understrap' ) )
+                    ->set_default_value( __( "Badge oficial: 'Método Kapunka autorizado'.", 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                // Keep legacy fields for backward compatibility
+                Field::make( 'text', 'metodo_badge_eyebrow', __( 'Eyebrow (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_badge_title', __( 'Título (legacy)', 'understrap' ) ),
+                Field::make( 'textarea', 'metodo_badge_description', __( 'Descripción (legacy)', 'understrap' ) ),
+                Field::make( 'image', 'metodo_badge_image', __( 'Imagen del badge (legacy)', 'understrap' ) )
                     ->set_value_type( 'url' ),
             )
         )
         ->add_tab(
             __( 'Formulario', 'understrap' ),
             array(
-                Field::make( 'text', 'metodo_lead_eyebrow', __( 'Eyebrow', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_title', __( 'Título', 'understrap' ) ),
-                Field::make( 'textarea', 'metodo_lead_description', __( 'Descripción', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_name_label', __( 'Etiqueta — Nombre completo', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_clinic_label', __( 'Etiqueta — Clínica o centro', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_email_label', __( 'Etiqueta — Correo profesional', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_phone_label', __( 'Etiqueta — Teléfono / WhatsApp', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_comments_label', __( 'Etiqueta — Comentarios', 'understrap' ) ),
-                Field::make( 'text', 'metodo_lead_button_label', __( 'Texto del botón', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_apply_cta_text', __( 'Texto del botón CTA', 'understrap' ) )
+                    ->set_default_value( __( 'Solicitar información', 'understrap' ) )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_metodo_apply_form_fields', __( 'Campos del formulario (JSON)', 'understrap' ) )
+                    ->set_default_value( '{"fields":["nombre_completo","clinica_centro","correo_profesional","telefono_whatsapp","comentarios"]}' )
+                    ->set_help_text( __( 'Formato JSON. No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_form_email_recipient', __( 'Email destinatario', 'understrap' ) )
+                    ->set_default_value( 'pro@kapunkargan.com' )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_metodo_crm_tag', __( 'Tag CRM', 'understrap' ) )
+                    ->set_default_value( 'Training_Request' )
+                    ->set_help_text( __( 'No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                Field::make( 'file', 'kapunka_metodo_pdf_link', __( 'PDF (opcional)', 'understrap' ) )
+                    ->set_value_type( 'url' )
+                    ->set_help_text( __( 'Opcional: subir PDF si está disponible. No duplicar — mantenimiento: Página Método Kapunka.', 'understrap' ) ),
+                // Keep legacy fields for backward compatibility
+                Field::make( 'text', 'metodo_lead_eyebrow', __( 'Eyebrow (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_title', __( 'Título (legacy)', 'understrap' ) ),
+                Field::make( 'textarea', 'metodo_lead_description', __( 'Descripción (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_name_label', __( 'Etiqueta — Nombre completo (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_clinic_label', __( 'Etiqueta — Clínica o centro (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_email_label', __( 'Etiqueta — Correo profesional (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_phone_label', __( 'Etiqueta — Teléfono / WhatsApp (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_comments_label', __( 'Etiqueta — Comentarios (legacy)', 'understrap' ) ),
+                Field::make( 'text', 'metodo_lead_button_label', __( 'Texto del botón (legacy)', 'understrap' ) ),
             )
         );
 

@@ -472,6 +472,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Generic mini case modals
+    const caseOpeners = document.querySelectorAll('[data-case-open]');
+    const caseModals = document.querySelectorAll('[data-case-modal]');
+    if (caseOpeners.length && caseModals.length) {
+        let activeCaseModal = null;
+        let caseTrigger = null;
+
+        const findModal = (id) => document.querySelector(`[data-case-modal="${id}"]`);
+
+        const closeCaseModal = () => {
+            if (!activeCaseModal) {
+                return;
+            }
+            activeCaseModal.classList.remove('is-open');
+            activeCaseModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('kapunka-modal-open');
+            if (caseTrigger && typeof caseTrigger.focus === 'function') {
+                caseTrigger.focus();
+            }
+            activeCaseModal = null;
+            caseTrigger = null;
+        };
+
+        caseOpeners.forEach((opener) => {
+            opener.addEventListener('click', () => {
+                const target = opener.getAttribute('data-case-open');
+                const modal = findModal(target);
+                if (!modal) {
+                    return;
+                }
+                activeCaseModal = modal;
+                caseTrigger = opener;
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('kapunka-modal-open');
+                const dialog = modal.querySelector('.spa-case-modal__dialog');
+                window.setTimeout(() => {
+                    if (dialog) {
+                        dialog.focus();
+                    }
+                }, 10);
+            });
+        });
+
+        caseModals.forEach((modal) => {
+            modal.querySelectorAll('[data-case-close]').forEach((closer) => {
+                closer.addEventListener('click', closeCaseModal);
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && activeCaseModal) {
+                closeCaseModal();
+            }
+        });
+    }
+
     // Newsletter fallback validation
     document.querySelectorAll('.kapunka-newsletter form').forEach((form) => {
         form.addEventListener('submit', (event) => {
@@ -482,4 +539,218 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    const downloadModal = document.querySelector('[data-download-modal]');
+    if (downloadModal) {
+        const openers = document.querySelectorAll('[data-download-open]');
+        const closeButtons = downloadModal.querySelectorAll('[data-download-close]');
+        const resourceInput = downloadModal.querySelector('input[name="resource_key"]');
+        const pageInput = downloadModal.querySelector('input[name="page_id"]');
+        const defaultPageId = pageInput ? pageInput.value : '';
+        const resourceLabel = downloadModal.querySelector('[data-download-resource-label]');
+        const form = downloadModal.querySelector('[data-download-form]');
+        const statusEl = downloadModal.querySelector('[data-download-status]');
+        const successEl = downloadModal.querySelector('[data-download-success]');
+        const dialog = downloadModal.querySelector('.spa-download-modal__dialog');
+        let activeTrigger = null;
+
+        const closeDownload = () => {
+            downloadModal.classList.remove('is-open');
+            downloadModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('kapunka-modal-open');
+            if (activeTrigger && typeof activeTrigger.focus === 'function') {
+                activeTrigger.focus();
+            }
+            activeTrigger = null;
+        };
+
+        const openDownload = (trigger) => {
+            activeTrigger = trigger;
+            downloadModal.classList.add('is-open');
+            downloadModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('kapunka-modal-open');
+            window.setTimeout(() => {
+                if (dialog) {
+                    dialog.focus();
+                }
+            }, 10);
+        };
+
+        openers.forEach((opener) => {
+            opener.addEventListener('click', () => {
+                const key = opener.getAttribute('data-resource');
+                const label = opener.getAttribute('data-resource-label');
+                if (resourceInput) {
+                    resourceInput.value = key || '';
+                }
+                if (resourceLabel && label) {
+                    resourceLabel.textContent = label;
+                }
+                if (statusEl) {
+                    statusEl.textContent = '';
+                }
+                if (successEl) {
+                    successEl.textContent = '';
+                }
+                if (form) {
+                    form.reset();
+                    if (resourceInput) {
+                        resourceInput.value = key || '';
+                    }
+                    if (pageInput) {
+                        pageInput.value = defaultPageId;
+                    }
+                }
+                openDownload(opener);
+            });
+        });
+
+        closeButtons.forEach((btn) => btn.addEventListener('click', closeDownload));
+        downloadModal.addEventListener('click', (event) => {
+            if (event.target === downloadModal) {
+                closeDownload();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && downloadModal.classList.contains('is-open')) {
+                closeDownload();
+            }
+        });
+
+        if (form) {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (statusEl) {
+                    statusEl.textContent = '';
+                }
+                if (successEl) {
+                    successEl.textContent = '';
+                }
+
+                const formData = new FormData(form);
+                formData.append('action', 'kapunka_download_resource');
+                formData.append('nonce', (window.kapunkaAjax && window.kapunkaAjax.nonce) || '');
+
+                const fetchUrl = (window.kapunkaAjax && window.kapunkaAjax.ajaxUrl) || (window.ajaxurl || '');
+
+                fetch(fetchUrl, {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then((response) => response.json())
+                    .then((payload) => {
+                        if (payload.success) {
+                            if (successEl) {
+                                successEl.textContent = payload.data && payload.data.message ? payload.data.message : (window.kapunkaAjax && window.kapunkaAjax.successCommon) || '';
+                            }
+                            form.reset();
+                            if (resourceInput) {
+                                resourceInput.value = '';
+                            }
+                        } else if (statusEl) {
+                            statusEl.textContent = (payload.data && payload.data.message) || (window.kapunkaAjax && window.kapunkaAjax.genericError) || '';
+                        }
+                    })
+                    .catch(() => {
+                        if (statusEl) {
+                            statusEl.textContent = (window.kapunkaAjax && window.kapunkaAjax.genericError) || '';
+                        }
+                    });
+            });
+        }
+    }
+
+    // Método Kapunka form handler
+    const metodoForm = document.getElementById('metodo-training-form');
+    if (metodoForm) {
+        const submitBtn = metodoForm.querySelector('.metodo-form__submit');
+        const statusEl = metodoForm.querySelector('.metodo-form__status');
+        
+        metodoForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+            }
+            
+            if (statusEl) {
+                statusEl.textContent = '';
+                statusEl.className = 'metodo-form__status';
+            }
+            
+            // Clear previous errors
+            metodoForm.querySelectorAll('.metodo-form__error').forEach((errorEl) => {
+                errorEl.textContent = '';
+            });
+            metodoForm.querySelectorAll('.metodo-form__input, .metodo-form__textarea').forEach((input) => {
+                input.classList.remove('has-error');
+            });
+            
+            const formData = new FormData(metodoForm);
+            // Ensure nonce is included
+            if (window.kapunkaAjax && window.kapunkaAjax.metodoNonce) {
+                const nonceInput = metodoForm.querySelector('input[name="kapunka_metodo_nonce"]');
+                if (!nonceInput) {
+                    formData.append('kapunka_metodo_nonce', window.kapunkaAjax.metodoNonce);
+                }
+            }
+            const fetchUrl = (window.kapunkaAjax && window.kapunkaAjax.ajaxUrl) || (window.ajaxurl || '');
+            
+            fetch(fetchUrl, {
+                method: 'POST',
+                body: formData,
+            })
+                .then((response) => response.json())
+                .then((payload) => {
+                    if (payload.success) {
+                        if (statusEl) {
+                            statusEl.textContent = payload.data && payload.data.message ? payload.data.message : 'Gracias. Recibimos su solicitud. Le contactaremos en 48 h hábiles.';
+                            statusEl.className = 'metodo-form__status has-success';
+                        }
+                        metodoForm.reset();
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = metodoForm.dataset.submitText || 'Solicitar información';
+                        }
+                    } else {
+                        const errorMessage = (payload.data && payload.data.message) || 'Hubo un error. Intente nuevamente.';
+                        const errorField = payload.data && payload.data.field;
+                        
+                        if (errorField) {
+                            const fieldInput = metodoForm.querySelector(`[name="${errorField}"]`);
+                            if (fieldInput) {
+                                fieldInput.classList.add('has-error');
+                                const errorEl = fieldInput.closest('.metodo-form__field').querySelector('.metodo-form__error');
+                                if (errorEl) {
+                                    errorEl.textContent = errorMessage;
+                                }
+                            }
+                        }
+                        
+                        if (statusEl) {
+                            statusEl.textContent = errorMessage;
+                            statusEl.className = 'metodo-form__status has-error';
+                        }
+                        
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = metodoForm.dataset.submitText || 'Solicitar información';
+                        }
+                    }
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    if (statusEl) {
+                        statusEl.textContent = 'Hubo un error al enviar. Intente nuevamente.';
+                        statusEl.className = 'metodo-form__status has-error';
+                    }
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = metodoForm.dataset.submitText || 'Solicitar información';
+                    }
+                });
+        });
+    }
 });

@@ -42,6 +42,17 @@ function kapunka_enqueue_styles() {
     // Scripts
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'kapunka-scripts', get_stylesheet_directory_uri() . '/js/kapunka.js', array( 'jquery' ), '1.1.0', true );
+    wp_localize_script(
+        'kapunka-scripts',
+        'kapunkaAjax',
+        array(
+            'ajaxUrl'       => admin_url( 'admin-ajax.php' ),
+            'nonce'         => wp_create_nonce( 'kapunka_download_resource' ),
+            'metodoNonce'   => wp_create_nonce( 'kapunka_metodo_training_request' ),
+            'genericError'  => __( 'No se pudo enviar. Intente nuevamente.', 'understrap' ),
+            'successCommon' => __( 'Gracias. Recibirás el enlace en tu correo.', 'understrap' ),
+        )
+    );
     
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -360,6 +371,299 @@ function kapunka_get_profesionales_megamenu_ctas() {
         ),
     );
 }
+
+function kapunka_get_partner_resource_map() {
+    return array(
+        'brochure_spa' => array(
+            'field'    => 'kapunka_brochure_spa',
+            'label'    => __( 'Kapunka Spa Partnership Brochure', 'understrap' ),
+            'filename' => __( 'Kapunka_Spa_Partnership_Brochure.pdf', 'understrap' ),
+            'type'     => 'pdf',
+        ),
+        'playbook_hotel' => array(
+            'field'    => 'kapunka_playbook_hotel',
+            'label'    => __( 'Kapunka Hotel Amenity Playbook', 'understrap' ),
+            'filename' => __( 'Kapunka_Hotel_Amenity_Playbook.pdf', 'understrap' ),
+            'type'     => 'pdf',
+        ),
+        'ficha_pif' => array(
+            'field'    => 'kapunka_ficha_pif',
+            'label'    => __( 'Kapunka Ficha Técnica PIF / MSDS', 'understrap' ),
+            'filename' => __( 'Kapunka_Ficha_Tecnica_PIF_MSDS.pdf', 'understrap' ),
+            'type'     => 'pdf',
+        ),
+        'marketing_kit' => array(
+            'field'    => 'kapunka_marketing_kit',
+            'label'    => __( 'Kapunka Marketing Kit', 'understrap' ),
+            'filename' => __( 'Kapunka_Marketing_Kit.zip', 'understrap' ),
+            'type'     => 'zip',
+        ),
+    );
+}
+
+function kapunka_log_partner_asset_lead( $entry ) {
+    $log = get_option( 'kapunka_partner_asset_downloads', array() );
+
+    $log[] = array_merge(
+        array(
+            'timestamp' => current_time( 'mysql' ),
+        ),
+        $entry
+    );
+
+    update_option( 'kapunka_partner_asset_downloads', $log, false );
+}
+
+function kapunka_handle_download_resource() {
+    check_ajax_referer( 'kapunka_download_resource', 'nonce' );
+
+    $resource_key = sanitize_text_field( wp_unslash( $_POST['resource_key'] ?? '' ) );
+    $page_id      = isset( $_POST['page_id'] ) ? absint( $_POST['page_id'] ) : 0;
+
+    if ( ! $resource_key || ! $page_id ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Solicitud inválida.', 'understrap' ) ),
+            400
+        );
+    }
+
+    $resources_map = kapunka_get_partner_resource_map();
+
+    if ( ! isset( $resources_map[ $resource_key ] ) ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Recurso no disponible.', 'understrap' ) ),
+            404
+        );
+    }
+
+    $resource_config = $resources_map[ $resource_key ];
+    $attachment_id   = kapunka_get_meta( $resource_config['field'], 0, $page_id );
+    $download_url    = $attachment_id ? wp_get_attachment_url( $attachment_id ) : '';
+
+    if ( ! $download_url ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Archivo no encontrado.', 'understrap' ) ),
+            404
+        );
+    }
+
+    $nombre   = sanitize_text_field( wp_unslash( $_POST['nombre_completo'] ?? '' ) );
+    $email    = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
+    $hotel    = sanitize_text_field( wp_unslash( $_POST['hotel'] ?? '' ) );
+
+    if ( '' === $nombre || '' === $email ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Complete los campos obligatorios.', 'understrap' ) ),
+            400
+        );
+    }
+
+    if ( ! is_email( $email ) ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Email no válido.', 'understrap' ) ),
+            400
+        );
+    }
+
+    $download_url = add_query_arg(
+        array(
+            'utm_source'   => 'site',
+            'utm_medium'   => 'partner_page',
+            'utm_campaign' => 'spa_pilot',
+        ),
+        $download_url
+    );
+
+    kapunka_log_partner_asset_lead(
+        array(
+            'name'           => $nombre,
+            'email'          => $email,
+            'hotel'          => $hotel,
+            'resource_key'   => $resource_key,
+            'resource_label' => $resource_config['label'],
+            'tag'            => 'Partner_Asset_Download',
+        )
+    );
+
+    $recipient = kapunka_get_meta( 'kapunka_pilot_form_email_recipient', 'pro@kapunkargan.com', $page_id );
+    $headers   = array( 'Content-Type: text/html; charset=UTF-8' );
+
+    $admin_subject = sprintf(
+        /* translators: %s resource label */
+        __( '[Kapunka] Nueva descarga de recurso: %s', 'understrap' ),
+        $resource_config['label']
+    );
+
+    $admin_message  = '<p>' . esc_html__( 'Nuevo lead de recurso:', 'understrap' ) . '</p>';
+    $admin_message .= '<ul>';
+    $admin_message .= '<li><strong>' . esc_html__( 'Nombre', 'understrap' ) . ':</strong> ' . esc_html( $nombre ) . '</li>';
+    $admin_message .= '<li><strong>' . esc_html__( 'Email', 'understrap' ) . ':</strong> ' . esc_html( $email ) . '</li>';
+    if ( $hotel ) {
+        $admin_message .= '<li><strong>' . esc_html__( 'Hotel/Spa', 'understrap' ) . ':</strong> ' . esc_html( $hotel ) . '</li>';
+    }
+    $admin_message .= '<li><strong>' . esc_html__( 'Recurso', 'understrap' ) . ':</strong> ' . esc_html( $resource_config['label'] ) . '</li>';
+    $admin_message .= '<li><strong>' . esc_html__( 'Tag', 'understrap' ) . ':</strong> Partner_Asset_Download</li>';
+    $admin_message .= '</ul>';
+
+    if ( $recipient ) {
+        wp_mail( $recipient, $admin_subject, $admin_message, $headers );
+    }
+
+    $user_subject = __( 'Tu enlace de descarga Kapunka', 'understrap' );
+    $user_message = '<p>' . esc_html__( 'Gracias por su interés en Kapunka. Aquí tiene su recurso:', 'understrap' ) . '</p>';
+    $user_message .= '<p><a href="' . esc_url( $download_url ) . '">' . esc_html( $resource_config['label'] ) . '</a></p>';
+    $user_message .= '<p>' . esc_html__( 'Si necesita apoyo adicional, responda a este correo.', 'understrap' ) . '</p>';
+
+    wp_mail( $email, $user_subject, $user_message, $headers );
+
+    wp_send_json_success(
+        array(
+            'message' => __( 'Gracias. Revise su email con el enlace de descarga.', 'understrap' ),
+        )
+    );
+}
+
+add_action( 'wp_ajax_kapunka_download_resource', 'kapunka_handle_download_resource' );
+add_action( 'wp_ajax_nopriv_kapunka_download_resource', 'kapunka_handle_download_resource' );
+
+/**
+ * Handle Método Kapunka training request form submission.
+ */
+function kapunka_handle_metodo_training_request() {
+    check_ajax_referer( 'kapunka_metodo_training_request', 'kapunka_metodo_nonce' );
+
+    $page_id = isset( $_POST['page_id'] ) ? absint( $_POST['page_id'] ) : 0;
+
+    if ( ! $page_id ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Solicitud inválida.', 'understrap' ) ),
+            400
+        );
+    }
+
+    // Honeypot check
+    $honeypot = sanitize_text_field( wp_unslash( $_POST['website'] ?? '' ) );
+    if ( ! empty( $honeypot ) ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Solicitud inválida.', 'understrap' ) ),
+            400
+        );
+    }
+
+    // Get and sanitize form fields
+    $nombre_completo = sanitize_text_field( wp_unslash( $_POST['nombre_completo'] ?? '' ) );
+    $clinica_centro = sanitize_text_field( wp_unslash( $_POST['clinica_centro'] ?? '' ) );
+    $correo_profesional = sanitize_email( wp_unslash( $_POST['correo_profesional'] ?? '' ) );
+    $telefono_whatsapp = sanitize_text_field( wp_unslash( $_POST['telefono_whatsapp'] ?? '' ) );
+    $comentarios = sanitize_textarea_field( wp_unslash( $_POST['comentarios'] ?? '' ) );
+
+    // Validation
+    if ( empty( $nombre_completo ) ) {
+        wp_send_json_error(
+            array(
+                'message' => __( 'El nombre completo es obligatorio.', 'understrap' ),
+                'field'   => 'nombre_completo',
+            ),
+            400
+        );
+    }
+
+    if ( empty( $clinica_centro ) ) {
+        wp_send_json_error(
+            array(
+                'message' => __( 'La clínica o centro es obligatorio.', 'understrap' ),
+                'field'   => 'clinica_centro',
+            ),
+            400
+        );
+    }
+
+    if ( empty( $correo_profesional ) || ! is_email( $correo_profesional ) ) {
+        wp_send_json_error(
+            array(
+                'message' => __( 'El correo profesional es obligatorio y debe ser válido.', 'understrap' ),
+                'field'   => 'correo_profesional',
+            ),
+            400
+        );
+    }
+
+    // Get form settings from Carbon Fields
+    $email_recipient = kapunka_get_meta( 'kapunka_metodo_form_email_recipient', 'pro@kapunkargan.com', $page_id );
+    $crm_tag        = kapunka_get_meta( 'kapunka_metodo_crm_tag', 'Training_Request', $page_id );
+
+    // Log lead
+    kapunka_log_partner_asset_lead(
+        array(
+            'name'           => $nombre_completo,
+            'email'          => $correo_profesional,
+            'clinic'         => $clinica_centro,
+            'phone'          => $telefono_whatsapp,
+            'comments'       => $comentarios,
+            'tag'            => $crm_tag,
+            'source'         => 'site',
+            'page'           => 'metodo_kapunka',
+            'page_url'       => get_permalink( $page_id ),
+            'utm_source'     => sanitize_text_field( wp_unslash( $_GET['utm_source'] ?? '' ) ),
+            'utm_medium'     => sanitize_text_field( wp_unslash( $_GET['utm_medium'] ?? '' ) ),
+            'utm_campaign'   => sanitize_text_field( wp_unslash( $_GET['utm_campaign'] ?? '' ) ),
+        )
+    );
+
+    // Send email to admin
+    $headers   = array( 'Content-Type: text/html; charset=UTF-8' );
+    $admin_subject = sprintf(
+        __( 'Solicitud Método Kapunka — %s', 'understrap' ),
+        $nombre_completo
+    );
+
+    $admin_message  = '<p>' . esc_html__( 'Nueva solicitud de formación:', 'understrap' ) . '</p>';
+    $admin_message .= '<ul>';
+    $admin_message .= '<li><strong>' . esc_html__( 'Nombre completo', 'understrap' ) . ':</strong> ' . esc_html( $nombre_completo ) . '</li>';
+    $admin_message .= '<li><strong>' . esc_html__( 'Clínica / Centro', 'understrap' ) . ':</strong> ' . esc_html( $clinica_centro ) . '</li>';
+    $admin_message .= '<li><strong>' . esc_html__( 'Correo profesional', 'understrap' ) . ':</strong> ' . esc_html( $correo_profesional ) . '</li>';
+    if ( $telefono_whatsapp ) {
+        $admin_message .= '<li><strong>' . esc_html__( 'Teléfono / WhatsApp', 'understrap' ) . ':</strong> ' . esc_html( $telefono_whatsapp ) . '</li>';
+    }
+    if ( $comentarios ) {
+        $admin_message .= '<li><strong>' . esc_html__( 'Comentarios', 'understrap' ) . ':</strong> ' . esc_html( $comentarios ) . '</li>';
+    }
+    $admin_message .= '<li><strong>' . esc_html__( 'Tag CRM', 'understrap' ) . ':</strong> ' . esc_html( $crm_tag ) . '</li>';
+    $admin_message .= '</ul>';
+
+    if ( $email_recipient ) {
+        wp_mail( $email_recipient, $admin_subject, $admin_message, $headers );
+    }
+
+    // Send confirmation email to user
+    $user_subject = __( 'Solicitud recibida — Método Kapunka', 'understrap' );
+    $user_message = '<p>' . esc_html__( 'Gracias por su interés en el Método Kapunka.', 'understrap' ) . '</p>';
+    $user_message .= '<p>' . esc_html__( 'Hemos recibido su solicitud de información. Le contactaremos en 48 h hábiles.', 'understrap' ) . '</p>';
+    $user_message .= '<p>' . esc_html__( 'Resumen de su solicitud:', 'understrap' ) . '</p>';
+    $user_message .= '<ul>';
+    $user_message .= '<li><strong>' . esc_html__( 'Nombre', 'understrap' ) . ':</strong> ' . esc_html( $nombre_completo ) . '</li>';
+    $user_message .= '<li><strong>' . esc_html__( 'Clínica / Centro', 'understrap' ) . ':</strong> ' . esc_html( $clinica_centro ) . '</li>';
+    $user_message .= '<li><strong>' . esc_html__( 'Correo', 'understrap' ) . ':</strong> ' . esc_html( $correo_profesional ) . '</li>';
+    if ( $telefono_whatsapp ) {
+        $user_message .= '<li><strong>' . esc_html__( 'Teléfono', 'understrap' ) . ':</strong> ' . esc_html( $telefono_whatsapp ) . '</li>';
+    }
+    if ( $comentarios ) {
+        $user_message .= '<li><strong>' . esc_html__( 'Comentarios', 'understrap' ) . ':</strong> ' . esc_html( $comentarios ) . '</li>';
+    }
+    $user_message .= '</ul>';
+    $user_message .= '<p>' . esc_html__( 'Atentamente,', 'understrap' ) . '<br>' . esc_html__( 'Equipo Kapunka', 'understrap' ) . '</p>';
+
+    wp_mail( $correo_profesional, $user_subject, $user_message, $headers );
+
+    wp_send_json_success(
+        array(
+            'message' => __( 'Gracias. Recibimos su solicitud. Le contactaremos en 48 h hábiles.', 'understrap' ),
+        )
+    );
+}
+
+add_action( 'wp_ajax_kapunka_metodo_training_request', 'kapunka_handle_metodo_training_request' );
+add_action( 'wp_ajax_nopriv_kapunka_metodo_training_request', 'kapunka_handle_metodo_training_request' );
 
 /**
  * Seed El Origen hero + carta content when the Carbon Fields are empty.
