@@ -735,8 +735,8 @@ HTML;
                         array(
                             array(
                                 'crb_origen_highlight_text' => __( 'Como enfermera y quiromasajista, entendí que la piel dañada no solo necesita química, necesita nutrición fundamental.', 'understrap' ),
-                            ),
-                            array(
+                    ),
+                        array(
                                 'crb_origen_highlight_text' => __( 'Así nació Kapunka, que significa “gracias” en tailandés. Es mi forma de dar las gracias a la naturaleza, a mis pacientes y a todas las personas que confían en nosotros.', 'understrap' ),
                             ),
                             array(
@@ -773,18 +773,18 @@ HTML;
                                 ->set_required( true ),
                             Field::make( 'textarea', 'crb_origen_valor_text', __( 'Descripción', 'understrap' ) ),
                         )
-                    )
+            )
                     ->set_default_value(
+            array(
                         array(
-                            array(
                                 'crb_origen_valor_title' => __( 'Confianza', 'understrap' ),
                                 'crb_origen_valor_text'  => __( 'Honestidad y calidad absoluta en todo lo que hacemos. Nos avalan pruebas científicas y la satisfacción de nuestros clientes.', 'understrap' ),
                             ),
-                            array(
+            array(
                                 'crb_origen_valor_title' => __( 'Esfuerzo & Excelencia', 'understrap' ),
                                 'crb_origen_valor_text'  => __( 'No escatimamos en esfuerzos para lograr la máxima pureza y eficacia. Desde la cosecha manual hasta las pruebas de laboratorio, perseguimos la excelencia.', 'understrap' ),
                             ),
-                            array(
+                        array(
                                 'crb_origen_valor_title' => __( 'Compromiso', 'understrap' ),
                                 'crb_origen_valor_text'  => __( 'Con tu piel y tu salud, con nuestro equipo y colaboradores, y con el entorno. Cumplimos lo que prometemos y nos regimos por la ética.', 'understrap' ),
                             ),
@@ -1159,16 +1159,131 @@ HTML;
         ->add_tab(
             __( 'Hero', 'understrap' ),
             array(
-                Field::make( 'text', 'spas_hero_eyebrow', __( 'Eyebrow', 'understrap' ) )
-                    ->set_default_value( __( 'Spas & Hoteles', 'understrap' ) ),
-                Field::make( 'text', 'spas_hero_title', __( 'Título', 'understrap' ) )
-                    ->set_default_value( __( 'El nuevo estándar en lujo consciente.', 'understrap' ) ),
-                Field::make( 'textarea', 'spas_hero_description', __( 'Descripción', 'understrap' ) )
-                    ->set_default_value( __( 'Eleve la experiencia de sus huéspedes con rituales sensoriales que justifican un posicionamiento premium.', 'understrap' ) ),
-                Field::make( 'file', 'spas_hero_video', __( 'Video de fondo', 'understrap' ) )
-                    ->set_value_type( 'id' ),
-                Field::make( 'image', 'spas_hero_poster', __( 'Poster del video', 'understrap' ) )
-                    ->set_value_type( 'id' ),
+                Field::make( 'file', 'kapunka_spas_hero_media', __( 'Medio del hero (imagen o video)', 'understrap' ) )
+                    ->set_value_type( 'url' )
+                    ->set_default_value( '/mnt/data/Spas & Hoteles - Kapunka.png' ),
+                Field::make( 'text', 'kapunka_spas_hero_eyebrow', __( 'Eyebrow', 'understrap' ) )
+                    ->set_default_value( __( 'SPAS & HOTELES', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_hero_title', __( 'Título', 'understrap' ) )
+                    ->set_default_value( __( 'Ritual Signature Kapunka. Eleva la experiencia de tus huéspedes y convierte amenities en ventas', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_hero_subtitle', __( 'Subtítulo', 'understrap' ) )
+                    ->set_default_value( __( 'Un ritual premium y un programa amenity-to-retail diseñado para hoteles 5★ y spas de lujo. Pack piloto, formación de equipo y co-marketing incluidos.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_hero_cta_primary_text', __( 'Texto botón primario', 'understrap' ) )
+                    ->set_default_value( __( 'Solicitar Pack Piloto', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_hero_cta_primary_url', __( 'URL botón primario', 'understrap' ) )
+                    ->set_default_value( '/contacto#profesionales' ),
+                Field::make( 'text', 'kapunka_spas_hero_cta_secondary_text', __( 'Texto enlace secundario', 'understrap' ) )
+                    ->set_default_value( __( 'Ver Packs Profesionales', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_hero_cta_secondary_url', __( 'URL enlace secundario', 'understrap' ) )
+                    ->set_default_value( '#packs' ),
+                Field::make( 'text', 'kapunka_spas_hero_support_line', __( 'Línea de soporte', 'understrap' ) )
+                    ->set_default_value( __( 'Piloto operativo en 6 semanas — incluye formación y material de venta.', 'understrap' ) ),
+            )
+        )
+        ->add_tab(
+            __( 'Logos y mini casos', 'understrap' ),
+            array(
+                Field::make( 'media_gallery', 'kapunka_spas_partner_logos', __( 'Logos partners (gris)', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_case_1_title', __( 'Caso 1 — Título', 'understrap' ) )
+                    ->set_default_value( __( 'Hotel X / Spa Y', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_case_1_problem', __( 'Caso 1 — Problema', 'understrap' ) )
+                    ->set_default_value( __( 'El spa buscaba una experiencia signature que justificara un precio premium y aumentara la venta retail.', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_case_1_solution', __( 'Caso 1 — Solución', 'understrap' ) )
+                    ->set_default_value( __( 'Piloto de 6 semanas: Ritual Signature + formación intensiva + amenities en suites VIP.', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_case_1_result', __( 'Caso 1 — Resultado', 'understrap' ) )
+                    ->set_default_value( __( 'Resultado: +12% ventas retail, conversión amenity→venta 3.8%, ticket medio retail 45 € (ejemplo).', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_case_2_title', __( 'Caso 2 — Título', 'understrap' ) )
+                    ->set_default_value( __( 'Hotel Z / Spa W', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_case_2_problem', __( 'Caso 2 — Problema', 'understrap' ) )
+                    ->set_default_value( __( 'El spa necesitaba un programa de retail que sostuviera la experiencia clínica fuera de cabina.', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_case_2_solution', __( 'Caso 2 — Solución', 'understrap' ) )
+                    ->set_default_value( __( 'Diseñamos protocolos faciales + cápsulas de formación digital para el personal de suites.', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spas_case_2_result', __( 'Caso 2 — Resultado', 'understrap' ) )
+                    ->set_default_value( __( 'Resultado: +18% reservas en cabina, upsell de packs profesionales en carta digital.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_spas_case_placeholder_text', __( 'Texto placeholder logo', 'understrap' ) )
+                    ->set_default_value( __( 'LOGO_PLACEHOLDER', 'understrap' ) ),
+            )
+        )
+        ->add_tab(
+            __( 'Packs', 'understrap' ),
+            array(
+                Field::make( 'text', 'kapunka_spa_pack_title', __( 'Título Pack Spa', 'understrap' ) )
+                    ->set_default_value( __( 'Spa Partnership Pack', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_spa_pack_bullets', __( 'Bullets Pack Spa', 'understrap' ) )
+                    ->set_default_value( "- 1 x Frasco profesional 500 ml\n- 10 x Goteros 30 ml para venta retail\n- Formación Kapunka (online + workshop práctico opcional)\n- Kit marketing: tarjetas, POS, imágenes para web\n- Soporte co-marketing y listado en nuestra web" ),
+                Field::make( 'text', 'kapunka_spa_pack_ref_price', __( 'Referencia precio Pack Spa', 'understrap' ) )
+                    ->set_default_value( __( '500 ml = 120 € ; 30 ml = 27 €', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_hotel_pack_title', __( 'Título Pack Hotel', 'understrap' ) )
+                    ->set_default_value( __( 'Hotel Amenity Pack', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_hotel_pack_bullets', __( 'Bullets Pack Hotel', 'understrap' ) )
+                    ->set_default_value( "- 50 x Amenities 10 ml (mini gotero)\n- 5 x Goteros 30 ml para boutique\n- Tarjetas en habitación con QR + código hotel\n- Guía implantación concierge + spa\n- Oferta piloto (6 semanas) con formación exprés" ),
+                Field::make( 'text', 'kapunka_cost_example_title', __( 'Título tabla coste', 'understrap' ) )
+                    ->set_default_value( __( 'Ejemplo: coste por tratamiento', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_cost_example_table', __( 'Tabla coste (líneas)', 'understrap' ) )
+                    ->set_default_value( "Coste €/ml = 120 € / 500 ml = 0,24 €/ml\nCoste por tratamiento (30 ml) = 30 × 0,24 = 7,20 €\nEjemplo de rentabilidad: Ritual a 90 € → margen ≈ 82,80 €" ),
+            )
+        )
+        ->add_tab(
+            __( 'Formación', 'understrap' ),
+            array(
+                Field::make( 'text', 'kapunka_training_title', __( 'Título formación', 'understrap' ) )
+                    ->set_default_value( __( 'Formación Kapunka — Certifícate Kapunka Pro', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_training_modules', __( 'Módulos', 'understrap' ) )
+                    ->set_default_value( "1. Teoría (1h): composición, evidencia clínica y seguridad.\n2. Práctica (2h): protocolo facial y corporal.\n3. Integración (1h): post-procedimiento y venta retail.\nEvaluación + certificado Kapunka Pro (sello para sala)." ),
+                Field::make( 'text', 'kapunka_training_duration', __( 'Duración', 'understrap' ) )
+                    ->set_default_value( __( 'Online + taller presencial 3–4 h (opción in-house).', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_training_cta_text', __( 'Texto CTA', 'understrap' ) )
+                    ->set_default_value( __( 'Reservar formación / Solicitar fecha', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_training_cta_url', __( 'URL CTA', 'understrap' ) )
+                    ->set_default_value( '/contacto#formacion' ),
+            )
+        )
+        ->add_tab(
+            __( 'Amenity-to-Retail', 'understrap' ),
+            array(
+                Field::make( 'textarea', 'kapunka_amenity_steps', __( 'Pasos del flujo', 'understrap' ) )
+                    ->set_default_value( "1) Amenidad 10 ml en suite + tarjeta informativa.\n2) Tarjeta: QR → landing del hotel con código único.\n3) Tracking: QR → visitas → compras con código único. Reporte mensual." ),
+                Field::make( 'textarea', 'kapunka_amenity_kpi_list', __( 'KPI recomendados', 'understrap' ) )
+                    ->set_default_value( "- Tasa escaneo QR por huéspedes\n- Conversión visita→compra\n- Ticket medio retail\n- Incremento ingresos spa / mes" ),
+                Field::make( 'textarea', 'kapunka_amenity_example', __( 'Ejemplo numérico', 'understrap' ) )
+                    ->set_default_value( "Ejemplo: 1000 huéspedes → 5% escanean = 50 visitas → 10% convierten = 5 ventas → ticket medio 45 € → 225 € ventas (ilustrativo)." ),
+            )
+        )
+        ->add_tab(
+            __( 'Logística y Certificaciones', 'understrap' ),
+            array(
+                Field::make( 'textarea', 'kapunka_certifications_bullets', __( 'Certificaciones', 'understrap' ) )
+                    ->set_default_value( "- Registro CPNP y expediente PIF disponible.\n- Dermatológicamente testado.\n- Orgánico / Vegano / Cruelty-Free (si aplica)" ),
+                Field::make( 'textarea', 'kapunka_logistics_bullets', __( 'Logística', 'understrap' ) )
+                    ->set_default_value( "- Lead time estándar: X semanas.\n- Lotes numerados y trazabilidad.\n- Reposición y opciones de refill." ),
+                Field::make( 'textarea', 'kapunka_commercial_terms', __( 'Términos comerciales', 'understrap' ) )
+                    ->set_default_value( "- Precios mayorista y descuentos por volumen.\n- Política de exclusividad geográfica (negociable).\n- MAP y reglas de co-branding." ),
+            )
+        )
+        ->add_tab(
+            __( 'Portal partners', 'understrap' ),
+            array(
+                Field::make( 'text', 'kapunka_partner_portal_title', __( 'Título portal', 'understrap' ) )
+                    ->set_default_value( __( 'Soporte completo para partners', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_partner_portal_text', __( 'Texto soporte', 'understrap' ) )
+                    ->set_default_value( __( 'Accede a vídeos de formación, plantillas de email, material para recepción/concierge y recursos para co-marketing.', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_partner_portal_cta_text', __( 'Texto CTA portal', 'understrap' ) )
+                    ->set_default_value( __( 'Solicitar acceso al Portal Kapunka Pro', 'understrap' ) ),
+                Field::make( 'text', 'kapunka_partner_portal_cta_url', __( 'URL formulario portal', 'understrap' ) )
+                    ->set_default_value( '/partner-portal-request' ),
+            )
+        )
+        ->add_tab(
+            __( 'KPIs piloto', 'understrap' ),
+            array(
+                Field::make( 'text', 'kapunka_kpis_title', __( 'Título KPIs', 'understrap' ) )
+                    ->set_default_value( __( 'KPIs primarios para piloto (6 semanas)', 'understrap' ) ),
+                Field::make( 'textarea', 'kapunka_kpis_list', __( 'Lista KPIs', 'understrap' ) )
+                    ->set_default_value( "- Conversión amenity→venta (%)\n- Ticket medio retail (€)\n- Incremento de ingresos spa por mes (€)\n- Coste del aceite por tratamiento (€)" ),
+                Field::make( 'textarea', 'kapunka_kpis_formula', __( 'Fórmulas', 'understrap' ) )
+                    ->set_default_value( "Coste €/ml = Precio 500 ml / 500\nCoste por tratamiento = ml usados × coste €/ml\nEjemplo: 120 € / 500 = 0,24 €/ml → 30 ml × 0,24 = 7,20 €" ),
+                Field::make( 'textarea', 'kapunka_kpis_objectives', __( 'Objetivos', 'understrap' ) )
+                    ->set_default_value( "- Amenity→retail ≥ 3%\n- Recuperación coste del piloto < 3 meses (meta)" ),
             )
         )
         ->add_tab(
@@ -1266,6 +1381,44 @@ HTML;
                 Field::make( 'text', 'crb_spa_cta_button_link', __( 'URL del botón', 'understrap' ) )
                     ->set_default_value( home_url( '/contacto#profesionales' ) )
                     ->set_attribute( 'type', 'url' ),
+            )
+        )
+        ->add_tab(
+            __( 'FAQ', 'understrap' ),
+            array(
+                Field::make( 'complex', 'kapunka_faq_items', __( 'Preguntas frecuentes', 'understrap' ) )
+                    ->add_fields(
+                        array(
+                            Field::make( 'text', 'kapunka_faq_q', __( 'Pregunta', 'understrap' ) )
+                                ->set_required( true ),
+                            Field::make( 'textarea', 'kapunka_faq_a', __( 'Respuesta', 'understrap' ) )
+                                ->set_required( true ),
+                        )
+                    )
+                    ->set_default_value(
+                        array(
+                            array(
+                                'kapunka_faq_q' => __( '¿Qué volumen por tratamiento?', 'understrap' ),
+                                'kapunka_faq_a' => __( 'Masaje corporal 20–40 ml; facial 3–6 gotas (ejemplos).', 'understrap' ),
+                            ),
+                            array(
+                                'kapunka_faq_q' => __( '¿Apto para pieles sensibles/embarazadas?', 'understrap' ),
+                                'kapunka_faq_a' => __( 'Sí; 100% argán, sin perfumes. Recomendamos prueba en pequeña zona.', 'understrap' ),
+                            ),
+                            array(
+                                'kapunka_faq_q' => __( '¿Formación incluida?', 'understrap' ),
+                                'kapunka_faq_a' => __( 'Sí, incluida en packs profesionales o como servicio.', 'understrap' ),
+                            ),
+                            array(
+                                'kapunka_faq_q' => __( '¿Cómo medimos conversiones?', 'understrap' ),
+                                'kapunka_faq_a' => __( 'QR + código único + reportes mensuales.', 'understrap' ),
+                            ),
+                            array(
+                                'kapunka_faq_q' => __( '¿Co-branding disponible?', 'understrap' ),
+                                'kapunka_faq_a' => __( 'Sí, bajo condiciones contractuales y MOQ.', 'understrap' ),
+                            ),
+                        )
+                    ),
             )
         );
 
