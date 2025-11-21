@@ -148,6 +148,9 @@ function kapunka_register_carbon_fields() {
         ->add_tab(
             __( 'Programa profesional', 'understrap' ),
             array(
+                Field::make( 'image', 'home_program_background', __( 'Imagen de fondo', 'understrap' ) )
+                    ->set_value_type( 'id' )
+                    ->set_help_text( __( 'Se mostrará como imagen de fondo con overlay oscuro. Si no se sube, se mantendrá el fondo negro.', 'understrap' ) ),
                 Field::make( 'text', 'home_program_eyebrow', __( 'Etiqueta', 'understrap' ) ),
                 Field::make( 'text', 'home_program_title', __( 'Título', 'understrap' ) ),
                 Field::make( 'textarea', 'home_program_description', __( 'Descripción', 'understrap' ) ),

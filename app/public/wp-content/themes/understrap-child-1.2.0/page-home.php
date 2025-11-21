@@ -112,6 +112,9 @@ if ( function_exists( 'wc_get_product' ) ) {
     }
 }
 
+$home_program_background_id = (int) kapunka_get_meta( 'home_program_background', 0 );
+$home_program_background_url = $home_program_background_id ? wp_get_attachment_image_url( $home_program_background_id, 'full' ) : '';
+
 $home_program = array(
     'eyebrow'     => kapunka_get_meta( 'home_program_eyebrow', __( 'Programa profesional', 'understrap' ) ),
     'title'       => kapunka_get_meta( 'home_program_title', __( 'Formaciones presenciales y soporte remoto para integrar Kapunka en tu menú.', 'understrap' ) ),
@@ -120,6 +123,8 @@ $home_program = array(
         'label' => kapunka_get_meta( 'home_program_cta_label', __( 'Ver módulos', 'understrap' ) ),
         'url'   => kapunka_get_meta( 'home_program_cta_url', home_url( '/profesionales' ) ),
     ),
+    'background_id' => $home_program_background_id,
+    'background_url' => $home_program_background_url,
 );
 
 $home_b2b_cta = array(
@@ -324,7 +329,13 @@ $journal_query = null;
         </section>
     <?php endif; ?>
 
-    <section class="kapunka-section home-program">
+    <section class="kapunka-section home-program<?php echo $home_program['background_url'] ? ' home-program--with-background' : ''; ?>">
+        <?php if ( $home_program['background_url'] ) : ?>
+            <div class="home-program__background" aria-hidden="true">
+                <img src="<?php echo esc_url( $home_program['background_url'] ); ?>" alt="" loading="lazy" decoding="async">
+                <div class="home-program__overlay"></div>
+            </div>
+        <?php endif; ?>
         <div class="kapunka-clamp home-program__wrap">
             <div>
                 <?php if ( '' !== trim( (string) $home_program['eyebrow'] ) ) : ?>
