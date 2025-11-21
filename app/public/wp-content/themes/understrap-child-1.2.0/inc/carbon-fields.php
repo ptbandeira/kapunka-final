@@ -32,14 +32,27 @@ function kapunka_register_carbon_fields() {
             array(
                 Field::make( 'text', 'home_hero_eyebrow', __( 'Eyebrow', 'understrap' ) ),
                 Field::make( 'text', 'home_hero_title', __( 'Título', 'understrap' ) )
-                    ->set_required( true ),
-                Field::make( 'textarea', 'home_hero_description', __( 'Descripción', 'understrap' ) ),
+                    ->set_required( true )
+                    ->set_default_value( __( 'Agradece a tu piel', 'understrap' ) ),
+                Field::make( 'textarea', 'home_hero_description', __( 'Descripción', 'understrap' ) )
+                    ->set_default_value( __( 'El argán 100% BIO perfeccionado con técnica clínica para quienes buscan resultados visibles sin perder pureza.', 'understrap' ) ),
                 Field::make( 'image', 'home_hero_background', __( 'Imagen de fondo', 'understrap' ) )
                     ->set_value_type( 'id' ),
-                Field::make( 'text', 'home_hero_primary_label', __( 'CTA principal - texto', 'understrap' ) ),
+                Field::make( 'text', 'home_hero_primary_label', __( 'CTA principal - texto', 'understrap' ) )
+                    ->set_default_value( __( 'Acceso profesionales', 'understrap' ) ),
                 Field::make( 'text', 'home_hero_primary_url', __( 'CTA principal - URL', 'understrap' ) ),
                 Field::make( 'text', 'home_hero_secondary_label', __( 'CTA secundaria - texto', 'understrap' ) ),
                 Field::make( 'text', 'home_hero_secondary_url', __( 'CTA secundaria - URL', 'understrap' ) ),
+                // Campos alternativos con nombres solicitados (alias para compatibilidad)
+                Field::make( 'text', 'hero_titulo', __( 'Título (alias)', 'understrap' ) )
+                    ->set_default_value( __( 'Agradece a tu piel', 'understrap' ) )
+                    ->set_help_text( __( 'Campo alias. Usar home_hero_title para el template. Mantenimiento: Homepage Hero.', 'understrap' ) ),
+                Field::make( 'textarea', 'hero_subtitulo', __( 'Subtítulo (alias)', 'understrap' ) )
+                    ->set_default_value( __( 'El argán 100% BIO perfeccionado con técnica clínica para quienes buscan resultados visibles sin perder pureza.', 'understrap' ) )
+                    ->set_help_text( __( 'Campo alias. Usar home_hero_description para el template. Mantenimiento: Homepage Hero.', 'understrap' ) ),
+                Field::make( 'text', 'hero_cta_texto', __( 'CTA texto (alias)', 'understrap' ) )
+                    ->set_default_value( __( 'Acceso profesionales', 'understrap' ) )
+                    ->set_help_text( __( 'Campo alias. Usar home_hero_primary_label para el template. Mantenimiento: Homepage Hero.', 'understrap' ) ),
             )
         )
         ->add_tab(

@@ -11,10 +11,10 @@ $kapunka_shop_url = function_exists( 'wc_get_page_id' ) ? get_permalink( wc_get_
 
 $hero = array(
     'eyebrow'     => kapunka_get_meta( 'home_hero_eyebrow', __( 'CIENCIA Y NATURALEZA', 'understrap' ) ),
-    'title'       => kapunka_get_meta( 'home_hero_title', __( 'Agradece a tu piel', 'understrap' ) ),
-    'description' => kapunka_get_meta( 'home_hero_description', __( 'El argán 100% BIO perfeccionado para la alta exigencia estética.', 'understrap' ) ),
+    'title'       => kapunka_get_meta( 'home_hero_title', kapunka_get_meta( 'hero_titulo', __( 'Agradece a tu piel', 'understrap' ) ) ),
+    'description' => kapunka_get_meta( 'home_hero_description', kapunka_get_meta( 'hero_subtitulo', __( 'El argán 100% BIO perfeccionado con técnica clínica para quienes buscan resultados visibles sin perder pureza.', 'understrap' ) ) ),
     'primary'     => array(
-        'label' => kapunka_get_meta( 'home_hero_primary_label', __( 'Explorar colección', 'understrap' ) ),
+        'label' => kapunka_get_meta( 'home_hero_primary_label', kapunka_get_meta( 'hero_cta_texto', __( 'Acceso profesionales', 'understrap' ) ) ),
         'url'   => kapunka_get_meta( 'home_hero_primary_url', $kapunka_shop_url ),
     ),
     'secondary'   => array(
