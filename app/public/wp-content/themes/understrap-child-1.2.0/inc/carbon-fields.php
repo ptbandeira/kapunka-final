@@ -190,8 +190,10 @@ function kapunka_register_carbon_fields() {
             __( 'Newsletter', 'understrap' ),
             array(
                 Field::make( 'text', 'home_newsletter_eyebrow', __( 'Etiqueta', 'understrap' ) ),
-                Field::make( 'text', 'home_newsletter_title', __( 'Título', 'understrap' ) ),
-                Field::make( 'textarea', 'home_newsletter_description', __( 'Descripción', 'understrap' ) ),
+                Field::make( 'text', 'home_newsletter_title', __( 'Título', 'understrap' ) )
+                    ->set_default_value( __( 'Notas clínicas y rituales nuevos, una vez al mes.', 'understrap' ) ),
+                Field::make( 'textarea', 'home_newsletter_description', __( 'Descripción', 'understrap' ) )
+                    ->set_default_value( __( 'Sin ruido. Solo protocolos descargables y playlists para cabina.', 'understrap' ) ),
                 Field::make( 'text', 'home_newsletter_placeholder', __( 'Placeholder del email', 'understrap' ) ),
                 Field::make( 'text', 'home_newsletter_button', __( 'Texto del botón', 'understrap' ) ),
                 Field::make( 'text', 'home_newsletter_shortcode', __( 'Shortcode alternativo', 'understrap' ) )

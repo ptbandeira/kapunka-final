@@ -2053,14 +2053,36 @@ a:focus {
 }
 
 .home-newsletter {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: clamp(6rem, 12vh, 9rem) clamp(1.5rem, 6vw, 4rem);
+}
+
+.home-newsletter .kapunka-tech {
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.home-newsletter h2 {
+    font-weight: 300;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.home-newsletter p {
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.9;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 2rem;
 }
 
 .home-journal__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
@@ -2104,16 +2126,17 @@ a:focus {
 
 .home-journal__content h3 {
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 250;
     margin: 0;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     color: var(--primary-white);
+    line-height: 1.4;
 }
 
 .home-journal__content p {
     margin: 0;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.85;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -2306,6 +2329,7 @@ a:focus {
     display: inline-block;
     box-shadow: none;
     white-space: nowrap;
+    text-align: center;
 }
 
 .home-program__button:hover,
@@ -2319,27 +2343,55 @@ a:focus {
 .home-newsletter form,
 .newsletter-form {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .newsletter-form input {
     flex: 1;
     min-width: 220px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    padding: 0.85rem 1rem;
-    border-radius: 999px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    padding: 0.875rem 0;
+    border-radius: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #222;
+    transition: border-bottom-color 0.3s ease, border-bottom-width 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-bottom-color: #000;
+    border-bottom-width: 2px;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 300;
 }
 
 .newsletter-form button {
     border: none;
-    background: var(--primary-black);
-    color: var(--primary-white);
-    padding: 0.85rem 1.5rem;
-    border-radius: 999px;
+    background: #000;
+    color: #fff;
+    padding: 0.875rem 2.5rem;
+    border-radius: 0;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover,
+.newsletter-form button:focus {
+    background: #222;
+    outline: none;
 }
 
 .tienda-hero__header {
