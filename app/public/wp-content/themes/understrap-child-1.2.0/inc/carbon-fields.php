@@ -62,8 +62,15 @@ function kapunka_register_carbon_fields() {
                     ->set_default_value( __( 'Más que un aceite. Un método.', 'understrap' ) )
                     ->set_help_text( __( 'Se mostrará como titular H2 en el bloque editorial.', 'understrap' ) ),
                 Field::make( 'rich_text', 'crb_home_hook_body', __( 'Cuerpo editorial', 'understrap' ) )
-                    ->set_default_value( __( 'Kapunka no es solo un ingrediente; es la fusión de un abastecimiento ético en Marruecos y un protocolo clínico desarrollado durante 35 años. Diseñado para quienes exigen resultados visibles sin comprometer la pureza.', 'understrap' ) )
-                    ->set_help_text( __( 'Texto enriquecido para el bloque “Más que un aceite. Un método.”', 'understrap' ) ),
+                    ->set_default_value( __( 'Kapunka es la fusión de un abastecimiento ético y trazable en Marruecos con un protocolo clínico desarrollado durante 35 años. Un método creado para quienes exigen eficacia visible, pureza absoluta y técnica profesional.', 'understrap' ) )
+                    ->set_help_text( __( 'Texto enriquecido para el bloque "Más que un aceite. Un método."', 'understrap' ) ),
+                // Campos alias solicitados
+                Field::make( 'text', 'metodo_titulo', __( 'Título (alias)', 'understrap' ) )
+                    ->set_default_value( __( 'Más que un aceite. Un método.', 'understrap' ) )
+                    ->set_help_text( __( 'Campo alias. Usar crb_home_hook_title para el template. Mantenimiento: Sección "Más que un aceite. Un método."', 'understrap' ) ),
+                Field::make( 'textarea', 'metodo_texto', __( 'Texto (alias)', 'understrap' ) )
+                    ->set_default_value( __( 'Kapunka es la fusión de un abastecimiento ético y trazable en Marruecos con un protocolo clínico desarrollado durante 35 años. Un método creado para quienes exigen eficacia visible, pureza absoluta y técnica profesional.', 'understrap' ) )
+                    ->set_help_text( __( 'Campo alias. Usar crb_home_hook_body para el template. Mantenimiento: Sección "Más que un aceite. Un método."', 'understrap' ) ),
             )
         )
         ->add_tab(

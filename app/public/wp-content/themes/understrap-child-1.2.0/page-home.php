@@ -25,10 +25,13 @@ $hero = array(
 );
 
 $home_hook = array(
-    'title' => kapunka_get_meta( 'crb_home_hook_title', __( 'Más que un aceite. Un método.', 'understrap' ) ),
+    'title' => kapunka_get_meta( 'crb_home_hook_title', kapunka_get_meta( 'metodo_titulo', __( 'Más que un aceite. Un método.', 'understrap' ) ) ),
     'body'  => kapunka_get_meta(
         'crb_home_hook_body',
-        __( 'Kapunka no es solo un ingrediente; es la fusión de un abastecimiento ético en Marruecos y un protocolo clínico desarrollado durante 35 años. Diseñado para quienes exigen resultados visibles sin comprometer la pureza.', 'understrap' )
+        kapunka_get_meta(
+            'metodo_texto',
+            __( 'Kapunka es la fusión de un abastecimiento ético y trazable en Marruecos con un protocolo clínico desarrollado durante 35 años. Un método creado para quienes exigen eficacia visible, pureza absoluta y técnica profesional.', 'understrap' )
+        )
     ),
 );
 
