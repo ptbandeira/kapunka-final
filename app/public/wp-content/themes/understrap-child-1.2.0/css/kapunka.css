@@ -2397,15 +2397,19 @@ a:focus {
     opacity: 1;
 }
 
+.contacto-grid {
+    padding: clamp(7rem, 13vh, 11rem) 0;
+}
+
 .contacto-grid__layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .contacto-main .hero-section {
     min-height: auto;
-    padding: clamp(3rem, 7vw, 4.5rem) 0 clamp(2.5rem, 6vw, 4rem);
+    padding: clamp(8rem, 14vh, 11rem) 0 clamp(8rem, 14vh, 11rem);
     margin-top: clamp(3.5rem, 8vw, 5.5rem);
 }
 
@@ -2414,21 +2418,26 @@ a:focus {
 }
 
 .contacto-main .hero-section h1 {
-    font-size: clamp(3.25rem, 8vw, 5rem);
-    font-weight: 200;
-    letter-spacing: -0.045em;
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    font-weight: 250;
+    letter-spacing: -0.03em;
     line-height: 1.05;
-    margin-bottom: clamp(1rem, 3vw, 1.8rem);
+    margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
+    color: #222;
 }
 
 .contacto-main .hero-section p {
-    max-width: 48ch;
-    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    max-width: 55ch;
+    font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+    line-height: 1.8;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 0;
 }
 
 .contact-form form {
     display: grid;
-    gap: 1.75rem;
+    gap: 2.25rem;
 }
 
 .contact-form form p {
@@ -2438,45 +2447,67 @@ a:focus {
 .contact-form .wpcf7-form-control:not(.wpcf7-submit) {
     width: 100%;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #dcdcdc;
     border-radius: 0;
     background: transparent;
-    padding: 0.85rem 0;
+    padding: 0.875rem 0;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-weight: 300;
+    color: #222;
+    transition: border-bottom-color 0.3s ease, border-bottom-width 0.3s ease;
 }
 
 .contact-form .wpcf7-form-control:not(.wpcf7-submit):focus {
     outline: none;
-    border-bottom-color: rgba(0, 0, 0, 0.85);
+    border-bottom-color: #000;
+    border-bottom-width: 2px;
 }
 
 .contact-form .wpcf7-form-control::placeholder {
-    color: rgba(0, 0, 0, 0.35);
+    color: rgba(0, 0, 0, 0.4);
     letter-spacing: 0.02em;
+    font-weight: 300;
 }
 
 .contact-form textarea.wpcf7-form-control {
     min-height: 140px;
     resize: vertical;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.contact-form textarea.wpcf7-form-control:focus {
+    border-bottom-color: #000;
+    border-bottom-width: 2px;
 }
 
 .contact-form .wpcf7-submit {
     align-self: flex-start;
-    border: 1px solid var(--primary-black);
-    background: var(--primary-black);
-    color: var(--primary-white);
+    border: none;
+    background: #000;
+    color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: 0.85rem 2.6rem;
-    border-radius: 999px;
-    transition: background 0.3s ease, color 0.3s ease;
+    letter-spacing: 0.08em;
+    padding: 1.125rem 3rem;
+    height: 48px;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-form .wpcf7-submit:hover,
 .contact-form .wpcf7-submit:focus {
-    background: var(--primary-white);
-    color: var(--primary-black);
+    background: #222;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.contact-form .wpcf7-submit:active {
+    transform: translateY(0);
 }
 
 .contacto-cta__link,
@@ -2507,31 +2538,101 @@ a:focus {
 
 .contacto-grid__blocks {
     display: grid;
-    gap: 1.25rem;
+    gap: 2rem;
 }
 
 .contacto-grid__blocks article,
 .contacto-cta {
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 18px;
-    padding: 1.5rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    padding: 2.25rem 2rem;
+    background: #fff;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contacto-grid__blocks article:hover,
+.contacto-cta:hover {
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.contacto-grid__blocks article .kapunka-tech,
+.contacto-cta .kapunka-tech {
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    display: block;
+}
+
+.contacto-grid__blocks article p:not(.kapunka-tech),
+.contacto-cta p:not(.kapunka-tech) {
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.contacto-grid__blocks article h3,
+.contacto-cta h3 {
+    font-weight: 300;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    color: #222;
+}
+
+.contacto-cta p:not(.kapunka-tech) {
+    font-weight: 300;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
 }
 
 .contacto-cta-final {
     background: var(--gray-light);
+    padding: clamp(7.5rem, 14vh, 12rem) clamp(1.5rem, 6vw, 4rem);
 }
 
 .contacto-cta-final__wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
+}
+
+.contacto-cta-final__wrap .kapunka-tech {
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.contacto-cta-final__wrap h2 {
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    margin: 0;
+    color: #222;
+    max-width: 50ch;
 }
 
 .contacto-cta-final__actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
+    align-items: center;
+}
+
+.contacto-cta-final__link {
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
 }
 
 .pro-onboarding__grid {
@@ -3258,6 +3359,60 @@ a:focus {
     .contacto-cta-final__wrap {
         flex-direction: column;
         align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    /* Contacto page responsive adjustments */
+    .contacto-main .hero-section {
+        padding: clamp(6rem, 10vh, 9rem) clamp(1.5rem, 4vw, 3rem);
+    }
+    
+    .contacto-main .hero-section h1 {
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        font-weight: 250;
+    }
+    
+    .contacto-grid {
+        padding: clamp(5rem, 10vh, 8rem) clamp(1.5rem, 4vw, 3rem);
+    }
+    
+    .contacto-grid__layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .contacto-grid__blocks {
+        gap: 2rem;
+    }
+    
+    .contacto-grid__blocks article,
+    .contacto-cta {
+        width: 100%;
+        padding: 2rem 1.75rem;
+    }
+    
+    .contact-form {
+        margin-top: clamp(3rem, 6vh, 5rem);
+    }
+    
+    .contact-form form {
+        gap: 2rem;
+    }
+    
+    .contacto-cta-final {
+        padding: clamp(6rem, 10vh, 9rem) clamp(1.5rem, 4vw, 3rem);
+    }
+    
+    .contacto-cta-final__wrap h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+    }
+    
+    .contacto-main .hero-section + .kapunka-section {
+        margin-top: clamp(3rem, 6vh, 5rem);
+    }
+    
+    .contacto-main .kapunka-section + .kapunka-section {
+        margin-top: clamp(3rem, 6vh, 5rem);
     }
 
     .home-featured__grid {

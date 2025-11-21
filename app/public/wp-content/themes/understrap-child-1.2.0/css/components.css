@@ -3056,7 +3056,7 @@
 
 .valor-propuesta-grid__inner {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: minmax(320px, 35vw);
     gap: 0;
     width: 100%;
@@ -3125,7 +3125,7 @@
 
 @media (max-width: 980px) {
     .valor-propuesta-grid__inner {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-auto-rows: minmax(320px, 40vw);
     }
 }
